@@ -112,12 +112,19 @@ export default function RamuneNemeikaitePage() {
       languagesTitle: 'Kalba šiomis kalbomis',
       languages: ['Lietuvių', 'Anglų', 'Rusų'],
       whenToContactTitle: 'Kada verta kreiptis',
-      whenToContact: [
-        'padidėjusi raumenų įtampa, tonuso ypatumai',
-        'raumenų disbalansas ir laikysenos ypatumai',
-        'bendras raumenų atsipalaidavimas ir savijautos gerinimas',
-        'pagalba po didesnių krūvių, augimo šuolių, sporto',
-        'rekomendacijos tėvams dėl kasdienės priežiūros ir raumenų atpalaidavimo',
+      infantProblemsTitle: 'Kūdikių problemos',
+      infantProblems: [
+        'Raumenų įtampa hipertonuso požymiai',
+        'Sumažėjęs raumenų tonusas hipotonijos požymiai',
+        'Neramumas ir sunkiau nusiraminantis kūdikis',
+        'Jautrumas prisilietimui sunku atsipalaiduoti',
+      ],
+      childrenProblemsTitle: 'Vaikų problemos',
+      childrenProblems: [
+        'Raumenų įtampa ir laikysenos ypatumai',
+        'Skausmai augimo laikotarpiu po krūvio',
+        'Sukaustytas kūnas mažiau judesio laisvumo',
+        'Papildoma pagalba šalia kineziterapijos',
       ],
       methodsTitle: 'Darbo kryptys',
       methodsText: 'Gydomasis masažas pritaikomas individualiai pagal vaiko amžių, būklę ir tikslą. Ramunė orientuojasi į švelnų, vaikui tinkamą tempą ir aiškų procedūros tikslą.',
@@ -134,12 +141,19 @@ export default function RamuneNemeikaitePage() {
       languagesTitle: 'Languages',
       languages: ['Lithuanian', 'English', 'Russian'],
       whenToContactTitle: 'When to Contact',
-      whenToContact: [
-        'increased muscle tension, tone peculiarities',
-        'muscle imbalance and posture peculiarities',
-        'general muscle relaxation and well-being improvement',
-        'help after heavy loads, growth spurts, sports',
-        'recommendations for parents regarding daily care and muscle relaxation',
+      infantProblemsTitle: 'Infant Problems',
+      infantProblems: [
+        'Muscle tension hypertonia signs',
+        'Decreased muscle tone hypotonia signs',
+        'Restlessness and difficulty calming down',
+        'Touch sensitivity difficulty relaxing',
+      ],
+      childrenProblemsTitle: 'Children Problems',
+      childrenProblems: [
+        'Muscle tension and posture peculiarities',
+        'Pain during growth period after exercise',
+        'Tight body less freedom of movement',
+        'Additional help alongside physiotherapy',
       ],
       methodsTitle: 'Work Methods',
       methodsText: 'Therapeutic massage is adapted individually according to the child\'s age, condition, and goal. Ramunė focuses on a gentle, child-appropriate pace and clear procedure goal.',
@@ -227,18 +241,41 @@ export default function RamuneNemeikaitePage() {
 
         {/* When to Contact Section */}
         <section className="py-16 bg-gray-50">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
               {txt.whenToContactTitle}
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-4">
-              {txt.whenToContact.map((item, idx) => (
-                <div key={idx} className="flex items-start space-x-3 bg-white rounded-xl p-6 shadow-sm">
-                  <CheckCircle className="w-6 h-6 text-[#fb7825] flex-shrink-0 mt-1" />
-                  <p className="text-gray-700 text-lg">{item}</p>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Infant Problems */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#fb7825] mb-6 text-center">
+                  {txt.infantProblemsTitle}
+                </h3>
+                <div className="space-y-4">
+                  {txt.infantProblems.map((item, idx) => (
+                    <div key={idx} className="flex items-start space-x-3 bg-white rounded-xl p-6 shadow-sm">
+                      <CheckCircle className="w-6 h-6 text-[#fb7825] flex-shrink-0 mt-1" />
+                      <p className="text-gray-700 text-lg">{item}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Children Problems */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#54B6FC] mb-6 text-center">
+                  {txt.childrenProblemsTitle}
+                </h3>
+                <div className="space-y-4">
+                  {txt.childrenProblems.map((item, idx) => (
+                    <div key={idx} className="flex items-start space-x-3 bg-white rounded-xl p-6 shadow-sm">
+                      <CheckCircle className="w-6 h-6 text-[#54B6FC] flex-shrink-0 mt-1" />
+                      <p className="text-gray-700 text-lg">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>

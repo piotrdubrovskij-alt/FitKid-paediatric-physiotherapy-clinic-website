@@ -458,17 +458,17 @@ export const translations: Record<Language, Translation> = {
         {
           name: "Agnė Juodytė",
           role: "Kineziterapeutė",
-          bio: "Ilgametę patirtį turinti kineziterapeutė, dirbanti su kūdikiais nuo pirmųjų dienų ir vaikais, turinčiais įvairių raidos, neurologinių ar judėjimo iššūkių.",
+          bio: "Dirba su kūdikiais nuo pirmųjų dienų ir vaikais. Taiko Vojta terapiją ir DNS principus, dėsto Vilniaus universitete kineziterapeutams.",
         },
         {
           name: "Ksenija Persijanova",
           role: "Kineziterapeutė",
-          bio: "Kineziterapeutė, turinti praktinę darbo patirtį kūdikių kineziterapijos ir paliatyvios pediatrijos srityse. Specializuojasi atliekant kūdikių hidroterapijos procedūras bei dirbant su vaikais.",
+          bio: "Dirba su kūdikiais ir vaikais. Praktikoje taiko DNS principus, atlieka kūdikių hidroterapiją, konsultuoja dėl raidos ir laikysenos.",
         },
         {
           name: "Ramunė Nemeikaitė",
           role: "Masažuotoja",
-          bio: "Sertifikuota vaikų masažo specialistė. Vaikų ligoninės, Santaros klinikų masažuotoja. Specializuojasi atliekant gydomuosius masažus kūdikiams ir vaikams.",
+          bio: "Sertifikuota vaikų masažo specialistė, dirbanti Santaros klinikose. Atlieka gydomuosius masažus kūdikiams ir vaikams, kaip pagalbą šalia kineziterapijos.",
         },
       ],
     },
@@ -480,16 +480,16 @@ export const translations: Record<Language, Translation> = {
       clientLabel: "FitKid klientė",
       items: [
         {
-          name: "Demetrija Laura",
-          text: "Mūsų Mija nuo gimimo draugauja su FitKid komanda, pradžioje lankėsi pas Osteopatą, pora užsiėmimų atnešė didelės naudos Mijos vystimuisi ir padėjo atsipalaiduoti. Vėliau išbandėme mankšta ir voneles, jas lankome iki šiol.",
+          name: "Skaistė Volungevičienė",
+          text: "Jauku, šeimyniška, profesionalu: šioje klinikoje kiekvienas pacientas gauna viską ir kartais daug daugiau nei gali įsivaizduoti. Gera lankytis, kai jauti, jog dirbantys specialistai yra viena darni komanda. Ačiū Ramunei už masažus, ačiū Agnei už Vojta ir kineziterapiją, ačiū Ksenijai už nuostabią šypseną ir gerą nuotaiką, su kuria ji pasitinka ne tik savo, bet ir kolegių pacientus 🥰.",
         },
         {
-          name: "Karolina Davidonytė",
-          text: "Didžiausios rekomendacijos FitKid klinikai! Lankomės nuo pat pirmųjų mažylio savaičių ir jau 9 mėnesius esame kartu su šia klinika bei pačia geriausia kineziterapiaute Ksenija!",
+          name: "Svetlana Urbanović",
+          text: "Puiki kineziterapijos klinika. Lankėmės pas kineziterapeutę Kseniją ir likome labai patenkinti sūnaus pažanga. Vienareikšmiškai rekomenduojame rinktis šią kliniką ir kitiems tėveliams!",
         },
         {
-          name: "Edita Višomirskaja",
-          text: "Rekomenduoju kliniką Fitkid. Čia dirba malonios ir kompetetingos savo srities specialistės. Ramunė puikiai atlieka masažus, o Ksenija smagiai ir naudingai praveda mankšteles.",
+          name: "Julija M.",
+          text: "Rekomenduoju FitKid kliniką! Nuostabios specialistės, kurios atsakingai dirba ir atsižvelgia į vaiko poreikius. Mes pradėjome lankyti nuo hidroterapijos pas kineziterapeutę Kseniją 💛 prieš vonelę mankštindavo mūsų mažylį ir parodydavo ką ir kaip mes galime atlikti namie. Mažylis po plukdymo atsipalaiduodavo, net geriau miegojo. Dėl padidėjusio tonuso lankėme masažus pas Ramunę 💛 nors mums dar metukų nebuvo, bet mažylis išbūdavo visą laiką. A po masažo jo kūnelis tikrai jautėsi atsipalaidavęs. Taip pat lankome mankštas pas kineziterapeutę Agnę 💛 Kiekvienam užsiėmui laukia vis kitokie žaislai, vis kažkas naujo kas tik sudomintų vaiką. Visada po užsiėmimo papasakos kaip sekėsi, patars mums.",
         },
       ],
     },
@@ -861,17 +861,17 @@ export const translations: Record<Language, Translation> = {
         {
           name: "Agnė Juodytė",
           role: "Physiotherapist",
-          bio: "Experienced physiotherapist working with infants from their first days and children with various developmental, neurological or movement challenges.",
+          bio: "Works with infants from first days and children. Applies Vojta therapy and DNS principles, teaches physiotherapists at Vilnius University.",
         },
         {
           name: "Ksenija Persijanova",
           role: "Physiotherapist",
-          bio: "Physiotherapist with practical experience in infant physiotherapy and palliative pediatrics. Specializes in infant hydrotherapy procedures and working with children.",
+          bio: "Works with infants and children. Applies DNS principles in practice, performs infant hydrotherapy, consults on development and posture.",
         },
         {
           name: "Ramunė Nemeikaitė",
           role: "Massage Therapist",
-          bio: "Certified children's massage specialist. Massage therapist at Children's Hospital and Santaros Clinics. Specializes in therapeutic massages for infants and children.",
+          bio: "Certified children's massage specialist working at Santaros Clinics. Performs therapeutic massages for infants and children as support alongside physiotherapy.",
         },
       ],
     },
@@ -883,16 +883,16 @@ export const translations: Record<Language, Translation> = {
       clientLabel: "FitKid client",
       items: [
         {
-          name: "Demetrija Laura",
-          text: "Our Mija has been friends with the FitKid team since birth. We started with an Osteopath, and a couple of sessions brought great benefits to Mija's development and helped her relax. Later we tried exercises and baths, which we still attend.",
+          name: "Skaistė Volungevičienė",
+          text: "Cozy, family-like, professional: at this clinic every patient receives everything and sometimes much more than they can imagine. It's good to visit when you feel that the specialists working there are one harmonious team. Thanks to Ramunė for massages, thanks to Agnė for Vojta and physiotherapy, thanks to Ksenija for wonderful smile and good mood with which she greets not only her own but also colleagues' patients 🥰.",
         },
         {
-          name: "Karolina Davidonytė",
-          text: "Highest recommendations for FitKid clinic! We've been visiting since our baby's first weeks and have been with this clinic for 9 months with the best physiotherapist Ksenija!",
+          name: "Svetlana Urbanović",
+          text: "Excellent physiotherapy clinic. We visited physiotherapist Ksenija and were very satisfied with our son's progress. We definitely recommend choosing this clinic to other parents!",
         },
         {
-          name: "Edita Višomirskaja",
-          text: "I recommend Fitkid clinic. Pleasant and competent specialists work here. Ramunė performs massages excellently, and Ksenija conducts exercises in a fun and useful way.",
+          name: "Julija M.",
+          text: "I recommend FitKid clinic! Amazing specialists who work responsibly and consider child's needs. We started with hydrotherapy with physiotherapist Ksenija 💛 before bath she exercised our baby and showed what and how we can do at home. Baby relaxed after swimming, even slept better. Due to increased tone we visited massages with Ramunė 💛 though our baby wasn't even a year old, he stayed for whole session. After massage his body really felt relaxed. We also visit exercises with physiotherapist Agnė 💛 Each session has different toys, always something new to interest the child. After session she always tells how it went and advises us.",
         },
       ],
     },

@@ -111,14 +111,20 @@ export default function KsenijaPersijanovaPage() {
       license: 'ASL-10431',
       languagesTitle: 'Kalba šiomis kalbomis',
       languages: ['Lietuvių', 'Anglų', 'Rusų'],
-      commonCasesTitle: 'Kuo dažniausiai kreipiasi',
-      commonCases: [
-        'kūdikio asimetrija, „mėgstama" pusė',
-        'raumenų tonuso ypatumai, įtampa',
-        'motorinės raidos klausimai pagal amžių',
-        'laikysenos ir judėjimo kokybės vertinimas kūdikystėje',
-        'vaikų ir paauglių laikysenos problemos, nugaros skausmai',
-        'konsultacijos dėl skoliozės, pratimų planas ir stebėsena',
+      commonCasesTitle: 'Kada verta kreiptis',
+      infantProblemsTitle: 'Kūdikių problemos',
+      infantProblems: [
+        'Motorinės raidos vėlavimas',
+        'Raumenų hipertonusas ir hipotonija',
+        'Kreivakaklystė (torticollis)',
+        'Po ankstyvumo ar sudėtingesnio gimdymo',
+      ],
+      childrenProblemsTitle: 'Vaikų problemos',
+      childrenProblems: [
+        'Laikysenos sutrikimai skoliozė padidinta kifozė',
+        '„O" ir „X" formos kojų ašis',
+        'Pėdos skliauto sutrikimai plokščiapėdystė ir kt',
+        'Skausmai augimo laikotarpiu',
       ],
       methodsTitle: 'Darbo kryptys',
       methodsText: 'DNS metodikos principai padeda tiksliau vertinti judėjimą ir parinkti pratimus, kurie gerina stabilumą, judėjimo kontrolę ir laikyseną. Hidroterapija kūdikiams gali būti naudinga, kai siekiame švelniai skatinti judėjimo laisvumą ir motorikos vystymąsi.',
@@ -134,14 +140,20 @@ export default function KsenijaPersijanovaPage() {
       license: 'ASL-10431',
       languagesTitle: 'Languages',
       languages: ['Lithuanian', 'English', 'Russian'],
-      commonCasesTitle: 'Most Common Reasons for Consultation',
-      commonCases: [
-        'infant asymmetry, "favorite" side',
-        'muscle tone peculiarities, tension',
-        'motor development questions by age',
-        'posture and movement quality assessment in infancy',
-        'children and adolescent posture problems, back pain',
-        'scoliosis consultations, exercise plan and monitoring',
+      commonCasesTitle: 'When to Contact',
+      infantProblemsTitle: 'Infant Problems',
+      infantProblems: [
+        'Motor development delay',
+        'Muscle hypertonia and hypotonia',
+        'Torticollis',
+        'After prematurity or complicated birth',
+      ],
+      childrenProblemsTitle: 'Children Problems',
+      childrenProblems: [
+        'Postural disorders scoliosis increased kyphosis',
+        '"O" and "X" shaped leg axis',
+        'Foot arch disorders flat feet etc',
+        'Pain during growth period',
       ],
       methodsTitle: 'Work Methods',
       methodsText: 'DNS methodology principles help to assess movement more accurately and select exercises that improve stability, movement control, and posture. Infant hydrotherapy can be beneficial when we aim to gently promote movement freedom and motor development.',
@@ -229,18 +241,41 @@ export default function KsenijaPersijanovaPage() {
 
         {/* Common Cases Section */}
         <section className="py-16 bg-gray-50">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
               {txt.commonCasesTitle}
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-4">
-              {txt.commonCases.map((caseText, idx) => (
-                <div key={idx} className="flex items-start space-x-3 bg-white rounded-xl p-6 shadow-sm">
-                  <CheckCircle className="w-6 h-6 text-[#54B6FC] flex-shrink-0 mt-1" />
-                  <p className="text-gray-700 text-lg">{caseText}</p>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Infant Problems */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#54B6FC] mb-6 text-center">
+                  {txt.infantProblemsTitle}
+                </h3>
+                <div className="space-y-4">
+                  {txt.infantProblems.map((item, idx) => (
+                    <div key={idx} className="flex items-start space-x-3 bg-white rounded-xl p-6 shadow-sm">
+                      <CheckCircle className="w-6 h-6 text-[#54B6FC] flex-shrink-0 mt-1" />
+                      <p className="text-gray-700 text-lg">{item}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Children Problems */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#fb7825] mb-6 text-center">
+                  {txt.childrenProblemsTitle}
+                </h3>
+                <div className="space-y-4">
+                  {txt.childrenProblems.map((item, idx) => (
+                    <div key={idx} className="flex items-start space-x-3 bg-white rounded-xl p-6 shadow-sm">
+                      <CheckCircle className="w-6 h-6 text-[#fb7825] flex-shrink-0 mt-1" />
+                      <p className="text-gray-700 text-lg">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>

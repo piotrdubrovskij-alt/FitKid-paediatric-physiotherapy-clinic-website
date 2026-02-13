@@ -110,15 +110,20 @@ export default function AgneJuodytePage() {
       license: 'ASL-04763 Kineziterapeutas',
       languagesTitle: 'Kalba šiomis kalbomis',
       languages: ['Lietuvių', 'Anglų', 'Rusų'],
-      commonCasesTitle: 'Kuo dažniausiai kreipiasi',
-      commonCases: [
-        'kūdikio asimetrija ir „mėgstama" pusė',
-        'kreivakaklystė',
-        'hipertonusas arba sumažėjęs tonusas',
-        'motorinės raidos tempas ir judėjimo kokybė',
-        'laikysenos, pėdų, eisenos ypatumai',
-        'po traumų, operacijų, ilgalaikio imobilizavimo',
-        'sudėtingesni atvejai, kai reikia nuoseklaus darbo ir aiškumo tėvams',
+      commonCasesTitle: 'Kada verta kreiptis',
+      infantProblemsTitle: 'Kūdikių problemos',
+      infantProblems: [
+        'Neurologinės būklės pagal gydytojo rekomendacijas',
+        'Motorinės raidos sutrikimai ir judesio kontrolė',
+        'Kūdikio asimetrija ir kreivakaklystė torticollis',
+        'Raumenų tonuso ypatumai',
+      ],
+      childrenProblemsTitle: 'Vaikų problemos',
+      childrenProblems: [
+        'Laikysenos sutrikimai, skoliozė',
+        'Lėtiniai nugaros ir sąnarių skausmai',
+        'Traumos ir operacijų pasekmės',
+        'Neurologinės būklės',
       ],
       methodsTitle: 'Metodai ir patirtis',
       methodsText: 'Vojta terapija taikoma pagal sertifikavimo programą ir klinikinę praktiką. DNS metodika padeda tiksliau vertinti judėjimą ir planuoti korekciją. Taip pat dėstau Vilniaus universitete kineziterapeutams.',
@@ -135,15 +140,20 @@ export default function AgneJuodytePage() {
       license: 'ASL-04763 Physiotherapist',
       languagesTitle: 'Languages',
       languages: ['Lithuanian', 'English', 'Russian'],
-      commonCasesTitle: 'Most Common Reasons for Consultation',
-      commonCases: [
-        'infant asymmetry and "favorite" side',
-        'torticollis',
-        'hypertonia or decreased tone',
-        'motor development pace and movement quality',
-        'posture, feet, gait peculiarities',
-        'after injuries, operations, long-term immobilization',
-        'complex cases requiring consistent work and clarity for parents',
+      commonCasesTitle: 'When to Contact',
+      infantProblemsTitle: 'Infant Problems',
+      infantProblems: [
+        'Neurological conditions as per doctor recommendations',
+        'Motor development disorders and movement control',
+        'Infant asymmetry and torticollis',
+        'Muscle tone peculiarities',
+      ],
+      childrenProblemsTitle: 'Children Problems',
+      childrenProblems: [
+        'Postural disorders, scoliosis',
+        'Chronic back and joint pain',
+        'Trauma and surgery consequences',
+        'Neurological conditions',
       ],
       methodsTitle: 'Methods and Experience',
       methodsText: 'Vojta therapy applied according to certification program and clinical practice. DNS methodology helps to assess movement more accurately and plan correction. I also teach at Vilnius University for physiotherapists.',
@@ -228,18 +238,41 @@ export default function AgneJuodytePage() {
 
         {/* Common Cases Section */}
         <section className="py-16 bg-gray-50">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
               {txt.commonCasesTitle}
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-4">
-              {txt.commonCases.map((caseText, idx) => (
-                <div key={idx} className="flex items-start space-x-3 bg-white rounded-xl p-6 shadow-sm">
-                  <CheckCircle className="w-6 h-6 text-[#54B6FC] flex-shrink-0 mt-1" />
-                  <p className="text-gray-700 text-lg">{caseText}</p>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Infant Problems */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#54B6FC] mb-6 text-center">
+                  {txt.infantProblemsTitle}
+                </h3>
+                <div className="space-y-4">
+                  {txt.infantProblems.map((item, idx) => (
+                    <div key={idx} className="flex items-start space-x-3 bg-white rounded-xl p-6 shadow-sm">
+                      <CheckCircle className="w-6 h-6 text-[#54B6FC] flex-shrink-0 mt-1" />
+                      <p className="text-gray-700 text-lg">{item}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Children Problems */}
+              <div>
+                <h3 className="text-2xl font-bold text-[#fb7825] mb-6 text-center">
+                  {txt.childrenProblemsTitle}
+                </h3>
+                <div className="space-y-4">
+                  {txt.childrenProblems.map((item, idx) => (
+                    <div key={idx} className="flex items-start space-x-3 bg-white rounded-xl p-6 shadow-sm">
+                      <CheckCircle className="w-6 h-6 text-[#fb7825] flex-shrink-0 mt-1" />
+                      <p className="text-gray-700 text-lg">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
