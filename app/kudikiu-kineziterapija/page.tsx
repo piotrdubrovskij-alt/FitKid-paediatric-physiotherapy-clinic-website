@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
 import { Phone, ArrowRight, CheckCircle, Clock, MapPin } from 'lucide-react';
 
@@ -12,6 +13,27 @@ export default function KudikiuKineziterapijaPage() {
   const [currentLang, setCurrentLang] = useState<Language>('lt');
   const [showMap, setShowMap] = useState(false);
   const t = translations[currentLang];
+
+  // Read language from URL on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang') as Language;
+    if (lang && (lang === 'lt' || lang === 'en')) {
+      setCurrentLang(lang);
+    }
+  }, []);
+
+  // Handle language change and update URL
+  const handleLanguageChange = (lang: Language) => {
+    setCurrentLang(lang);
+    const url = new URL(window.location.href);
+    if (lang === 'lt') {
+      url.searchParams.delete('lang');
+    } else {
+      url.searchParams.set('lang', lang);
+    }
+    window.history.pushState({}, '', url.toString());
+  };
 
   const pageText = {
     lt: {
@@ -240,7 +262,7 @@ export default function KudikiuKineziterapijaPage() {
       <Header
         translations={t}
         currentLang={currentLang}
-        onLanguageChange={setCurrentLang}
+        onLanguageChange={handleLanguageChange}
       />
       
       <main className="pt-20">
@@ -731,16 +753,7 @@ export default function KudikiuKineziterapijaPage() {
       </main>
 
       <Footer translations={t} />
-
-      {/* Sticky Call Button (Mobile) */}
-      <div className="md:hidden fixed bottom-4 right-4 z-40">
-        <a
-          href="tel:+37066699676"
-          className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#54B6FC] to-[#4a9fe0] text-white rounded-full shadow-2xl hover:scale-110 transition-all"
-        >
-          <Phone className="w-7 h-7" />
-        </a>
-      </div>
+      <FloatingActionButtons currentLang={currentLang} />
     </div>
   );
 }

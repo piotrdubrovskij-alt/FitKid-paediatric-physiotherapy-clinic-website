@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
 import { Activity, Scale, Minimize2, Zap, Phone, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -10,6 +11,27 @@ import Link from 'next/link';
 export default function KaGydomePage() {
   const [currentLang, setCurrentLang] = useState<Language>('lt');
   const t = translations[currentLang];
+
+  // Read language from URL on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang') as Language;
+    if (lang && (lang === 'lt' || lang === 'en')) {
+      setCurrentLang(lang);
+    }
+  }, []);
+
+  // Handle language change and update URL
+  const handleLanguageChange = (lang: Language) => {
+    setCurrentLang(lang);
+    const url = new URL(window.location.href);
+    if (lang === 'lt') {
+      url.searchParams.delete('lang');
+    } else {
+      url.searchParams.set('lang', lang);
+    }
+    window.history.pushState({}, '', url.toString());
+  };
 
   const infantProblems = [
     {
@@ -181,7 +203,7 @@ export default function KaGydomePage() {
       <Header
         translations={t}
         currentLang={currentLang}
-        onLanguageChange={setCurrentLang}
+        onLanguageChange={handleLanguageChange}
       />
 
       <main>
@@ -434,6 +456,7 @@ export default function KaGydomePage() {
       </main>
 
       <Footer translations={t} />
+      <FloatingActionButtons currentLang={currentLang} />
     </div>
   );
 }
