@@ -37,7 +37,7 @@ export default function KudikiuPlukdymasPage() {
 
   const pageText = {
     lt: {
-      heroTitle: 'Kūdikių plukdymas Vilniuje',
+      heroTitle: 'Kūdikių plukdymas',
       heroSub: 'Plukdymas pas mus vyksta kartu su kineziterapija arba masažu – taip sukuriame didžiausią vertę: kūdikis atsipalaiduoja vandenyje, o tada kryptingai dirbame su judėjimu ar tonusu.',
       heroNote: 'Be streso – prisitaikome prie kūdikio ritmo, darome pertraukėles, jei reikia.',
       briefTitle: 'Trumpai apie procedūrą (45 min)',
@@ -113,13 +113,13 @@ export default function KudikiuPlukdymasPage() {
       q3: 'Ar reikia kažką nusipirkti plukdymui?',
       a3: 'Ne. Visas reikalingas priemones suteikiame vietoje – nieko papildomai pirkti nereikia.',
       q4: 'Kaip pasiruošti vizitui?',
-      a4: 'Patogu, kai kūdikis nėra labai alkanas ir nėra visiškai pervargęs. Jei naudojate – atsineškite čiulptuką ar buteliuką.',
+      a4: 'Patogu, kai kūdikis nėra labai alkanas ir nėra visiškai pervargęs. Plukdymui viską suteikiame vietoje – nieko papildomai pirkti nereikia (jokių "dirželių", priemonių ar pan.). Jei naudojate – galite atsinešti čiulptuką ar buteliuką, kad kūdikiui būtų ramiau.',
       q5: 'O jeigu kūdikis verks ar norės valgyti?',
       a5: 'Tai normalu. Darome pertraukėles ir prisitaikome prie kūdikio ritmo.',
       q6: 'Kaip dažnai verta kartoti?',
       a6: 'Dažnis priklauso nuo tikslo ir kūdikio reakcijų. Po pirmo vizito pasiūlome aiškų, realistišką planą.',
       q7: 'Kada geriau vizitą atidėti?',
-      a7: 'Jei yra karščiavimas, ūmi infekcija ar kūdikis prastai jaučiasi – vizitą geriau perkelti. Jei abejojate – susisiekite.',
+      a7: 'Procedūrą geriau perkelti, jei: yra karščiavimas ar ūmi infekcija; kūdikis akivaizdžiai prastai jaučiasi; yra odos paūmėjimai ar bėrimai, dėl kurių vanduo gali dirginti. Jei abejojate – parašykite arba paskambinkite, patarsime pagal situaciją.',
       q8: 'Ar gali ateiti abu tėvai?',
       a8: 'Taip – rekomenduojame. Abu tėvai gali geriau suprasti namų rekomendacijas ir kasdienius principus.',
       finalCTA: 'Norite ramesnio kūdikio ir aiškaus plano šeimai?',
@@ -263,16 +263,34 @@ export default function KudikiuPlukdymasPage() {
 
       <main>
         {/* Hero Section with 16:9 Image */}
-        <section className="relative bg-[#f5f3f0] overflow-hidden" style={{ minHeight: 'clamp(420px, 55vh, 620px)' }}>
+        <section 
+          className="relative flex items-center bg-[#f5f3f0]" 
+          style={{ 
+            width: '100%', 
+            minHeight: '85vh',
+            overflow: 'hidden' 
+          }}
+        >
           <div className="absolute inset-0 w-full h-full">
+            {/* Mobile image */}
+            <Image
+              src="/images/hero/hero-kudikiu-plukdymas-mobile.png"
+              alt={txt.heroTitle}
+              fill
+              priority
+              quality={95}
+              sizes="(max-width: 768px) 100vw, 1px"
+              className="object-cover object-center blur-[8px] saturate-75 contrast-90 md:hidden"
+            />
+            {/* Desktop image */}
             <Image
               src="/images/hero/hero-kudikiu-plukdymas.jpg"
               alt={txt.heroTitle}
               fill
               priority
               quality={95}
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1920px"
-              className="object-cover object-[center_40%] blur-[8px] md:blur-[6px] saturate-75 contrast-90"
+              sizes="(max-width: 768px) 1px, 100vw"
+              className="object-cover object-[center_30%] blur-[6px] saturate-75 contrast-90 hidden md:block"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10" />
             <div className="pointer-events-none absolute inset-0 backdrop-blur-[2px]" />
@@ -281,26 +299,26 @@ export default function KudikiuPlukdymasPage() {
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div className="max-w-2xl">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
                   {txt.heroTitle}
                 </h1>
-                <p className="text-xl md:text-2xl text-white/95 leading-relaxed mb-8">
+                <p className="text-lg md:text-2xl text-white/95 leading-relaxed mb-6 md:mb-8">
                   {txt.heroSub}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row items-start gap-4">
+                <div className="flex flex-col sm:flex-row items-start gap-3 md:gap-4">
                   <a
                     href="/registracija"
-                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#54B6FC] to-[#4a9fe0] hover:from-[#4a9fe0] hover:to-[#54B6FC] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
+                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#54B6FC] to-[#4a9fe0] hover:from-[#4a9fe0] hover:to-[#54B6FC] text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-base transition-all hover:scale-105 shadow-lg"
                   >
                     <span>{txt.ctaRegister}</span>
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                   </a>
                   <a
                     href="tel:+37066699676"
-                    className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white border-2 border-white px-8 py-4 rounded-full font-semibold transition-all"
+                    className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white border-2 border-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-base transition-all"
                   >
-                    <Phone className="w-5 h-5" />
+                    <Phone className="w-4 h-4 md:w-5 md:h-5" />
                     <span>+370 666 99676</span>
                   </a>
                 </div>
@@ -465,42 +483,14 @@ export default function KudikiuPlukdymasPage() {
         </section>
 
         {/* Why Combine */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gradient-to-br from-[#54B6FC] to-[#4a9fe0]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
               {txt.whyTitle}
             </h2>
-            <p className="text-lg text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
+            <p className="text-xl text-white/95 leading-relaxed text-center max-w-3xl mx-auto">
               {txt.whyDesc}
             </p>
-          </div>
-        </section>
-
-        {/* How to Prepare */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-200">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
-                {txt.prepareTitle}
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed text-center">
-                {txt.prepareDesc}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Safety */}
-        <section className="py-16 bg-white">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-2xl p-8 md:p-10 shadow-xl border-2 border-orange-200">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
-                {txt.safetyTitle}
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed text-center">
-                {txt.safetyDesc}
-              </p>
-            </div>
           </div>
         </section>
 
@@ -709,27 +699,29 @@ export default function KudikiuPlukdymasPage() {
                 <span className="font-semibold">{txt.address}</span>
               </div>
               
-              {!showMap ? (
-                <button
-                  onClick={() => setShowMap(true)}
-                  className="inline-flex items-center space-x-2 text-white font-semibold hover:text-white/90 transition-colors"
-                >
-                  <span>{txt.showMap}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              ) : (
-                <div className="mt-6 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2305.7557777777777!2d25.286!3d54.6857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd941a9bf6b5e5%3A0x1234567890abcdef!2sAludari%C5%B3%20g.%207-43%2C%20Vilnius!5e0!3m2!1slt!2slt!4v1234567890"
-                    width="100%"
-                    height="400"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-              )}
+              <div className="max-w-3xl mx-auto">
+                {!showMap ? (
+                  <button
+                    onClick={() => setShowMap(true)}
+                    className="w-full bg-white/10 hover:bg-white/20 backdrop-blur border-2 border-white rounded-2xl p-8 text-center transition-all"
+                  >
+                    <MapPin className="w-12 h-12 text-white mx-auto mb-3" />
+                    <p className="text-white font-semibold text-lg">{txt.showMap}</p>
+                  </button>
+                ) : (
+                  <div className="rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe
+                      src="https://maps.google.com/maps?q=Aludarių+g.+7-43,+Vilnius+01113&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                      width="100%"
+                      height="400"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      title="FitKid klinika"
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </section>

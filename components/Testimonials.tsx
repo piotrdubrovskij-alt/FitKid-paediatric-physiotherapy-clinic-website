@@ -24,14 +24,14 @@ export default function Testimonials({ translations }: TestimonialsProps) {
             </div>
             <span className="text-2xl font-bold text-gray-900">5.0</span>
           </div>
-          <p className="text-gray-600 mb-4">5.0/5 iš 45+ atsiliepimų Google</p>
+          <p className="text-gray-600 mb-4">{translations.testimonials.rating}</p>
           <a
             href="https://www.google.com/maps/place/FitKid/@54.6858121,25.2627827,17z/data=!3m1!4b1!4m6!3m5!1s0x46dd95a0079269cf:0x4ba0f9b6c2cee820!8m2!3d54.6858121!4d25.2653576!16s%2Fg%2F11kpn9khtc"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 text-[#54B6FC] hover:text-[#fb7825] font-semibold transition-colors text-sm"
           >
-            <span>Žiūrėti visus atsiliepimus Google Maps</span>
+            <span>{translations.testimonials.viewAllReviews}</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
@@ -71,7 +71,7 @@ export default function Testimonials({ translations }: TestimonialsProps) {
                   <div className="font-semibold text-gray-900">
                     {testimonial.name}
                   </div>
-                  <div className="text-sm text-gray-500">FitKid klientė</div>
+                  <div className="text-sm text-gray-500">{translations.testimonials.clientLabel}</div>
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function Testimonials({ translations }: TestimonialsProps) {
               />
             </svg>
             <span className="text-sm font-medium text-gray-700">
-              Patikrinti atsiliepimai iš Google
+              {translations.testimonials.verifiedReviews}
             </span>
           </div>
         </div>

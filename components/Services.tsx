@@ -2,23 +2,24 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { type Translation } from '@/lib/i18n/translations';
+import { type Translation, type Language } from '@/lib/i18n/translations';
 
 interface ServicesProps {
   translations: Translation;
+  currentLang: Language;
 }
 
 // Mapping service slugs to image filenames
 const serviceImages = {
   'kudikiu-kineziterapija': 'infant-physiotherapy.jpg',
-  'kudikiu-masazai': 'infant-massage.jpg',
+  'kudikiu-masazai': 'hero/hero-kudikiu-masazas.png',
   'kudikiu-plukdymas': 'infant-swimming.jpg',
   'vaiku-kineziterapija': 'child-physiotherapy.jpg',
-  'vaiku-masazai': 'child-massage.jpg',
+  'vaiku-masazas': 'child-massage.jpg',
   'vojta-terapija': 'vojta-therapy.jpg',
 };
 
-export default function Services({ translations }: ServicesProps) {
+export default function Services({ translations, currentLang }: ServicesProps) {
   // Разделяем услуги на группы
   const infantServices = translations.services.items.filter(
     (item) => item.ageGroup === 'infant'
@@ -36,7 +37,7 @@ export default function Services({ translations }: ServicesProps) {
       'kudikiu-masazai': 'center 40%',
       'kudikiu-plukdymas': 'center 35%',
       'vaiku-kineziterapija': 'center 40%',
-      'vaiku-masazai': 'center 45%',
+      'vaiku-masazas': 'center 45%',
       'vojta-terapija': 'center 55%',
     };
     
@@ -62,16 +63,20 @@ export default function Services({ translations }: ServicesProps) {
 
     const scheme = colors[colorScheme];
 
+    const serviceUrl = currentLang === 'lt' 
+      ? `/${service.slug}` 
+      : `/${service.slug}?lang=${currentLang}`;
+
     return (
       <Link
         key={service.slug}
-        href={`/${service.slug}`}
+        href={serviceUrl}
         className={`group relative bg-gradient-to-br from-white to-gray-50 border-2 ${scheme.border} ${scheme.hoverBorder} rounded-2xl overflow-hidden hover:shadow-xl ${scheme.hoverShadow} transition-all duration-300 hover:-translate-y-1 block cursor-pointer`}
       >
         {/* Service Image - больше места */}
         <div className="relative w-full h-72 bg-gray-100 overflow-hidden">
           <Image
-            src={`/services/${imageName}`}
+            src={imageName.includes('hero/') ? `/images/${imageName}` : `/services/${imageName}`}
             alt={service.name}
             fill
             className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
@@ -96,7 +101,7 @@ export default function Services({ translations }: ServicesProps) {
 
           {/* Learn more link */}
           <div className={`inline-flex items-center ${scheme.link} ${scheme.hoverLink} font-medium transition-colors`}>
-            Sužinoti daugiau
+            {translations.services.learnMore}
             <svg
               className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
               fill="none"
@@ -134,7 +139,7 @@ export default function Services({ translations }: ServicesProps) {
           {/* Centered group header */}
           <div className="text-center mb-8">
             <div className="inline-flex flex-col items-center">
-              <h3 className="text-3xl font-bold text-[#54B6FC]">Kūdikiams</h3>
+              <h3 className="text-3xl font-bold text-[#54B6FC]">{translations.services.infantsTitle}</h3>
             </div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -147,7 +152,7 @@ export default function Services({ translations }: ServicesProps) {
           {/* Centered group header */}
           <div className="text-center mb-8">
             <div className="inline-flex flex-col items-center">
-              <h3 className="text-3xl font-bold text-[#fb7825]">Vaikams</h3>
+              <h3 className="text-3xl font-bold text-[#fb7825]">{translations.services.childrenTitle}</h3>
             </div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

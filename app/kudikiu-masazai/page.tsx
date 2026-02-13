@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Testimonials from '@/components/Testimonials';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
 import { Phone, ArrowRight, CheckCircle, Clock, MapPin } from 'lucide-react';
@@ -14,7 +15,6 @@ export default function KudikiuMasazasPage() {
   const [showMap, setShowMap] = useState(false);
   const t = translations[currentLang];
 
-  // Read language from URL on mount
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const lang = params.get('lang') as Language;
@@ -23,7 +23,6 @@ export default function KudikiuMasazasPage() {
     }
   }, []);
 
-  // Handle language change and update URL
   const handleLanguageChange = (lang: Language) => {
     setCurrentLang(lang);
     const url = new URL(window.location.href);
@@ -37,7 +36,7 @@ export default function KudikiuMasazasPage() {
 
   const pageText = {
     lt: {
-      heroTitle: 'Kūdikių masažas Vilniuje',
+      heroTitle: 'Kūdikių masažas',
       heroSub: 'Švelnus, kūdikiui pritaikytas masažas – atsipalaidavimui, tonuso balansui ir geresnei savijautai.',
       heroNote: 'Masažas be streso – prisitaikome prie kūdikio ritmo, darome pertraukėles, jei reikia.',
       whenTitle: 'Kada verta rinktis kūdikių masažą?',
@@ -222,7 +221,7 @@ export default function KudikiuMasazasPage() {
     name: txt.ramune,
     role: txt.ramuneRole,
     description: txt.ramuneDesc,
-    image: '/specialists/ramune.jpg',
+    image: '/specialists/ramune.png',
   };
 
   const additionalServices = [
@@ -259,20 +258,40 @@ export default function KudikiuMasazasPage() {
 
       <main>
         {/* Hero Section with 16:9 Image */}
-        <section className="relative bg-[#f5f3f0] overflow-hidden" style={{ minHeight: 'clamp(420px, 55vh, 620px)' }}>
-          {/* Background Image 16:9 */}
+        <section 
+          className="relative flex items-center bg-[#f5f3f0]" 
+          style={{ 
+            width: '100%', 
+            minHeight: '85vh',
+            overflow: 'hidden' 
+          }}
+        >
+          {/* Background Image */}
           <div className="absolute inset-0 w-full h-full">
+            {/* Mobile image */}
+            <Image
+              src="/images/hero/hero-kudikiu-masazas-mobile.png"
+              alt={txt.heroTitle}
+              fill
+              priority
+              quality={95}
+              sizes="(max-width: 768px) 100vw, 1px"
+              className="object-cover object-center md:hidden"
+              style={{ 
+                filter: 'brightness(1.1) contrast(0.95) blur(8px)'
+              }}
+            />
+            {/* Desktop image */}
             <Image
               src="/images/hero/hero-kudikiu-masazas.png"
               alt={txt.heroTitle}
               fill
               priority
               quality={95}
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1920px"
+              sizes="(max-width: 768px) 1px, 100vw"
+              className="object-cover object-center hidden md:block"
               style={{ 
-                objectFit: 'cover', 
-                objectPosition: 'center center',
-                filter: 'brightness(1.1) contrast(0.95)'
+                filter: 'brightness(1.1) contrast(0.95) blur(3px)'
               }}
             />
             {/* Белый оверлей для единого светлого тона */}
@@ -285,26 +304,26 @@ export default function KudikiuMasazasPage() {
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div className="max-w-2xl">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
                   {txt.heroTitle}
                 </h1>
-                <p className="text-xl md:text-2xl text-white/95 leading-relaxed mb-8">
+                <p className="text-lg md:text-2xl text-white/95 leading-relaxed mb-6 md:mb-8">
                   {txt.heroSub}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row items-start gap-4">
+                <div className="flex flex-col sm:flex-row items-start gap-3 md:gap-4">
                   <a
                     href="/registracija"
-                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#54B6FC] to-[#4a9fe0] hover:from-[#4a9fe0] hover:to-[#54B6FC] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
+                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#54B6FC] to-[#4a9fe0] hover:from-[#4a9fe0] hover:to-[#54B6FC] text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-base transition-all hover:scale-105 shadow-lg"
                   >
                     <span>{txt.ctaRegister}</span>
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                   </a>
                   <a
                     href="tel:+37066699676"
-                    className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white border-2 border-white px-8 py-4 rounded-full font-semibold transition-all"
+                    className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white border-2 border-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-base transition-all"
                   >
-                    <Phone className="w-5 h-5" />
+                    <Phone className="w-4 h-4 md:w-5 md:h-5" />
                     <span>+370 666 99676</span>
                   </a>
                 </div>
@@ -447,6 +466,9 @@ export default function KudikiuMasazasPage() {
           </div>
         </section>
 
+        {/* Testimonials */}
+        <Testimonials translations={t} />
+
         {/* Our Approach */}
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -569,7 +591,7 @@ export default function KudikiuMasazasPage() {
             <div className="max-w-md mx-auto mb-10">
               <div className="group relative bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-[#54B6FC] hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 {/* Photo with 4:5 aspect ratio */}
-                <div className="relative bg-gradient-to-br from-[#54B6FC]/15 to-[#fb7825]/15 overflow-hidden" style={{ aspectRatio: '4/5' }}>
+                <div className="relative aspect-[4/5] bg-gradient-to-br from-[#54B6FC]/15 to-[#fb7825]/15 overflow-hidden">
                   <Image
                     src={specialist.image}
                     alt={specialist.name}
@@ -615,9 +637,9 @@ export default function KudikiuMasazasPage() {
         </section>
 
         {/* Additional Services */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gradient-to-br from-[#54B6FC] to-[#4a9fe0]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
               {txt.additionalTitle}
             </h2>
 
@@ -633,7 +655,7 @@ export default function KudikiuMasazasPage() {
                   </h3>
                   <p className="text-gray-700 mb-5 leading-relaxed">{service.description}</p>
                   <div className="inline-flex items-center space-x-2 text-[#54B6FC] font-semibold">
-                    <span>Sužinoti daugiau</span>
+                    <span>{t.services.learnMore}</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </Link>
@@ -707,27 +729,29 @@ export default function KudikiuMasazasPage() {
                 <span className="font-semibold">{txt.address}</span>
               </div>
               
-              {!showMap ? (
-                <button
-                  onClick={() => setShowMap(true)}
-                  className="inline-flex items-center space-x-2 text-white font-semibold hover:text-white/90 transition-colors"
-                >
-                  <span>{txt.showMap}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              ) : (
-                <div className="mt-6 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2305.7557777777777!2d25.286!3d54.6857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd941a9bf6b5e5%3A0x1234567890abcdef!2sAludari%C5%B3%20g.%207-43%2C%20Vilnius!5e0!3m2!1slt!2slt!4v1234567890"
-                    width="100%"
-                    height="400"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-              )}
+              <div className="max-w-3xl mx-auto">
+                {!showMap ? (
+                  <button
+                    onClick={() => setShowMap(true)}
+                    className="w-full bg-white/10 hover:bg-white/20 backdrop-blur border-2 border-white rounded-2xl p-8 text-center transition-all"
+                  >
+                    <MapPin className="w-12 h-12 text-white mx-auto mb-3" />
+                    <p className="text-white font-semibold text-lg">{txt.showMap}</p>
+                  </button>
+                ) : (
+                  <div className="rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe
+                      src="https://maps.google.com/maps?q=Aludarių+g.+7-43,+Vilnius+01113&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                      width="100%"
+                      height="400"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      title="FitKid klinika"
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </section>

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 import { Menu, X, Phone } from 'lucide-react';
 import { type Language, type Translation } from '@/lib/i18n/translations';
 
@@ -14,12 +15,45 @@ interface HeaderProps {
 
 export default function Header({ translations, currentLang, onLanguageChange }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Handle logo click - scroll to top on home page, navigate otherwise
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    if (pathname === '/') {
+      // Already on home page - scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Navigate to home page
+      const homeUrl = currentLang === 'lt' ? '/' : `/?lang=${currentLang}`;
+      router.push(homeUrl);
+    }
+  };
+
+  // Add language parameter to URLs if not Lithuanian
+  const addLangParam = (href: string) => {
+    if (currentLang === 'lt') return href;
+    
+    // Handle anchor links separately
+    const hashIndex = href.indexOf('#');
+    if (hashIndex !== -1) {
+      const base = href.substring(0, hashIndex);
+      const hash = href.substring(hashIndex);
+      const separator = base.includes('?') ? '&' : '?';
+      return `${base}${separator}lang=${currentLang}${hash}`;
+    }
+    
+    const separator = href.includes('?') ? '&' : '?';
+    return `${href}${separator}lang=${currentLang}`;
+  };
 
   const navigation = [
-    { name: translations.nav.services, href: '#services' },
-    { name: translations.nav.treatments, href: '#treatments' },
-    { name: translations.nav.prices, href: '/kainos' },
-    { name: translations.nav.contacts, href: '#contacts' },
+    { name: translations.nav.services, href: addLangParam('/#services') },
+    { name: translations.nav.treatments, href: addLangParam('/#treatments') },
+    { name: translations.nav.prices, href: addLangParam('/kainos') },
+    { name: translations.nav.contacts, href: addLangParam('/kontaktai') },
   ];
 
   const languages: Language[] = ['lt', 'en'];
@@ -29,7 +63,11 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <a 
+            href={currentLang === 'lt' ? '/' : `/?lang=${currentLang}`}
+            onClick={handleLogoClick}
+            className="flex items-center group cursor-pointer"
+          >
             <div className="relative w-32 h-9 md:w-44 md:h-12 transition-transform group-hover:scale-105">
               <Image
                 src="/fitkid-logo.png"
@@ -39,7 +77,7 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
                 priority
               />
             </div>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -54,26 +92,35 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
             ))}
           </nav>
 
-          {/* Right side: Phone + CTA + Language */}
-          <div className="flex items-center space-x-4 md:space-x-6">
-            {/* Phone number (desktop) */}
+          {/* Right side: Phone + CTA + Language + Menu */}
+          <div className="flex items-center space-x-2 md:space-x-6">
+            {/* Phone icon - mobile only */}
             <a
               href="tel:+37066699676"
-              className="hidden lg:flex items-center space-x-2 text-gray-700 hover:text-[#54B6FC] transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Call"
             >
-              <Phone className="w-5 h-5 text-[#54B6FC]" />
-              <span className="font-semibold">066 699 676</span>
+              <Phone className="w-6 h-6 text-[#54B6FC]" />
             </a>
 
-            {/* CTA Button */}
-            <Link
-              href="#registration"
-              className="hidden md:flex items-center space-x-2 bg-[#fb7825] hover:bg-[#e66f1f] text-white px-6 py-2.5 rounded-full font-semibold transition-colors shadow-sm hover:shadow-md"
+            {/* Phone number with text - desktop/tablet */}
+            <a
+              href="tel:+37066699676"
+              className="hidden md:flex items-center space-x-2 text-gray-700 hover:text-[#54B6FC] transition-colors"
             >
-              <span>Registracija vizitui</span>
+              <Phone className="w-5 h-5 text-[#54B6FC]" />
+              <span className="font-semibold">+370 666 99676</span>
+            </a>
+
+            {/* CTA Button - desktop/tablet only */}
+            <Link
+              href={addLangParam('#registration')}
+              className="hidden md:flex items-center bg-[#fb7825] hover:bg-[#e66f1f] text-white px-6 py-2.5 rounded-full font-semibold transition-colors shadow-sm hover:shadow-md"
+            >
+              <span>{translations.nav.registration}</span>
             </Link>
 
-            {/* Language Switcher - minimal */}
+            {/* Language Switcher - desktop/tablet only */}
             <div className="hidden md:flex items-center space-x-1 text-sm">
               {languages.map((lang, index) => (
                 <button
@@ -95,6 +142,7 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -106,39 +154,20 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
       {isMenuOpen && (
         <div className="md:hidden border-t border-gray-100 bg-white">
           <nav className="px-4 py-4 space-y-3">
-            {/* Phone number (mobile) - prominent */}
-            <a
-              href="tel:+37066699676"
-              className="flex items-center justify-center space-x-2 px-4 py-3 text-white bg-[#54B6FC] hover:bg-[#4a9fe0] rounded-lg transition-colors font-semibold"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <Phone className="w-5 h-5" />
-              <span>066 699 676</span>
-            </a>
-
             {/* Menu items */}
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors font-medium"
               >
                 {item.name}
               </Link>
             ))}
 
-            {/* CTA Button */}
-            <Link
-              href="#registration"
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center justify-center space-x-2 bg-[#fb7825] text-white px-6 py-3 rounded-full font-semibold w-full"
-            >
-              <span>{translations.nav.registration}</span>
-            </Link>
-
-            {/* Language switcher (mobile) - minimal */}
-            <div className="flex items-center justify-center space-x-3 pt-2 text-sm">
+            {/* Language switcher (mobile) */}
+            <div className="flex items-center justify-center space-x-3 pt-4 border-t border-gray-100 mt-2">
               {languages.map((lang) => (
                 <button
                   key={lang}
@@ -146,10 +175,10 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
                     onLanguageChange(lang);
                     setIsMenuOpen(false);
                   }}
-                  className={`transition-colors ${
+                  className={`px-4 py-2 rounded-lg transition-colors ${
                     currentLang === lang
-                      ? 'text-[#54B6FC] font-semibold'
-                      : 'text-gray-400'
+                      ? 'bg-[#54B6FC] text-white font-semibold'
+                      : 'bg-gray-100 text-gray-600'
                   }`}
                 >
                   {lang.toUpperCase()}

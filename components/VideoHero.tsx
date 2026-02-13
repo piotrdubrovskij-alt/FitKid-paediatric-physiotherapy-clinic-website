@@ -24,7 +24,7 @@ export default function VideoHero({ translations }: VideoHeroProps) {
   };
 
   return (
-    <section className="relative h-screen min-h-[600px] max-h-[900px] w-full overflow-hidden">
+    <section id="hero-section" className="relative h-screen min-h-[600px] max-h-[900px] w-full overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
         <video

@@ -16,10 +16,16 @@ export default function Treatments({ translations }: TreatmentsProps) {
   );
 
   const renderCard = (item: any, colorScheme: 'blue' | 'orange') => {
+    // Определяем ссылку для каждой карточки
+    let href = "/ka-gydome";
+    if (item.name === "Motorinės raidos vėlavimas" || item.name === "Motor Development Delays") {
+      href = "/motorines-raidos-velavimas";
+    }
+    
     return (
       <Link
         key={item.name}
-        href="/ka-gydome"
+        href={href}
         className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-white hover:border-[#fb7825] cursor-pointer min-h-[140px] flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-105"
       >
         {/* Problem name */}
@@ -58,7 +64,7 @@ export default function Treatments({ translations }: TreatmentsProps) {
       >
         {/* Text with arrow */}
         <p className="text-lg font-semibold text-[#fb7825] flex items-center">
-          Daugiau būklių
+          {translations.treatments.moreConditions}
           <svg
             className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300"
             fill="none"
@@ -98,14 +104,9 @@ export default function Treatments({ translations }: TreatmentsProps) {
           <div className="mb-16">
             {/* Group header */}
             <div className="text-center mb-8">
-              <div className="inline-flex flex-col items-center">
-                <h3 className="text-3xl font-bold text-white mb-1">
-                  Kūdikiams
-                </h3>
-                <p className="text-sm text-white/80">
-                  {translations.treatments.infantAge}
-                </p>
-              </div>
+              <h3 className="text-3xl font-bold text-white">
+                {translations.treatments.infantTitle}
+              </h3>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -118,14 +119,9 @@ export default function Treatments({ translations }: TreatmentsProps) {
           <div className="mb-20">
             {/* Group header */}
             <div className="text-center mb-8">
-              <div className="inline-flex flex-col items-center">
-                <h3 className="text-3xl font-bold text-white mb-1">
-                  Vaikams
-                </h3>
-                <p className="text-sm text-white/80">
-                  {translations.treatments.childAge}
-                </p>
-              </div>
+              <h3 className="text-3xl font-bold text-white">
+                {translations.treatments.childTitle}
+              </h3>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -140,7 +136,7 @@ export default function Treatments({ translations }: TreatmentsProps) {
               href="tel:+37066699676"
               className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-[#fb7825] px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
             >
-              <span>Neradote savo situacijos? Susisiekite</span>
+              <span>{translations.treatments.notFoundMessage}</span>
               <svg
                 className="w-5 h-5"
                 fill="none"

@@ -23,7 +23,7 @@ export default function Hero({ translations }: HeroProps) {
             <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-[#54B6FC]/20">
               <Sparkles className="w-4 h-4 text-[#54B6FC]" />
               <span className="text-sm font-semibold text-gray-700">
-                Vilniaus centre
+                {translations.hero.badge}
               </span>
             </div>
 
@@ -58,17 +58,17 @@ export default function Hero({ translations }: HeroProps) {
             <div className="flex items-center space-x-8 pt-4">
               <div>
                 <div className="text-3xl font-bold text-[#54B6FC]">500+</div>
-                <div className="text-sm text-gray-600">Laimingų šeimų</div>
+                <div className="text-sm text-gray-600">{translations.hero.stats.families}</div>
               </div>
               <div className="h-12 w-px bg-gray-300" />
               <div>
                 <div className="text-3xl font-bold text-[#54B6FC]">10+</div>
-                <div className="text-sm text-gray-600">Metų patirties</div>
+                <div className="text-sm text-gray-600">{translations.hero.stats.experience}</div>
               </div>
               <div className="h-12 w-px bg-gray-300" />
               <div>
                 <div className="text-3xl font-bold text-[#54B6FC]">3</div>
-                <div className="text-sm text-gray-600">Specialistai</div>
+                <div className="text-sm text-gray-600">{translations.hero.stats.specialists}</div>
               </div>
             </div>
           </div>
@@ -122,8 +122,8 @@ export default function Hero({ translations }: HeroProps) {
                   <span className="text-2xl">✓</span>
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-gray-900">Licencijuoti</div>
-                  <div className="text-xs text-gray-500">Specialistai</div>
+                  <div className="text-sm font-semibold text-gray-900">{translations.hero.cards.licensed}</div>
+                  <div className="text-xs text-gray-500">{translations.hero.cards.specialistsLabel}</div>
                 </div>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function Hero({ translations }: HeroProps) {
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-gray-900">4.9/5</div>
-                  <div className="text-xs text-gray-500">100+ atsiliepimai</div>
+                  <div className="text-xs text-gray-500">{translations.hero.cards.reviews}</div>
                 </div>
               </div>
             </div>

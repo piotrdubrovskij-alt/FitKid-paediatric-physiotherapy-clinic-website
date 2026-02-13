@@ -15,14 +15,17 @@ export default function Footer({ translations }: FooterProps) {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-[#54B6FC] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">FK</span>
+            <Link href="/" className="inline-block">
+              <div className="relative w-36 h-10">
+                <img
+                  src="/fitkid-logo-white.png"
+                  alt="FitKid"
+                  className="w-full h-full object-contain object-left"
+                />
               </div>
-              <span className="text-xl font-bold">FitKid</span>
-            </div>
+            </Link>
             <p className="text-gray-400 leading-relaxed">
-              Vaikų kineziterapijos klinika Vilniuje. Aukščiausios kokybės gydymas ir sveikatinimas.
+              {translations.footer.description}
             </p>
             {/* Social links */}
             <div className="flex items-center space-x-3">
@@ -55,26 +58,26 @@ export default function Footer({ translations }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Greitos nuorodos</h3>
+            <h3 className="text-lg font-semibold mb-4">{translations.footer.quickLinks}</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#about" className="text-gray-400 hover:text-white transition-colors">
-                  {translations.nav.about}
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/#services" className="text-gray-400 hover:text-white transition-colors">
                   {translations.nav.services}
                 </Link>
               </li>
               <li>
-                <Link href="#specialists" className="text-gray-400 hover:text-white transition-colors">
-                  {translations.nav.specialists}
+                <Link href="/#treatments" className="text-gray-400 hover:text-white transition-colors">
+                  {translations.nav.treatments}
                 </Link>
               </li>
               <li>
-                <Link href="/prices" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/kainos" className="text-gray-400 hover:text-white transition-colors">
                   {translations.nav.prices}
+                </Link>
+              </li>
+              <li>
+                <Link href="/kontaktai" className="text-gray-400 hover:text-white transition-colors">
+                  {translations.nav.contacts}
                 </Link>
               </li>
             </ul>
@@ -141,14 +144,14 @@ export default function Footer({ translations }: FooterProps) {
         {/* Bottom bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} FitKid. Visos teisės saugomos.
+            {translations.footer.copyright.replace('2026', String(new Date().getFullYear()))}
           </p>
           <div className="flex items-center space-x-6">
             <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
               {translations.footer.privacy}
             </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
-              Naudojimosi sąlygos
+            <Link href="/cookies" className="text-gray-400 hover:text-white text-sm transition-colors">
+              {translations.footer.cookies}
             </Link>
           </div>
         </div>

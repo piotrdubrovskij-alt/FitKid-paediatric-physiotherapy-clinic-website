@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Testimonials from '@/components/Testimonials';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
 import { Phone, ArrowRight, CheckCircle, Clock, MapPin } from 'lucide-react';
@@ -37,7 +38,7 @@ export default function KudikiuKineziterapijaPage() {
 
   const pageText = {
     lt: {
-      heroTitle: 'Kūdikių kineziterapija Vilniuje',
+      heroTitle: 'Kūdikių kineziterapija',
       heroSub: 'Profesionalus motorinės raidos įvertinimas ir individuali pagalba jūsų mažyliui nuo pirmųjų savaičių.',
       whenTitle: 'Kada verta kreiptis? (jei atpažįstate bent vieną)',
       sign1: 'Kūdikis aiškiai renkasi vieną pusę (galvytė dažniau pasukta į tą pačią pusę, matosi asimetrija).',
@@ -271,24 +272,36 @@ export default function KudikiuKineziterapijaPage() {
           className="relative flex items-center bg-[#e8e6e3]" 
           style={{ 
             width: '100%', 
-            height: '0',
-            paddingBottom: '56.25%', // 16:9 aspect ratio
+            minHeight: '85vh',
             overflow: 'hidden' 
           }}
         >
           {/* Background Image */}
           <div className="absolute inset-0">
+            {/* Mobile image */}
+            <Image
+              src="/images/hero/hero-kudikiu-kineziterapija-mobile.png"
+              alt={txt.heroTitle}
+              fill
+              priority
+              quality={95}
+              sizes="(max-width: 768px) 100vw, 1px"
+              className="object-cover object-center md:hidden"
+              style={{ 
+                filter: 'brightness(1.1) contrast(0.95) blur(8px)'
+              }}
+            />
+            {/* Desktop image */}
             <Image
               src="/images/hero/hero-kudikiu-kineziterapija-v2.png"
               alt={txt.heroTitle}
               fill
               priority
               quality={95}
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1920px"
+              sizes="(max-width: 768px) 1px, 100vw"
+              className="object-cover object-[center_30%] hidden md:block"
               style={{ 
-                objectFit: 'cover', 
-                objectPosition: 'center 35%',
-                filter: 'brightness(1.1) contrast(0.95)'
+                filter: 'brightness(1.1) contrast(0.95) blur(3px)'
               }}
             />
             {/* Белый оверлей для единого светлого тона */}
@@ -301,26 +314,26 @@ export default function KudikiuKineziterapijaPage() {
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div className="max-w-2xl">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
                   {txt.heroTitle}
                 </h1>
-                <p className="text-xl md:text-2xl text-white/95 leading-relaxed mb-8">
+                <p className="text-lg md:text-2xl text-white/95 leading-relaxed mb-6 md:mb-8">
                   {txt.heroSub}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row items-start gap-4">
+                <div className="flex flex-col sm:flex-row items-start gap-3 md:gap-4">
                   <a
                     href="/registracija"
-                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#54B6FC] to-[#4a9fe0] hover:from-[#4a9fe0] hover:to-[#54B6FC] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
+                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#54B6FC] to-[#4a9fe0] hover:from-[#4a9fe0] hover:to-[#54B6FC] text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-base transition-all hover:scale-105 shadow-lg"
                   >
                     <span>{txt.ctaRegister}</span>
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                   </a>
                   <a
                     href="tel:+37066699676"
-                    className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white border-2 border-white px-8 py-4 rounded-full font-semibold transition-all"
+                    className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white border-2 border-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-base transition-all"
                   >
-                    <Phone className="w-5 h-5" />
+                    <Phone className="w-4 h-4 md:w-5 md:h-5" />
                     <span>+370 666 99676</span>
                   </a>
                 </div>
@@ -354,12 +367,12 @@ export default function KudikiuKineziterapijaPage() {
         </section>
 
         {/* What We Help Solve Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gradient-to-br from-[#fb7825] to-[#e66f1f]">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">
+            <h2 className="text-3xl font-bold text-white mb-3 text-center">
               {txt.whatWeHelpTitle}
             </h2>
-            <p className="text-lg text-gray-600 mb-10 text-center max-w-3xl mx-auto">
+            <p className="text-lg text-white/95 mb-10 text-center max-w-3xl mx-auto">
               {txt.whatWeHelpSubtitle}
             </p>
 
@@ -376,12 +389,12 @@ export default function KudikiuKineziterapijaPage() {
               ].map((situation, index) => (
                 <div
                   key={index}
-                  className="group bg-gradient-to-br from-[#54B6FC]/5 to-white rounded-xl p-6 border-2 border-gray-100 hover:border-[#54B6FC] transition-all hover:-translate-y-1 cursor-pointer"
+                  className="group bg-white rounded-xl p-6 border-2 border-white/40 hover:border-white transition-all hover:-translate-y-1 cursor-pointer shadow-lg"
                 >
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#54B6FC] transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 transition-colors">
                     {situation.title}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-700 leading-relaxed">
                     {situation.desc}
                   </p>
                 </div>
@@ -460,20 +473,20 @@ export default function KudikiuKineziterapijaPage() {
         </section>
 
         {/* Methodology */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gradient-to-br from-[#54B6FC] to-[#4a9fe0]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4 text-center">
               {txt.methodTitle}
             </h2>
-            <p className="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+            <p className="text-lg text-white/95 mb-12 text-center max-w-3xl mx-auto">
               {txt.methodDesc}
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
               {/* DNS */}
-              <div className="bg-gradient-to-br from-[#54B6FC]/5 to-white rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-[#54B6FC] transition-all hover:-translate-y-1">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#54B6FC] to-[#4a9fe0] rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                  <svg className="w-9 h-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-white/40 hover:border-white transition-all hover:-translate-y-1">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                  <svg className="w-9 h-9 text-[#54B6FC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
@@ -482,7 +495,7 @@ export default function KudikiuKineziterapijaPage() {
               </div>
 
               {/* Vojta */}
-              <div className="bg-gradient-to-br from-[#fb7825]/5 to-white rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-[#fb7825] transition-all hover:-translate-y-1">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-white/40 hover:border-white transition-all hover:-translate-y-1">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#fb7825] to-[#e66f1f] rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                   <svg className="w-9 h-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -493,9 +506,9 @@ export default function KudikiuKineziterapijaPage() {
               </div>
 
               {/* Edukacija */}
-              <div className="bg-gradient-to-br from-[#54B6FC]/5 to-white rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-[#54B6FC] transition-all hover:-translate-y-1">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#54B6FC] to-[#4a9fe0] rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                  <svg className="w-9 h-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-white/40 hover:border-white transition-all hover:-translate-y-1">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                  <svg className="w-9 h-9 text-[#54B6FC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
@@ -505,6 +518,9 @@ export default function KudikiuKineziterapijaPage() {
             </div>
           </div>
         </section>
+
+        {/* Testimonials */}
+        <Testimonials translations={t} />
 
         {/* How Many Visits */}
         <section className="py-16 bg-gray-50">
