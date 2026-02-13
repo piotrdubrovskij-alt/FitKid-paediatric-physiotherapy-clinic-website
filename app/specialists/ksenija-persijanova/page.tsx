@@ -7,25 +7,25 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
-import { CheckCircle, GraduationCap, Award, Heart, Phone, Calendar } from 'lucide-react';
+import { CheckCircle, Award, Heart, Phone, Calendar } from 'lucide-react';
 
-// Static reviews component for Agnė
-function AgneReviews() {
+// Static reviews component for Ksenija
+function KsenijaReviews() {
   const staticReviews = [
     {
-      author_name: "Jurgita R",
+      author_name: "Svetlana Urbanović",
       rating: 5,
-      text: "Dirbame su Agne, jos požiūris ir darbo supratimas labai mums patinka. Laikome ją pagrindine savo kineziterapeute ir be jos įžvalgų nepriimame jokių sprendimų, nes visiškai pasitikime jos aukšta kompetencija ir žiniomis! Agnės darbo dėka mano dukra sparčiai stiprėja, tobulėja ir juda pirmyn neskaitant cerebrinio paralyžiaus, epilepsijos bei regos sutrikimų. Nuoširdžiausias AČIŪ už geranoriškumą ir nuolatinę pagalbą ❤️."
+      text: "Puiki kineziterapijos klinika. Lankėmės pas kineziterapeutę Kseniją ir likome labai patenkinti sūnaus pažanga. Vienareikšmiškai rekomenduojame rinktis šią kliniką ir kitiems tėveliams!"
     },
     {
-      author_name: "Alexandr Levcuk",
+      author_name: "Sigita Rudaminiene",
       rating: 5,
-      text: "Esu labai dekingas kineziterapeutei Agnei – mano 2 mėn. vaikas vis kreipdavo galva į vieną pusę, o po Vojta terapijos jau po savaitės pastebėjome didelį pagerėjimą. Agnė viską detaliai paaiškino, parodė, kaip daryti pratimus namuose."
+      text: "Ksenija puiki vaikų kineziterapeutė. Labai maloni, draugiška, šilta, lengvai užmezgė ryšį su vaiku. Duktė užsiėmimų metu jautėsi drąsiai ir laisvai, noriai į juos ėjo. Viskas puikiai :-)"
     },
     {
-      author_name: "Kotryna Gudžiūnaitė",
+      author_name: "Indrė Misiūnienė",
       rating: 5,
-      text: "Lankėsi 7 mėn. kūdikis. Agnė moka puikiai užsiimti su vaikais. Pas kitas kineziterapeutes kūdikis visąlaik praverkdavo, pas Agnę neverkė. Nuodugniai apžiūrėjo, paaiškino, atsakė į klausimus. Rekomenduoju."
+      text: "Su metukų dukryte lankėm mankštas pas Kseniją. Nuostabi specialistė - iš karto rado bendrą kalbą (jei taip galima sakyti apie bendravimą su metinuku vaiku :), visų užsiėmimų metu sugebėdavo sudominti mažąją, kai bandydavo patinginiaut. Mankštos tikrai labai padėjo ir jau po kelių užsiėmimų buvo matyti ženklus pagerėjimas. Kaip ir kituose atsiliepimuose jau minėta, pasikartosiu ir aš, kad Ksenija visada pataria ir parodo, kokius pratimus geriausia daryti namuose, kaip juos atlikti taisyklingai, tad ir efektas gaunasi dar didesnis. Todėk tikrai net nekyla abejonių, kur rinksimės lankyti užsiėmimus, kai vėl atsiras poreikis."
     }
   ];
 
@@ -33,7 +33,7 @@ function AgneReviews() {
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-          Atsiliepimai apie Agnę
+          Atsiliepimai apie Kseniją
         </h2>
         <p className="text-lg text-gray-600 mb-8 text-center">
           Klientų atsiliepimai iš Google Maps
@@ -76,7 +76,7 @@ function AgneReviews() {
   );
 }
 
-export default function AgneJuodytePage() {
+export default function KsenijaPersijanovaPage() {
   const [currentLang, setCurrentLang] = useState<Language>('lt');
   const t = translations[currentLang];
 
@@ -103,52 +103,48 @@ export default function AgneJuodytePage() {
 
   const pageText = {
     lt: {
-      heroTitle: 'Agnė Juodytė',
-      heroSubtitle: 'Vaikų kineziterapeutė. Vojta terapeutė. DNS metodika.',
-      introText: 'Dirbu su kūdikiais nuo pirmųjų dienų ir vaikais, kuriems reikia tikslaus judėjimo įvertinimo bei aiškaus, praktiško plano šeimai. Man svarbu, kad tėvai suprastų, ką darome ir kodėl, o rekomendacijos būtų pritaikomos kasdienybėje.',
-      licenseTitle: 'Licencijos',
-      license: 'ASL-04763 Kineziterapeutas',
+      heroTitle: 'Ksenija Persijanova',
+      heroSubtitle: 'Kineziterapeutė. DNS metodika. Hidroterapija kūdikiams.',
+      introTitle: 'Trumpai',
+      introText: 'Dirbu su naujagimiais ir kūdikiais nuo pirmųjų gyvenimo savaičių, taip pat konsultuoju vyresnius vaikus. Pirmo vizito metu įvertinu judėjimą, aptariame jūsų pastebėjimus ir sudarome praktišką planą namams.',
+      licenseTitle: 'Kineziterapeutės licencija',
+      license: 'ASL-10431',
       languagesTitle: 'Kalba šiomis kalbomis',
       languages: ['Lietuvių', 'Anglų', 'Rusų'],
       commonCasesTitle: 'Kuo dažniausiai kreipiasi',
       commonCases: [
-        'kūdikio asimetrija ir „mėgstama" pusė',
-        'kreivakaklystė',
-        'hipertonusas arba sumažėjęs tonusas',
-        'motorinės raidos tempas ir judėjimo kokybė',
-        'laikysenos, pėdų, eisenos ypatumai',
-        'po traumų, operacijų, ilgalaikio imobilizavimo',
-        'sudėtingesni atvejai, kai reikia nuoseklaus darbo ir aiškumo tėvams',
+        'kūdikio asimetrija, „mėgstama" pusė',
+        'raumenų tonuso ypatumai, įtampa',
+        'motorinės raidos klausimai pagal amžių',
+        'laikysenos ir judėjimo kokybės vertinimas kūdikystėje',
+        'vaikų ir paauglių laikysenos problemos, nugaros skausmai',
+        'konsultacijos dėl skoliozės, pratimų planas ir stebėsena',
       ],
-      methodsTitle: 'Metodai ir patirtis',
-      methodsText: 'Vojta terapija taikoma pagal sertifikavimo programą ir klinikinę praktiką. DNS metodika padeda tiksliau vertinti judėjimą ir planuoti korekciją. Taip pat dėstau Vilniaus universitete kineziterapeutams.',
-      firstVisitTitle: 'Pirmas vizitas',
-      firstVisitText: 'Pirmo vizito metu įvertinu vaiko judėjimą, aptariame jūsų pastebėjimus ir tikslą. Po įvertinimo pateikiu aiškų planą, ką darome kabinete ir ką galima tęsti namuose.',
+      methodsTitle: 'Darbo kryptys',
+      methodsText: 'DNS metodikos principai padeda tiksliau vertinti judėjimą ir parinkti pratimus, kurie gerina stabilumą, judėjimo kontrolę ir laikyseną. Hidroterapija kūdikiams gali būti naudinga, kai siekiame švelniai skatinti judėjimo laisvumą ir motorikos vystymąsi.',
       ctaRegister: 'Užsiregistruoti vizitui',
       ctaCall: 'Skambinti',
     },
     en: {
-      heroTitle: 'Agnė Juodytė',
-      heroSubtitle: 'Pediatric Physiotherapist. Vojta Therapist. DNS Methodology.',
-      introText: 'I work with infants from first days and children who need precise movement assessment and clear, practical plan for the family. It\'s important to me that parents understand what we do and why, and that recommendations are applicable in daily life.',
-      licenseTitle: 'Licenses',
-      license: 'ASL-04763 Physiotherapist',
+      heroTitle: 'Ksenija Persijanova',
+      heroSubtitle: 'Pediatric Physiotherapist. DNS Methodology. Infant Hydrotherapy.',
+      introTitle: 'About',
+      introText: 'I work with newborns and infants from their first weeks of life, and also consult older children. During the first visit, I assess movement, discuss your observations, and create a practical plan for home.',
+      licenseTitle: 'Physiotherapist License',
+      license: 'ASL-10431',
       languagesTitle: 'Languages',
       languages: ['Lithuanian', 'English', 'Russian'],
       commonCasesTitle: 'Most Common Reasons for Consultation',
       commonCases: [
-        'infant asymmetry and "favorite" side',
-        'torticollis',
-        'hypertonia or decreased tone',
-        'motor development pace and movement quality',
-        'posture, feet, gait peculiarities',
-        'after injuries, operations, long-term immobilization',
-        'complex cases requiring consistent work and clarity for parents',
+        'infant asymmetry, "favorite" side',
+        'muscle tone peculiarities, tension',
+        'motor development questions by age',
+        'posture and movement quality assessment in infancy',
+        'children and adolescent posture problems, back pain',
+        'scoliosis consultations, exercise plan and monitoring',
       ],
-      methodsTitle: 'Methods and Experience',
-      methodsText: 'Vojta therapy applied according to certification program and clinical practice. DNS methodology helps to assess movement more accurately and plan correction. I also teach at Vilnius University for physiotherapists.',
-      firstVisitTitle: 'First Visit',
-      firstVisitText: 'During first visit I assess child\'s movement, discuss your observations and goals. After assessment I provide clear plan of what we do in clinic and what can be continued at home.',
+      methodsTitle: 'Work Methods',
+      methodsText: 'DNS methodology principles help to assess movement more accurately and select exercises that improve stability, movement control, and posture. Infant hydrotherapy can be beneficial when we aim to gently promote movement freedom and motor development.',
       ctaRegister: 'Book a Visit',
       ctaCall: 'Call',
     },
@@ -176,9 +172,15 @@ export default function AgneJuodytePage() {
                 <p className="text-xl text-[#54B6FC] font-semibold mb-6">
                   {txt.heroSubtitle}
                 </p>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  {txt.introText}
-                </p>
+                
+                <div className="mb-6">
+                  <h3 className="font-semibold text-gray-900 mb-3 text-lg">
+                    {txt.introTitle}
+                  </h3>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    {txt.introText}
+                  </p>
+                </div>
 
                 {/* License */}
                 <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl border-l-4 border-[#54B6FC]">
@@ -191,8 +193,7 @@ export default function AgneJuodytePage() {
 
                 {/* Languages */}
                 <div className="p-4 bg-white rounded-xl border border-gray-200">
-                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
-                    <GraduationCap className="w-5 h-5 text-[#fb7825] mr-2" />
+                  <h3 className="font-semibold text-gray-900 mb-3">
                     {txt.languagesTitle}
                   </h3>
                   <div className="flex flex-wrap gap-2">
@@ -211,8 +212,8 @@ export default function AgneJuodytePage() {
               <div className="relative">
                 <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/specialists/agne.png"
-                    alt="Agnė Juodytė"
+                    src="/specialists/ksenija.png"
+                    alt="Ksenija Persijanova"
                     fill
                     className="object-cover"
                     priority
@@ -244,7 +245,7 @@ export default function AgneJuodytePage() {
           </div>
         </section>
 
-        {/* Methods & Experience Section */}
+        {/* Methods Section */}
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-blue-50 to-orange-50 rounded-2xl p-8 md:p-12">
@@ -261,25 +262,8 @@ export default function AgneJuodytePage() {
           </div>
         </section>
 
-        {/* First Visit Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border-l-4 border-[#54B6FC]">
-              <div className="flex items-center mb-6">
-                <Heart className="w-8 h-8 text-[#54B6FC] mr-3" />
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                  {txt.firstVisitTitle}
-                </h2>
-              </div>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                {txt.firstVisitText}
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Reviews Section */}
-        <AgneReviews />
+        <KsenijaReviews />
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-br from-[#54B6FC] to-[#4a9fe0]">

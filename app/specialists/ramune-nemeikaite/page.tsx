@@ -7,25 +7,25 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
-import { CheckCircle, GraduationCap, Award, Heart, Phone, Calendar } from 'lucide-react';
+import { CheckCircle, Award, Phone, Calendar } from 'lucide-react';
 
-// Static reviews component for Agnė
-function AgneReviews() {
+// Static reviews component for Ramunė
+function RamuneReviews() {
   const staticReviews = [
     {
-      author_name: "Jurgita R",
+      author_name: "Julija Gudaitė",
       rating: 5,
-      text: "Dirbame su Agne, jos požiūris ir darbo supratimas labai mums patinka. Laikome ją pagrindine savo kineziterapeute ir be jos įžvalgų nepriimame jokių sprendimų, nes visiškai pasitikime jos aukšta kompetencija ir žiniomis! Agnės darbo dėka mano dukra sparčiai stiprėja, tobulėja ir juda pirmyn neskaitant cerebrinio paralyžiaus, epilepsijos bei regos sutrikimų. Nuoširdžiausias AČIŪ už geranoriškumą ir nuolatinę pagalbą ❤️."
+      text: "Lankėmės su metukų amžiaus sūnumi masažuose pas Ramunę Nemeikaitę, kurią rekomendavo kineziterapeutė. Patirtis pati geriausia, Ramunė darė viską (linksmino, kalbino, keitė erdves), kad tik galėtų atlikti masažą tokiam įnoringam klientui. Vaikas greit atsipalaidavo ir prisileido Ramunę, kas su nepažįstamais žmonėmis būna itin retai. Pačios geriausios rekomendacijos! Pati klinika taip paliko labai gerą įspūdį. :)"
     },
     {
-      author_name: "Alexandr Levcuk",
+      author_name: "Kristina Jodenytė",
       rating: 5,
-      text: "Esu labai dekingas kineziterapeutei Agnei – mano 2 mėn. vaikas vis kreipdavo galva į vieną pusę, o po Vojta terapijos jau po savaitės pastebėjome didelį pagerėjimą. Agnė viską detaliai paaiškino, parodė, kaip daryti pratimus namuose."
+      text: "Norime nuoširdžiai padėkoti gydytojai Ramunei už profesionalumą, rūpestingumą ir šilumą, kurią parodė mūsų keturių mėnesių kūdikiui masažų metu. Jautėsi, kad gydytoja turi daug patirties dirbant su mažaisiais, o jos švelnus bendravimas ir ramybė suteikė pasitikėjimo ne tik vaikui, bet ir mums, tėvams. Masažo metu kūdikis jautėsi ramus ir atsipalaidavęs, o po kelių seansų pastebėjome teigiamus pokyčius jo raumenų tonuse ir bendrajame vystymesi. Džiaugiamės atradę tokią nuoširdžią ir atsidavusią specialistę. Rekomenduojame visiems tėveliams, ieškantiems tikro profesionalo savo vaikui!"
     },
     {
-      author_name: "Kotryna Gudžiūnaitė",
+      author_name: "Evelina Čatrauskienė",
       rating: 5,
-      text: "Lankėsi 7 mėn. kūdikis. Agnė moka puikiai užsiimti su vaikais. Pas kitas kineziterapeutes kūdikis visąlaik praverkdavo, pas Agnę neverkė. Nuodugniai apžiūrėjo, paaiškino, atsakė į klausimus. Rekomenduoju."
+      text: "Nuostabi vieta, kur jaučiamės kaip namuose. Masažistė Ramunė ir Kinezeterapeutė Ksenija yra tiesiog turbo komanda! Su tokia meile, rūpesčiu kalbina, užsiima/masažuoja mažylį, kad užsiėmimai pralekia su geriausiomis emocijomis bei daug šypsenų. Visiems tėveliams nuoširdžiai rekomenduoju bei siunčiu didžiausias padėkas!"
     }
   ];
 
@@ -33,7 +33,7 @@ function AgneReviews() {
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
-          Atsiliepimai apie Agnę
+          Atsiliepimai apie Ramunę
         </h2>
         <p className="text-lg text-gray-600 mb-8 text-center">
           Klientų atsiliepimai iš Google Maps
@@ -63,7 +63,7 @@ function AgneReviews() {
             href="https://www.google.com/maps/place/FitKid/@54.6858121,25.2627827,17z/data=!3m1!4b1!4m6!3m5!1s0x46dd95a0079269cf:0x4ba0f9b6c2cee820!8m2!3d54.6858121!4d25.2653576!16s%2Fg%2F11kpn9khtc"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 bg-[#54B6FC] hover:bg-[#4a9fe0] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
+            className="inline-flex items-center space-x-2 bg-[#fb7825] hover:bg-[#e66915] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -76,7 +76,7 @@ function AgneReviews() {
   );
 }
 
-export default function AgneJuodytePage() {
+export default function RamuneNemeikaitePage() {
   const [currentLang, setCurrentLang] = useState<Language>('lt');
   const t = translations[currentLang];
 
@@ -103,52 +103,46 @@ export default function AgneJuodytePage() {
 
   const pageText = {
     lt: {
-      heroTitle: 'Agnė Juodytė',
-      heroSubtitle: 'Vaikų kineziterapeutė. Vojta terapeutė. DNS metodika.',
-      introText: 'Dirbu su kūdikiais nuo pirmųjų dienų ir vaikais, kuriems reikia tikslaus judėjimo įvertinimo bei aiškaus, praktiško plano šeimai. Man svarbu, kad tėvai suprastų, ką darome ir kodėl, o rekomendacijos būtų pritaikomos kasdienybėje.',
-      licenseTitle: 'Licencijos',
-      license: 'ASL-04763 Kineziterapeutas',
+      heroTitle: 'Ramunė Nemeikaitė',
+      heroSubtitle: 'Vaikų ir kūdikių masažo specialistė.',
+      introTitle: 'Trumpai',
+      introText: 'Ramunė dirba su kūdikiais ir vaikais, taikydama gydomąjį masažą pagal vaiko poreikius. Ji taip pat dirba Vilniaus Santaros klinikose, kur nuolat gilina praktinius įgūdžius ir žinias.',
+      licenseTitle: 'Gydomojo masažo specialisto licencija',
+      license: 'ASL-10641',
       languagesTitle: 'Kalba šiomis kalbomis',
       languages: ['Lietuvių', 'Anglų', 'Rusų'],
-      commonCasesTitle: 'Kuo dažniausiai kreipiasi',
-      commonCases: [
-        'kūdikio asimetrija ir „mėgstama" pusė',
-        'kreivakaklystė',
-        'hipertonusas arba sumažėjęs tonusas',
-        'motorinės raidos tempas ir judėjimo kokybė',
-        'laikysenos, pėdų, eisenos ypatumai',
-        'po traumų, operacijų, ilgalaikio imobilizavimo',
-        'sudėtingesni atvejai, kai reikia nuoseklaus darbo ir aiškumo tėvams',
+      whenToContactTitle: 'Kada verta kreiptis',
+      whenToContact: [
+        'padidėjusi raumenų įtampa, tonuso ypatumai',
+        'raumenų disbalansas ir laikysenos ypatumai',
+        'bendras raumenų atsipalaidavimas ir savijautos gerinimas',
+        'pagalba po didesnių krūvių, augimo šuolių, sporto',
+        'rekomendacijos tėvams dėl kasdienės priežiūros ir raumenų atpalaidavimo',
       ],
-      methodsTitle: 'Metodai ir patirtis',
-      methodsText: 'Vojta terapija taikoma pagal sertifikavimo programą ir klinikinę praktiką. DNS metodika padeda tiksliau vertinti judėjimą ir planuoti korekciją. Taip pat dėstau Vilniaus universitete kineziterapeutams.',
-      firstVisitTitle: 'Pirmas vizitas',
-      firstVisitText: 'Pirmo vizito metu įvertinu vaiko judėjimą, aptariame jūsų pastebėjimus ir tikslą. Po įvertinimo pateikiu aiškų planą, ką darome kabinete ir ką galima tęsti namuose.',
+      methodsTitle: 'Darbo kryptys',
+      methodsText: 'Gydomasis masažas pritaikomas individualiai pagal vaiko amžių, būklę ir tikslą. Ramunė orientuojasi į švelnų, vaikui tinkamą tempą ir aiškų procedūros tikslą.',
       ctaRegister: 'Užsiregistruoti vizitui',
       ctaCall: 'Skambinti',
     },
     en: {
-      heroTitle: 'Agnė Juodytė',
-      heroSubtitle: 'Pediatric Physiotherapist. Vojta Therapist. DNS Methodology.',
-      introText: 'I work with infants from first days and children who need precise movement assessment and clear, practical plan for the family. It\'s important to me that parents understand what we do and why, and that recommendations are applicable in daily life.',
-      licenseTitle: 'Licenses',
-      license: 'ASL-04763 Physiotherapist',
+      heroTitle: 'Ramunė Nemeikaitė',
+      heroSubtitle: 'Pediatric and Infant Massage Specialist.',
+      introTitle: 'About',
+      introText: 'Ramunė works with infants and children, applying therapeutic massage according to the child\'s needs. She also works at Vilnius Santaros clinics, where she continuously deepens her practical skills and knowledge.',
+      licenseTitle: 'Therapeutic Massage Specialist License',
+      license: 'ASL-10641',
       languagesTitle: 'Languages',
       languages: ['Lithuanian', 'English', 'Russian'],
-      commonCasesTitle: 'Most Common Reasons for Consultation',
-      commonCases: [
-        'infant asymmetry and "favorite" side',
-        'torticollis',
-        'hypertonia or decreased tone',
-        'motor development pace and movement quality',
-        'posture, feet, gait peculiarities',
-        'after injuries, operations, long-term immobilization',
-        'complex cases requiring consistent work and clarity for parents',
+      whenToContactTitle: 'When to Contact',
+      whenToContact: [
+        'increased muscle tension, tone peculiarities',
+        'muscle imbalance and posture peculiarities',
+        'general muscle relaxation and well-being improvement',
+        'help after heavy loads, growth spurts, sports',
+        'recommendations for parents regarding daily care and muscle relaxation',
       ],
-      methodsTitle: 'Methods and Experience',
-      methodsText: 'Vojta therapy applied according to certification program and clinical practice. DNS methodology helps to assess movement more accurately and plan correction. I also teach at Vilnius University for physiotherapists.',
-      firstVisitTitle: 'First Visit',
-      firstVisitText: 'During first visit I assess child\'s movement, discuss your observations and goals. After assessment I provide clear plan of what we do in clinic and what can be continued at home.',
+      methodsTitle: 'Work Methods',
+      methodsText: 'Therapeutic massage is adapted individually according to the child\'s age, condition, and goal. Ramunė focuses on a gentle, child-appropriate pace and clear procedure goal.',
       ctaRegister: 'Book a Visit',
       ctaCall: 'Call',
     },
@@ -166,24 +160,30 @@ export default function AgneJuodytePage() {
 
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#54B6FC]/10 to-white py-16 md:py-24">
+        <section className="relative bg-gradient-to-br from-[#fb7825]/10 to-white py-16 md:py-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                   {txt.heroTitle}
                 </h1>
-                <p className="text-xl text-[#54B6FC] font-semibold mb-6">
+                <p className="text-xl text-[#fb7825] font-semibold mb-6">
                   {txt.heroSubtitle}
                 </p>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  {txt.introText}
-                </p>
+                
+                <div className="mb-6">
+                  <h3 className="font-semibold text-gray-900 mb-3 text-lg">
+                    {txt.introTitle}
+                  </h3>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    {txt.introText}
+                  </p>
+                </div>
 
                 {/* License */}
-                <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl border-l-4 border-[#54B6FC]">
+                <div className="mb-6 p-4 bg-gradient-to-r from-orange-50 to-blue-50 rounded-xl border-l-4 border-[#fb7825]">
                   <h3 className="font-semibold text-gray-900 mb-2 flex items-center">
-                    <Award className="w-5 h-5 text-[#54B6FC] mr-2" />
+                    <Award className="w-5 h-5 text-[#fb7825] mr-2" />
                     {txt.licenseTitle}
                   </h3>
                   <p className="text-gray-700">{txt.license}</p>
@@ -191,15 +191,14 @@ export default function AgneJuodytePage() {
 
                 {/* Languages */}
                 <div className="p-4 bg-white rounded-xl border border-gray-200">
-                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
-                    <GraduationCap className="w-5 h-5 text-[#fb7825] mr-2" />
+                  <h3 className="font-semibold text-gray-900 mb-3">
                     {txt.languagesTitle}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {txt.languages.map((lang, idx) => (
                       <span
                         key={idx}
-                        className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-[#54B6FC] to-[#4a9fe0] text-white"
+                        className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-[#fb7825] to-[#e66915] text-white"
                       >
                         {lang}
                       </span>
@@ -211,45 +210,45 @@ export default function AgneJuodytePage() {
               <div className="relative">
                 <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/specialists/agne.png"
-                    alt="Agnė Juodytė"
+                    src="/specialists/ramune.png"
+                    alt="Ramunė Nemeikaitė"
                     fill
                     className="object-cover"
                     priority
                   />
                 </div>
                 {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#fb7825] rounded-full opacity-20 blur-2xl" />
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#54B6FC] rounded-full opacity-20 blur-2xl" />
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#54B6FC] rounded-full opacity-20 blur-2xl" />
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#fb7825] rounded-full opacity-20 blur-2xl" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Common Cases Section */}
+        {/* When to Contact Section */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-              {txt.commonCasesTitle}
+              {txt.whenToContactTitle}
             </h2>
             
             <div className="grid md:grid-cols-2 gap-4">
-              {txt.commonCases.map((caseText, idx) => (
+              {txt.whenToContact.map((item, idx) => (
                 <div key={idx} className="flex items-start space-x-3 bg-white rounded-xl p-6 shadow-sm">
-                  <CheckCircle className="w-6 h-6 text-[#54B6FC] flex-shrink-0 mt-1" />
-                  <p className="text-gray-700 text-lg">{caseText}</p>
+                  <CheckCircle className="w-6 h-6 text-[#fb7825] flex-shrink-0 mt-1" />
+                  <p className="text-gray-700 text-lg">{item}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Methods & Experience Section */}
+        {/* Methods Section */}
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-blue-50 to-orange-50 rounded-2xl p-8 md:p-12">
+            <div className="bg-gradient-to-br from-orange-50 to-blue-50 rounded-2xl p-8 md:p-12">
               <div className="flex items-center mb-6">
-                <Award className="w-8 h-8 text-[#fb7825] mr-3" />
+                <Award className="w-8 h-8 text-[#54B6FC] mr-3" />
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                   {txt.methodsTitle}
                 </h2>
@@ -261,28 +260,11 @@ export default function AgneJuodytePage() {
           </div>
         </section>
 
-        {/* First Visit Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border-l-4 border-[#54B6FC]">
-              <div className="flex items-center mb-6">
-                <Heart className="w-8 h-8 text-[#54B6FC] mr-3" />
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                  {txt.firstVisitTitle}
-                </h2>
-              </div>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                {txt.firstVisitText}
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Reviews Section */}
-        <AgneReviews />
+        <RamuneReviews />
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-[#54B6FC] to-[#4a9fe0]">
+        <section className="py-16 bg-gradient-to-br from-[#fb7825] to-[#e66915]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               {txt.ctaRegister}
@@ -291,7 +273,7 @@ export default function AgneJuodytePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/registracija"
-                className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-[#54B6FC] px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
+                className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-[#fb7825] px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
               >
                 <Calendar className="w-5 h-5" />
                 <span>{txt.ctaRegister}</span>

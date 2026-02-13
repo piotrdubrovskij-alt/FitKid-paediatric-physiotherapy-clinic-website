@@ -17,8 +17,8 @@ export default function Specialists({ translations }: SpecialistsProps) {
 
   const specialistLinks: Record<string, string | null> = {
     'Agnė Juodytė': '/specialists/agne-juodyte',
-    'Ksenija Persijanova': null,
-    'Ramunė Nemeikaitė': null,
+    'Ksenija Persijanova': '/specialists/ksenija-persijanova',
+    'Ramunė Nemeikaitė': '/specialists/ramune-nemeikaite',
   };
 
   return (
