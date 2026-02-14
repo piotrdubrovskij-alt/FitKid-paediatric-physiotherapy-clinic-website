@@ -79,6 +79,7 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
                 src="/fitkid-logo.png"
                 alt="FitKid Klinika"
                 fill
+                sizes="(max-width: 768px) 128px, 176px"
                 className="object-contain object-left"
                 priority
               />
