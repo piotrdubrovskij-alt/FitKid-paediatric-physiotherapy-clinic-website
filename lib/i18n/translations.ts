@@ -321,7 +321,7 @@ export const translations: Record<Language, Translation> = {
         {
           name: "Vojta terapija",
           slug: "vojta-terapija",
-          description: "Refleksinė lokomocija vaikams",
+          description: "Specializuota neurologinių būklių terapija",
           ageGroup: "child" as const,
         },
       ],
@@ -754,7 +754,7 @@ export const translations: Record<Language, Translation> = {
         {
           name: "Vojta Therapy",
           slug: "vojta-terapija",
-          description: "Reflex locomotion therapy for children",
+          description: "Specialized therapy for neurological conditions",
           ageGroup: "child" as const,
         },
       ],

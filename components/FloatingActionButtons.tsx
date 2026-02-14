@@ -111,7 +111,7 @@ export default function FloatingActionButtons({ currentLang }: FloatingActionBut
 
       {/* Register button - Orange */}
       <Link
-        href={addLangParam('#registration')}
+        href={addLangParam('/registracija')}
         className="
           flex items-center justify-center
           bg-gradient-to-r from-[#fb7825] to-[#e66f1f]

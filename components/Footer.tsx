@@ -71,6 +71,11 @@ export default function Footer({ translations }: FooterProps) {
                 </Link>
               </li>
               <li>
+                <Link href="/#specialists" className="text-gray-400 hover:text-white transition-colors">
+                  {translations.nav.specialists}
+                </Link>
+              </li>
+              <li>
                 <Link href="/kainos" className="text-gray-400 hover:text-white transition-colors">
                   {translations.nav.prices}
                 </Link>
@@ -87,10 +92,10 @@ export default function Footer({ translations }: FooterProps) {
           <div>
             <h3 className="text-lg font-semibold mb-4">{translations.services.title}</h3>
             <ul className="space-y-3">
-              {translations.services.items.slice(0, 5).map((service) => (
+              {translations.services.items.map((service) => (
                 <li key={service.slug}>
                   <Link
-                    href={`/services/${service.slug}`}
+                    href={`/${service.slug}`}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     {service.name}

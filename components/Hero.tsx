@@ -40,7 +40,7 @@ export default function Hero({ translations }: HeroProps) {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#registration"
+                href="/registracija"
                 className="inline-flex items-center justify-center space-x-2 bg-[#fb7825] hover:bg-[#e66f1f] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg shadow-[#fb7825]/25"
               >
                 <span>{translations.nav.registration}</span>

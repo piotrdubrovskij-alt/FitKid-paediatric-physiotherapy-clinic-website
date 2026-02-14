@@ -54,7 +54,7 @@ export default function About({ translations }: AboutProps) {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <a
-            href="#registration"
+            href="/registracija"
             className="inline-flex items-center space-x-2 bg-[#fb7825] hover:bg-[#e66f1f] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
           >
             <span>Užsiregistruokite konsultacijai</span>

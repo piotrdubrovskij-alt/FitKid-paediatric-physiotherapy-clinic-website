@@ -71,7 +71,7 @@ export default function VideoHero({ translations }: VideoHeroProps) {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#registration"
+                href="/registracija"
                 className="group inline-flex items-center justify-center space-x-3 bg-[#fb7825] hover:bg-[#e66f1f] text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-xl"
               >
                 <span>{translations.nav.registration}</span>

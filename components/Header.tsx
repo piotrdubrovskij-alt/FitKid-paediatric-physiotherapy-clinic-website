@@ -56,6 +56,11 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
     { name: translations.nav.prices, href: addLangParam('/kainos') },
     { name: translations.nav.contacts, href: addLangParam('/kontaktai') },
   ];
+  const registrationHref = addLangParam('/registracija');
+  const handleRegistrationClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.location.href = registrationHref;
+  };
 
   const languages: Language[] = ['lt', 'en'];
 
@@ -114,12 +119,13 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
             </a>
 
             {/* CTA Button - desktop/tablet only */}
-            <Link
-              href={addLangParam('#registration')}
-              className="hidden md:flex items-center bg-[#fb7825] hover:bg-[#e66f1f] text-white px-6 py-2.5 rounded-full font-semibold transition-colors shadow-sm hover:shadow-md"
+            <a
+              href={registrationHref}
+              onClick={handleRegistrationClick}
+              className="hidden md:flex items-center bg-[#fb7825] hover:bg-[#e66f1f] text-white px-6 py-2.5 rounded-full font-semibold transition-colors shadow-sm hover:shadow-md relative z-10 pointer-events-auto"
             >
               <span>{translations.nav.registration}</span>
-            </Link>
+            </a>
 
             {/* Language Switcher - desktop/tablet only */}
             <div className="hidden md:flex items-center space-x-1 text-sm">
@@ -155,6 +161,13 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
       {isMenuOpen && (
         <div className="md:hidden border-t border-gray-100 bg-white">
           <nav className="px-4 py-4 space-y-3">
+            <a
+              href={registrationHref}
+              onClick={() => setIsMenuOpen(false)}
+              className="block text-center bg-[#fb7825] hover:bg-[#e66f1f] text-white px-4 py-2.5 rounded-lg font-semibold transition-colors"
+            >
+              {translations.nav.registration}
+            </a>
             {/* Menu items */}
             {navigation.map((item) => (
               <Link

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Poppins } from "next/font/google";
 import StructuredData from "./schema";
 import "./globals.css";
@@ -74,10 +75,15 @@ export default function RootLayout({
   return (
     <html lang="lt" className="scroll-smooth">
       <head>
+        <link href="https://www.manodaktaras.lt/widget/css/mydocwidget.css" rel="stylesheet" />
         <StructuredData />
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
         {children}
+        <Script
+          src="https://www.manodaktaras.lt/widget/js/mydocwidget.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

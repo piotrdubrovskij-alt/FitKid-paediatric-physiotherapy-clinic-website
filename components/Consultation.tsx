@@ -98,7 +98,7 @@ export default function Consultation({ translations }: ConsultationProps) {
         {/* CTA */}
         <div className="text-center">
           <a
-            href="#specialists"
+            href="/registracija"
             className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-[#54B6FC] px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-xl"
           >
             <span>{translations.consultation.cta}</span>

@@ -129,6 +129,7 @@ export default function RamuneNemeikaitePage() {
       methodsTitle: 'Darbo kryptys',
       methodsText: 'Gydomasis masažas pritaikomas individualiai pagal vaiko amžių, būklę ir tikslą. Ramunė orientuojasi į švelnų, vaikui tinkamą tempą ir aiškų procedūros tikslą.',
       ctaRegister: 'Užsiregistruoti vizitui',
+      ctaBookRamune: 'Registruotis pas Ramunę Nemeikaitę',
       ctaCall: 'Skambinti',
     },
     en: {
@@ -158,6 +159,7 @@ export default function RamuneNemeikaitePage() {
       methodsTitle: 'Work Methods',
       methodsText: 'Therapeutic massage is adapted individually according to the child\'s age, condition, and goal. Ramunė focuses on a gentle, child-appropriate pace and clear procedure goal.',
       ctaRegister: 'Book a Visit',
+      ctaBookRamune: 'Book a Visit with Ramunė Nemeikaitė',
       ctaCall: 'Call',
     },
   };
@@ -218,6 +220,17 @@ export default function RamuneNemeikaitePage() {
                       </span>
                     ))}
                   </div>
+                </div>
+
+                {/* Registration CTA button */}
+                <div className="mt-6">
+                  <Link
+                    href={`/registracija?specialist=ramune${currentLang !== 'lt' ? `&lang=${currentLang}` : ''}`}
+                    className="inline-flex items-center justify-center w-full space-x-2 bg-[#fb7825] hover:bg-[#e66f1f] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg text-lg"
+                  >
+                    <Calendar className="w-5 h-5" />
+                    <span>{txt.ctaBookRamune}</span>
+                  </Link>
                 </div>
               </div>
               
@@ -309,11 +322,11 @@ export default function RamuneNemeikaitePage() {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/registracija"
+                href={`/registracija?specialist=ramune${currentLang !== 'lt' ? `&lang=${currentLang}` : ''}`}
                 className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-[#fb7825] px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
               >
                 <Calendar className="w-5 h-5" />
-                <span>{txt.ctaRegister}</span>
+                <span>{txt.ctaBookRamune}</span>
               </Link>
               
               <a

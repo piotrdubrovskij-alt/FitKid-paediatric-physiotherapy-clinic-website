@@ -129,6 +129,7 @@ export default function KsenijaPersijanovaPage() {
       methodsTitle: 'Darbo kryptys',
       methodsText: 'DNS metodikos principai padeda tiksliau vertinti judėjimą ir parinkti pratimus, kurie gerina stabilumą, judėjimo kontrolę ir laikyseną. Hidroterapija kūdikiams gali būti naudinga, kai siekiame švelniai skatinti judėjimo laisvumą ir motorikos vystymąsi.',
       ctaRegister: 'Užsiregistruoti vizitui',
+      ctaBookKsenija: 'Registruotis pas Kseniją Persijanovą',
       ctaCall: 'Skambinti',
     },
     en: {
@@ -158,6 +159,7 @@ export default function KsenijaPersijanovaPage() {
       methodsTitle: 'Work Methods',
       methodsText: 'DNS methodology principles help to assess movement more accurately and select exercises that improve stability, movement control, and posture. Infant hydrotherapy can be beneficial when we aim to gently promote movement freedom and motor development.',
       ctaRegister: 'Book a Visit',
+      ctaBookKsenija: 'Book a Visit with Ksenija Persijanova',
       ctaCall: 'Call',
     },
   };
@@ -218,6 +220,17 @@ export default function KsenijaPersijanovaPage() {
                       </span>
                     ))}
                   </div>
+                </div>
+
+                {/* Registration CTA button */}
+                <div className="mt-6">
+                  <Link
+                    href={`/registracija?specialist=ksenija${currentLang !== 'lt' ? `&lang=${currentLang}` : ''}`}
+                    className="inline-flex items-center justify-center w-full space-x-2 bg-[#fb7825] hover:bg-[#e66f1f] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg text-lg"
+                  >
+                    <Calendar className="w-5 h-5" />
+                    <span>{txt.ctaBookKsenija}</span>
+                  </Link>
                 </div>
               </div>
               
@@ -309,11 +322,11 @@ export default function KsenijaPersijanovaPage() {
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/registracija"
+                href={`/registracija?specialist=ksenija${currentLang !== 'lt' ? `&lang=${currentLang}` : ''}`}
                 className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-[#54B6FC] px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
               >
                 <Calendar className="w-5 h-5" />
-                <span>{txt.ctaRegister}</span>
+                <span>{txt.ctaBookKsenija}</span>
               </Link>
               
               <a
