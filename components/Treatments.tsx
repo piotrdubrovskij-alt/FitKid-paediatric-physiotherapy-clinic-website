@@ -17,7 +17,37 @@ export default function Treatments({ translations }: TreatmentsProps) {
 
   const renderCard = (item: any, colorScheme: 'blue' | 'orange') => {
     const isMotorDelay = item.name === "Motorinės raidos vėlavimas" || item.name === "Motor Development Delays";
+    const isHypotonia = item.name === "Sumažėjęs raumenų tonusas (hipotonusas)" || item.name === "Decreased Muscle Tone (Hypotonia)";
+
+    if (isHypotonia) {
+      return (
+        <Link key={item.name} href="/kudikiu-hipotonusas" className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-white hover:border-[#fb7825] cursor-pointer min-h-[120px] flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-105">
+          <h3 className="text-base md:text-lg font-semibold text-gray-900 text-center leading-snug group-hover:text-[#fb7825] transition-colors">{item.name}</h3>
+        </Link>
+      );
+    }
+
+    const isHypotonia = item.name === "Sumažėjęs raumenų tonusas (hipotonusas)" || item.name === "Decreased Muscle Tone (Hypotonia)";
+
+    if (isHypotonia) {
+      return (
+        <Link key={item.name} href="/kudikiu-hipotonusas" className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-white hover:border-[#fb7825] cursor-pointer min-h-[120px] flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-105">
+          <h3 className="text-base md:text-lg font-semibold text-gray-900 text-center leading-snug group-hover:text-[#fb7825] transition-colors">{item.name}</h3>
+        </Link>
+      );
+    }
+
+    const isHypotonia = item.name === "Sumažėjęs raumenų tonusas (hipotonusas)" || item.name === "Decreased Muscle Tone (Hypotonia)";
     const isHypertonia = item.name === "Padidėjęs raumenų tonusas (hipertonusas)" || item.name === "Increased Muscle Tone (Hypertonia)";
+
+    if (isHypotonia) {
+      return (
+        <Link key={item.name} href="/kudikiu-hipotonusas" className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-white hover:border-[#fb7825] cursor-pointer min-h-[120px] flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-105">
+          <h3 className="text-base md:text-lg font-semibold text-gray-900 text-center leading-snug group-hover:text-[#fb7825] transition-colors">{item.name}</h3>
+          <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300"><svg className="w-5 h-5 text-[#fb7825]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg></div>
+        </Link>
+      );
+    }
 
     if (isHypertonia) {
       return (
