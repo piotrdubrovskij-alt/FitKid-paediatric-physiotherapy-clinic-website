@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { type Translation } from '@/lib/i18n/translations';
 
 interface SpecialistsProps {
@@ -33,9 +34,10 @@ export default function Specialists({ translations }: SpecialistsProps) {
             const hasPhoto = photos[specialist.name];
             
             return (
-              <div
+              <Link
                 key={specialist.name}
-                className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                href={`/specialistai/${specialist.slug}`}
+                className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 block"
               >
                 {/* Photo or placeholder */}
                 <div className="relative aspect-[3/4] bg-gradient-to-br from-[#54B6FC]/15 to-[#fb7825]/15 flex items-center justify-center overflow-hidden">
@@ -62,7 +64,7 @@ export default function Specialists({ translations }: SpecialistsProps) {
 
                 {/* Info */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-[#54B6FC] transition-colors">
                     {specialist.name}
                   </h3>
                   <div className="text-sm font-semibold text-[#54B6FC] mb-4">
@@ -75,7 +77,7 @@ export default function Specialists({ translations }: SpecialistsProps) {
 
                 {/* Decorative element */}
                 <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-[#54B6FC]/10 to-[#fb7825]/10 rounded-full blur-2xl" />
-              </div>
+              </Link>
             );
           })}
         </div>

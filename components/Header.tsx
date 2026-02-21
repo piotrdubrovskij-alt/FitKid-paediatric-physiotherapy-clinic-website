@@ -53,6 +53,7 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
     { name: translations.nav.services, href: addLangParam('/#services') },
     { name: translations.nav.treatments, href: addLangParam('/#treatments') },
     { name: translations.nav.prices, href: addLangParam('/kainos') },
+    { name: translations.nav.specialists, href: addLangParam('/#specialists') },
     { name: translations.nav.contacts, href: addLangParam('/kontaktai') },
   ];
 

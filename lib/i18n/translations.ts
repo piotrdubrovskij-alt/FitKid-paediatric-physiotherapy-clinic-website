@@ -83,7 +83,7 @@ export type Translation = {
   specialists: {
     title: string;
     subtitle: string;
-    team: Array<{ name: string; role: string; bio: string }>;
+    team: Array<{ name: string; role: string; bio: string; slug: string }>;
   };
   testimonials: {
     title: string;
@@ -459,16 +459,19 @@ export const translations: Record<Language, Translation> = {
           name: "Agnė Juodytė",
           role: "Kineziterapeutė",
           bio: "Ilgametę patirtį turinti kineziterapeutė, dirbanti su kūdikiais nuo pirmųjų dienų ir vaikais, turinčiais įvairių raidos, neurologinių ar judėjimo iššūkių.",
+          slug: "agne-juodyte",
         },
         {
           name: "Ksenija Persijanova",
           role: "Kineziterapeutė",
           bio: "Kineziterapeutė, turinti praktinę darbo patirtį kūdikių kineziterapijos ir paliatyvios pediatrijos srityse. Specializuojasi atliekant kūdikių hidroterapijos procedūras bei dirbant su vaikais.",
+          slug: "ksenija-persijanova",
         },
         {
           name: "Ramunė Nemeikaitė",
           role: "Masažuotoja",
           bio: "Sertifikuota vaikų masažo specialistė. Vaikų ligoninės, Santaros klinikų masažuotoja. Specializuojasi atliekant gydomuosius masažus kūdikiams ir vaikams.",
+          slug: "ramune-nemeikaite",
         },
       ],
     },
@@ -862,16 +865,19 @@ export const translations: Record<Language, Translation> = {
           name: "Agnė Juodytė",
           role: "Physiotherapist",
           bio: "Experienced physiotherapist working with infants from their first days and children with various developmental, neurological or movement challenges.",
+          slug: "agne-juodyte",
         },
         {
           name: "Ksenija Persijanova",
           role: "Physiotherapist",
           bio: "Physiotherapist with practical experience in infant physiotherapy and palliative pediatrics. Specializes in infant hydrotherapy procedures and working with children.",
+          slug: "ksenija-persijanova",
         },
         {
           name: "Ramunė Nemeikaitė",
           role: "Massage Therapist",
           bio: "Certified children's massage specialist. Massage therapist at Children's Hospital and Santaros Clinics. Specializes in therapeutic massages for infants and children.",
+          slug: "ramune-nemeikaite",
         },
       ],
     },
