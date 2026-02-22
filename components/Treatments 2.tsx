@@ -16,10 +16,18 @@ export default function Treatments({ translations }: TreatmentsProps) {
   );
 
   const renderCard = (item: any, colorScheme: 'blue' | 'orange') => {
+    const isTorticollis = item.name === "Kreivakaklystė (tortikolis)" || item.name === "Torticollis";
+    const isMotorDelay = item.name === "Motorinės raidos vėlavimas" || item.name === "Motor Development Delays";
+    const linkedHref = isTorticollis
+      ? "/kudikio-kreivakakliste"
+      : isMotorDelay
+      ? "/motorines-raidos-velavimas"
+      : "/registracija";
+
     return (
       <Link
         key={item.name}
-        href="/ka-gydome"
+        href={linkedHref}
         className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-white hover:border-[#fb7825] cursor-pointer min-h-[140px] flex flex-col items-center justify-center hover:-translate-y-2 hover:scale-105"
       >
         {/* Problem name */}
@@ -53,7 +61,7 @@ export default function Treatments({ translations }: TreatmentsProps) {
   const renderMoreCard = (colorScheme: 'blue' | 'orange') => {
     return (
       <Link
-        href="/ka-gydome"
+        href="/registracija"
         className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-[#fb7825]/50 hover:border-[#fb7825] cursor-pointer min-h-[140px] flex items-center justify-center hover:-translate-y-2 hover:scale-105"
       >
         {/* Text with arrow */}

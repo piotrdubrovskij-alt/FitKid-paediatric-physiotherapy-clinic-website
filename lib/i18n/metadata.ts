@@ -86,6 +86,36 @@ export const pageMetadata: Record<string, Record<Language, { title: string; desc
       description: 'Motor development delay signs, causes and modern physiotherapy help. Individual assessment at FitKid clinic Vilnius.',
     },
   },
+  '/kudikiu-hipertonusas': {
+    lt: {
+      title: 'Kūdikių hipertonusas | Padidėjęs raumenų tonusas – požymiai ir korekcija | FitKid',
+      description: 'Kūdikių hipertonuso (padidėjusio raumenų tonuso) požymiai pagal amžių, priežastys ir kineziterapinė korekcija. Individualus įvertinimas FitKid klinikoje Vilniuje. ☎ +370 666 99676',
+    },
+    en: {
+      title: 'Infant Hypertonia | Increased Muscle Tone – Signs & Correction | FitKid Vilnius',
+      description: 'Infant hypertonia (increased muscle tone) signs by age, causes and physiotherapy correction. Individual assessment at FitKid clinic in Vilnius. ☎ +370 666 99676',
+    },
+  },
+  '/plagiocefalija': {
+    lt: {
+      title: 'Kūdikių plagiocefalija | Plokšia galvytė – požymiai ir korekcija | FitKid',
+      description: 'Kūdikių plagiocefalijos (plokščios galvytės) požymiai pagal amžių, tipai ir kineziterapinė korekcija. Individualus įvertinimas FitKid klinikoje Vilniuje. ☎ +370 666 99676',
+    },
+    en: {
+      title: 'Infant Plagiocephaly | Flat Head Signs & Correction | FitKid Vilnius',
+      description: 'Infant plagiocephaly signs by age, types and physiotherapy correction. Individual assessment at FitKid clinic in Vilnius. ☎ +370 666 99676',
+    },
+  },
+  '/kudikio-kreivakakliste': {
+    lt: {
+      title: 'Kūdikio kreivakaklystė (tortikolis) | Požymiai, tipai, gydymas | FitKid',
+      description: 'Kūdikio kreivakaklystės (tortikolis) požymiai, tipai ir kineziterapinis gydymas. Individualus įvertinimas FitKid klinikoje Vilniuje. ☎ +370 666 99676',
+    },
+    en: {
+      title: 'Infant Torticollis | Signs, Types & Treatment | FitKid Vilnius',
+      description: 'Infant torticollis signs, types and physiotherapy treatment. Individual assessment at FitKid clinic in Vilnius. ☎ +370 666 99676',
+    },
+  },
   '/ka-gydome': {
     lt: {
       title: 'Ką gydome | Būklės ir situacijos | FitKid klinika',

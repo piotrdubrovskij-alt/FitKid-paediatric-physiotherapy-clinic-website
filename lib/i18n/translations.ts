@@ -344,12 +344,12 @@ export const translations: Record<Language, Translation> = {
         },
         {
           name: "Padidėjęs raumenų tonusas (hipertonusas)",
-          hint: "",
+          hint: "Kūdikis jaudinasi, turi standžius raumenis ar kampuotus judesius? Kineziterapija padeda atpalaiduoti raumenis ir lavinti tinkamus judesių modelius.",
           ageGroup: "infant" as const,
         },
         {
           name: "Sumažėjęs raumenų tonusas (hipotonusas)",
-          hint: "",
+          hint: "Kūdikis atrodo vangus, lėtai laiko galvą ar kūną? Kineziterapija stiprina raumenis ir skatina tinkamą motorinę raidą.",
           ageGroup: "infant" as const,
         },
         {
@@ -359,42 +359,42 @@ export const translations: Record<Language, Translation> = {
         },
         {
           name: "Plagiocefalija",
-          hint: "",
+          hint: "Pastebėjote plokščią vietą kūdikio galvutėje? Kineziterapija padeda ištaisyti galvos formą ir užtikrina tinkamą kaklo raumenų darbą.",
           ageGroup: "infant" as const,
         },
         {
           name: "Klubo sąnario displazija",
-          hint: "",
+          hint: "Po gydymo ar palaikymų – kineziterapija padeda atkurti tinkamą klubo funkciją ir lavinti eiseną.",
           ageGroup: "infant" as const,
         },
         {
           name: "Netaisyklinga laikysena",
-          hint: "",
+          hint: "Vaikas kumpsta, turi išlenktą nugarą ar išsikišusį pilvą? Vertinsime laikyseną ir sudarysime individualų pratimų planą.",
           ageGroup: "child" as const,
         },
         {
           name: "Nugaros, kaklo ir pečių skausmai",
-          hint: "",
+          hint: "Skausmai dažnai kyla dėl raumenų disbalanso ar netinkamos laikysenos. Kineziterapija šalina priežastį, ne tik simptomus.",
           ageGroup: "child" as const,
         },
         {
           name: "Skoliozė ir kiti stuburo iškrypimai",
-          hint: "",
+          hint: "Nugaros linkimas į šoną, nelygūs pečiai? Anksti pradėjus gydymą, progresą galima sustabdyti ir pagerinti.",
           ageGroup: "child" as const,
         },
         {
           name: "Plokščiapėdystė, pėdų pronacija, eisenos sutrikimai",
-          hint: "",
+          hint: "Vaikas vaikšto ant vidinio pėdos krašto, klumpa ar greitai pavargsta? Padėsime ištaisyti pėdų funkciją ir eiseną.",
           ageGroup: "child" as const,
         },
         {
           name: "Kreivos kojos (X ar O kojų deformacija)",
-          hint: "",
+          hint: "Natūralus korekcijos laikotarpis – iki 7 metų. Kineziterapeutas įvertins, ar reikalinga papildoma pagalba.",
           ageGroup: "child" as const,
         },
         {
           name: "Reabilitacija po traumų ar imobilizacijos",
-          hint: "",
+          hint: "Po lūžio, operacijos ar ilgo nejudėjimo – padėsime greitai ir saugiai atkurti pilną funkciją.",
           ageGroup: "child" as const,
         },
       ],
@@ -777,12 +777,12 @@ export const translations: Record<Language, Translation> = {
         },
         {
           name: "Increased Muscle Tone (Hypertonia)",
-          hint: "",
+          hint: "Baby seems tense, stiff, or moves in angular patterns? Physiotherapy helps relax muscles and develop natural movement.",
           ageGroup: "infant" as const,
         },
         {
           name: "Decreased Muscle Tone (Hypotonia)",
-          hint: "",
+          hint: "Baby seems floppy or slow to hold their head and body? Physiotherapy strengthens muscles and supports motor development.",
           ageGroup: "infant" as const,
         },
         {
@@ -792,42 +792,42 @@ export const translations: Record<Language, Translation> = {
         },
         {
           name: "Plagiocephaly",
-          hint: "",
+          hint: "Noticed a flat spot on baby's head? Physiotherapy corrects head shape and ensures proper neck muscle function.",
           ageGroup: "infant" as const,
         },
         {
           name: "Hip Dysplasia",
-          hint: "",
+          hint: "After treatment or bracing — physiotherapy restores proper hip function and helps develop correct gait.",
           ageGroup: "infant" as const,
         },
         {
           name: "Incorrect Posture",
-          hint: "",
+          hint: "Child slouches or has a curved back? We'll assess posture and create an individual exercise plan.",
           ageGroup: "child" as const,
         },
         {
           name: "Back, Neck and Shoulder Pain",
-          hint: "",
+          hint: "Pain usually stems from muscle imbalance or poor posture. Physiotherapy addresses the cause, not just symptoms.",
           ageGroup: "child" as const,
         },
         {
           name: "Scoliosis and Spinal Deformities",
-          hint: "",
+          hint: "Sideways spinal curve or uneven shoulders? Early treatment can stop progression and improve alignment.",
           ageGroup: "child" as const,
         },
         {
           name: "Flat Feet, Foot Pronation, Gait Disorders",
-          hint: "",
+          hint: "Child walks on inner foot edge, trips, or tires quickly? We'll correct foot function and gait.",
           ageGroup: "child" as const,
         },
         {
           name: "Crooked Legs (X or O Leg Deformity)",
-          hint: "",
+          hint: "Natural correction window is until age 7. A physiotherapist will assess whether additional help is needed.",
           ageGroup: "child" as const,
         },
         {
           name: "Rehabilitation After Trauma or Immobilization",
-          hint: "",
+          hint: "After fracture, surgery or prolonged immobilization — we'll help restore full function safely and quickly.",
           ageGroup: "child" as const,
         },
       ],
