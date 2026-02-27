@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { Star, Quote, ExternalLink } from 'lucide-react';
-import Image from 'next/image';
 
 interface Review {
   author_name: string;
@@ -131,7 +130,7 @@ export default function GoogleReviews() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reviews.slice(0, 6).map((review, index) => (
             <div
-              key={`${review.author_name}-${review.time}`}
+              key={review.time}
               className="relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
             >
               {/* Quote icon */}
@@ -158,27 +157,14 @@ export default function GoogleReviews() {
                 {review.text}
               </p>
 
-              {/* Author */}
+              {/* Author – be vardo/pavardės (LT teisė) */}
               <div className="flex items-center space-x-4 border-t border-gray-100 pt-4">
-                {review.profile_photo_url ? (
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                    <Image
-                      src={review.profile_photo_url}
-                      alt={review.author_name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ) : (
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#54B6FC] to-[#fb7825] rounded-full flex items-center justify-center text-white font-bold">
-                    {review.author_name.charAt(0)}
-                  </div>
-                )}
+                <div className="w-12 h-12 bg-gradient-to-br from-[#54B6FC] to-[#fb7825] rounded-full flex items-center justify-center text-white font-bold">
+                  K
+                </div>
                 <div>
-                  <div className="font-semibold text-gray-900">
-                    {review.author_name}
-                  </div>
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-gray-500">Klientas</div>
+                  <div className="text-xs text-gray-400">
                     {review.relative_time_description}
                   </div>
                 </div>

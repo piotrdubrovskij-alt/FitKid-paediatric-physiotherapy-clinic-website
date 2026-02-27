@@ -20,6 +20,8 @@ export default function Treatments({ translations }: TreatmentsProps) {
     const isMotorDelay = item.name === "Motorinės raidos vėlavimas" || item.name === "Motor Development Delays";
     const isPlagiocephaly = item.name === "Plagiocefalija" || item.name === "Plagiocephaly";
     const isHypertonia = item.name === "Padidėjęs raumenų tonusas (hipertonusas)" || item.name === "Increased Muscle Tone (Hypertonia)";
+    const isDDH = item.name === "Klubo sąnario displazija" || item.name === "Hip Dysplasia";
+    const isHypotonia = item.name === "Sumažėjęs raumenų tonusas (hipotonusas)" || item.name === "Decreased Muscle Tone (Hypotonia)";
     const href = isTorticollis
       ? "/kudikio-kreivakakliste"
       : isMotorDelay
@@ -28,6 +30,10 @@ export default function Treatments({ translations }: TreatmentsProps) {
       ? "/plagiocefalija"
       : isHypertonia
       ? "/kudikiu-hipertonusas"
+      : isDDH
+      ? "/ka-gydome/klubo-sanario-displazija-kudikiams"
+      : isHypotonia
+      ? "/ka-gydome/kudikiu-hipotonusas"
       : "/registracija";
 
     return (

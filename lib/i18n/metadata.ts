@@ -89,11 +89,39 @@ export const pageMetadata: Record<string, Record<Language, { title: string; desc
   '/kudikiu-hipertonusas': {
     lt: {
       title: 'Kūdikių hipertonusas | Padidėjęs raumenų tonusas – požymiai ir korekcija | FitKid',
-      description: 'Kūdikių hipertonuso (padidėjusio raumenų tonuso) požymiai pagal amžių, priežastys ir kineziterapinė korekcija. Individualus įvertinimas FitKid klinikoje Vilniuje. ☎ +370 666 99676',
+      description:
+        'Kūdikių hipertonuso (padidėjusio raumenų tonuso) požymiai pagal amžių, priežastys ir kineziterapinė korekcija. Individualus įvertinimas FitKid klinikoje Vilniuje. ☎ +370 666 99676',
     },
     en: {
       title: 'Infant Hypertonia | Increased Muscle Tone – Signs & Correction | FitKid Vilnius',
-      description: 'Infant hypertonia (increased muscle tone) signs by age, causes and physiotherapy correction. Individual assessment at FitKid clinic in Vilnius. ☎ +370 666 99676',
+      description:
+        'Infant hypertonia (increased muscle tone) signs by age, causes and physiotherapy correction. Individual assessment at FitKid clinic in Vilnius. ☎ +370 666 99676',
+    },
+  },
+  '/ka-gydome/klubo-sanario-displazija-kudikiams': {
+    lt: {
+      title:
+        'Kūdikių klubo sąnario displazija Vilniuje | Požymiai, diagnostika ir pagalba | FitKid',
+      description:
+        'Kūdikių klubo sąnario displazija: požymiai pagal amžių, rizikos veiksniai, kada kreiptis skubiai, kaip vyksta diagnostika ir kaip kineziterapija padeda kartu su ortopediniu gydymu.',
+    },
+    en: {
+      title:
+        'Infant Hip Dysplasia in Vilnius | Signs, Diagnosis and Support | FitKid',
+      description:
+        'Infant developmental dysplasia of the hip: age-related signs, risk factors, when to seek urgent help, how diagnosis is performed and how physiotherapy supports orthopedic treatment.',
+    },
+  },
+  '/ka-gydome/kudikiu-hipotonusas': {
+    lt: {
+      title: 'Kūdikių hipotonusas Vilniuje | Žemas raumenų tonusas: požymiai ir pagalba | FitKid',
+      description:
+        'Sumažėjęs raumenų tonusas (hipotonusas) kūdikiams: požymiai pagal amžių, kada kreiptis, kaip padeda kineziterapija, Vojta, DNS, masažas ir hidroterapija.',
+    },
+    en: {
+      title: 'Infant Hypotonia in Vilnius | Low Muscle Tone: Signs and Help | FitKid',
+      description:
+        'Decreased muscle tone (hypotonia) in infants: age-related signs, when to seek help, how physiotherapy, Vojta, DNS, massage and hydrotherapy help.',
     },
   },
   '/plagiocefalija': {

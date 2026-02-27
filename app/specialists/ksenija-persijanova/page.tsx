@@ -44,7 +44,7 @@ function KsenijaReviews() {
             <div key={idx} className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center mb-4">
                 <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900">{review.author_name}</h3>
+                  <h3 className="font-semibold text-gray-900">Klientas</h3>
                   <div className="flex items-center mt-1">
                     {[...Array(5)].map((_, i) => (
                       <span key={i} className={i < review.rating ? "text-yellow-400 text-lg" : "text-gray-300 text-lg"}>★</span>

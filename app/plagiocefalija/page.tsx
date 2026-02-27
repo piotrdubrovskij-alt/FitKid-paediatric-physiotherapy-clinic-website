@@ -165,7 +165,7 @@ export default function PlagiocefalijosPage() {
       related: [
         { href: '/kudikio-kreivakakliste', label: 'Kreivakaklystė' },
         { href: '/kudikiu-hipertonusas', label: 'Hipertonusas' },
-        { href: '/kudikiu-hipotonusas', label: 'Hipotonusas' },
+        { href: '/ka-gydome/kudikiu-hipotonusas', label: 'Hipotonusas' },
         { href: '/motorines-raidos-velavimas', label: 'Motorinės raidos vėlavimas' },
       ],
 
@@ -173,6 +173,7 @@ export default function PlagiocefalijosPage() {
       ctaPhone: '+370 666 99676',
       ctaAddress: 'Aludarių g. 7-43, Vilnius',
       ctaRegister: 'Registruotis vizitui',
+      medNote: 'Ši informacija yra informacinio pobūdžio ir nepakeičia individualios gydytojo konsultacijos. Jei būklė blogėja arba atsiranda pavojaus požymių, nedelsdami kreipkitės į gydytoją.',
     },
     en: {
       heroTitle: 'Infant Plagiocephaly: Signs of a Flat Head and What Parents Should Do',
@@ -309,7 +310,7 @@ export default function PlagiocefalijosPage() {
       related: [
         { href: '/kudikio-kreivakakliste', label: 'Torticollis' },
         { href: '/kudikiu-hipertonusas', label: 'Hypertonia' },
-        { href: '/kudikiu-hipotonusas', label: 'Hypotonia' },
+        { href: '/ka-gydome/kudikiu-hipotonusas', label: 'Hypotonia' },
         { href: '/motorines-raidos-velavimas', label: 'Motor Development Delays' },
       ],
 
@@ -317,6 +318,7 @@ export default function PlagiocefalijosPage() {
       ctaPhone: '+370 666 99676',
       ctaAddress: 'Aludarių g. 7-43, Vilnius',
       ctaRegister: 'Register for Visit',
+      medNote: 'This information is for informational purposes and does not replace individual medical consultation. If the condition worsens or danger signs appear, contact a doctor without delay.',
     },
   };
 
@@ -666,6 +668,13 @@ export default function PlagiocefalijosPage() {
               </a>
             </div>
             <p className="text-white/80 text-sm mt-6">{txt.ctaAddress}</p>
+          </div>
+        </section>
+
+        {/* Medical note */}
+        <section className="py-8 bg-gray-50 border-t border-gray-200">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-sm text-gray-500">{txt.medNote}</p>
           </div>
         </section>
       </main>

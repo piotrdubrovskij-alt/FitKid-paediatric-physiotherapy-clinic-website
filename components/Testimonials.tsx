@@ -62,15 +62,12 @@ export default function Testimonials({ translations }: TestimonialsProps) {
                 {testimonial.text}
               </p>
 
-              {/* Author */}
+              {/* Author – be vardo/pavardės (LT teisė) */}
               <div className="flex items-center space-x-4 border-t border-gray-100 pt-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#54B6FC] to-[#fb7825] rounded-full flex items-center justify-center text-white font-bold">
-                  {testimonial.name.charAt(0)}
+                  K
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">
-                    {testimonial.name}
-                  </div>
                   <div className="text-sm text-gray-500">{translations.testimonials.clientLabel}</div>
                 </div>
               </div>

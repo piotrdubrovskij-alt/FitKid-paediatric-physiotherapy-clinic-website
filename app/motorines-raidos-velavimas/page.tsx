@@ -34,7 +34,8 @@ export default function MotoRaidosVelavimasPage() {
 
   const pageText = {
     lt: {
-      heroTitle: 'Motorinės raidos vėlavimas kūdikiams: požymiai, priežastys ir šiuolaikinė pagalba',
+      heroTitleH1: 'Motorinės raidos vėlavimas',
+      heroTitleH2: 'Požymiai, priežastys ir šiuolaikinė pagalba',
       intro1: 'Motorinė raida – tai kūdikio gebėjimas judėti, laikyti kūną, keisti pozas ir palaipsniui įgyti vis sudėtingesnius judesius: nuo galvytės laikymo iki vartymosi, ropojimo, sėdėjimo ir galiausiai vaikščiojimo. Kiekvienas kūdikis vystosi individualiai, tačiau yra tam tikri raidos „langai", kuriuose tikimasi pagrindinių judėjimo etapų. Kai šie etapai aiškiai vėluoja, tai vadinama motorinės raidos vėlavimu.',
       intro2: 'Svarbu pabrėžti: motorinės raidos vėlavimas nebūtinai reiškia rimtą ligą. Dažnai tai yra funkcinė, koreguojama būklė, susijusi su raumenų tonuso disbalansu, kūno asimetrija ar nepakankamu stabilumu. Ankstyvas kineziterapinis įvertinimas ir tikslinga pagalba padeda „grąžinti" raidą į taisyklingą kelią ir užtikrinti, kad kūdikis jaustųsi stiprus, stabilus ir saugus judėdamas.',
       intro3: 'Šiame puslapyje aiškiai ir „pusiau moksliškai" paaiškiname, kas yra motorinės raidos vėlavimas, kaip jį atpažinti, kokios galimos priežastys, kokios pasekmės, ir kaip Fitkid vaikų ir kūdikių kineziterapijos klinikoje Vilniuje padedame kūdikiams.',
@@ -94,9 +95,19 @@ export default function MotoRaidosVelavimasPage() {
       finalDesc: 'Jei pastebite, kad vaiko motorinė raida vėluoja, kviečiame pasikonsultuoti. Ankstyva pagalba padeda užtikrinti sklandžią raidą ir išvengti vėlesnių problemų.',
       ctaRegister: 'Registruotis vizitui',
       ctaCall: '+370 666 99676',
+      medNote: 'Ši informacija yra informacinio pobūdžio ir nepakeičia individualios gydytojo konsultacijos. Jei būklė blogėja arba atsiranda pavojaus požymių, nedelsdami kreipkitės į gydytoją.',
+      relatedTitle: 'Susijusios būklės',
+      related: [
+        { href: '/kudikiu-hipertonusas', label: 'Hipertonusas' },
+        { href: '/ka-gydome/kudikiu-hipotonusas', label: 'Hipotonusas' },
+        { href: '/kudikio-kreivakakliste', label: 'Kreivakaklystė' },
+        { href: '/plagiocefalija', label: 'Plagiocefalija' },
+        { href: '/ka-gydome/klubo-sanario-displazija-kudikiams', label: 'Klubo sąnario displazija' },
+      ],
     },
     en: {
-      heroTitle: 'Motor Development Delays in Infants: Signs, Causes and Modern Help',
+      heroTitleH1: 'Motor Development Delays',
+      heroTitleH2: 'Signs, causes and modern help',
       intro1: 'Motor development is the infant\'s ability to move, hold the body, change positions, and gradually acquire increasingly complex movements: from holding the head to rolling, crawling, sitting, and finally walking. Each infant develops individually, but there are certain developmental "windows" where key movement milestones are expected. When these milestones are clearly delayed, it is called motor development delay.',
       intro2: 'Important to emphasize: motor development delay does not necessarily mean a serious illness. Often it is a functional, correctable condition related to muscle tone imbalance, body asymmetry, or insufficient stability. Early physiotherapy assessment and targeted help helps to "return" development to the correct path and ensure that the infant feels strong, stable and safe when moving.',
       intro3: 'On this page we clearly and "semi-scientifically" explain what motor development delay is, how to recognize it, what are possible causes, consequences, and how we help infants at Fitkid children\'s and infant physiotherapy clinic in Vilnius.',
@@ -156,6 +167,15 @@ export default function MotoRaidosVelavimasPage() {
       finalDesc: 'If you notice that your child\'s motor development is delayed, we invite you to consult. Early help ensures smooth development and avoids later problems.',
       ctaRegister: 'Register for Visit',
       ctaCall: '+370 666 99676',
+      medNote: 'This information is for informational purposes and does not replace individual medical consultation. If the condition worsens or danger signs appear, contact a doctor without delay.',
+      relatedTitle: 'Related conditions',
+      related: [
+        { href: '/kudikiu-hipertonusas', label: 'Hypertonia' },
+        { href: '/ka-gydome/kudikiu-hipotonusas', label: 'Hypotonia' },
+        { href: '/kudikio-kreivakakliste', label: 'Torticollis' },
+        { href: '/plagiocefalija', label: 'Plagiocephaly' },
+        { href: '/ka-gydome/klubo-sanario-displazija-kudikiams', label: 'Hip dysplasia' },
+      ],
     },
   };
 
@@ -200,9 +220,12 @@ export default function MotoRaidosVelavimasPage() {
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div className="max-w-3xl">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
-                  {txt.heroTitle}
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 leading-tight">
+                  {txt.heroTitleH1}
                 </h1>
+                <h2 className="text-lg md:text-xl text-white/90 leading-relaxed mt-2">
+                  {txt.heroTitleH2}
+                </h2>
               </div>
             </div>
           </div>
@@ -565,6 +588,25 @@ export default function MotoRaidosVelavimasPage() {
         {/* Testimonials */}
         <Testimonials translations={t} />
 
+        {/* Related conditions */}
+        <section className="py-12 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-6">{txt.relatedTitle}</h2>
+            <div className="flex flex-wrap gap-3">
+              {txt.related.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="inline-flex items-center gap-2 bg-white border border-gray-200 hover:border-[#54B6FC] text-gray-700 hover:text-[#54B6FC] px-4 py-2 rounded-full text-sm font-medium transition-all hover:shadow-md"
+                >
+                  {link.label}
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="py-20 bg-gradient-to-br from-[#54B6FC] to-[#4a9fe0]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -591,6 +633,13 @@ export default function MotoRaidosVelavimasPage() {
                 <span>{txt.ctaCall}</span>
               </a>
             </div>
+          </div>
+        </section>
+
+        {/* Medical note */}
+        <section className="py-8 bg-gray-50 border-t border-gray-200">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-sm text-gray-500">{txt.medNote}</p>
           </div>
         </section>
       </main>

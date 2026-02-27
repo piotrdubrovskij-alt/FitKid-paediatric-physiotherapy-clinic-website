@@ -173,7 +173,7 @@ export default function HipertonusasPage() {
 
       relatedTitle: 'Susijusios būklės',
       related: [
-        { href: '/kudikiu-hipotonusas', label: 'Hipotonusas' },
+        { href: '/ka-gydome/kudikiu-hipotonusas', label: 'Hipotonusas' },
         { href: '/kudikio-kreivakakliste', label: 'Kreivakaklystė' },
         { href: '/plagiocefalija', label: 'Plagiocefalija' },
         { href: '/motorines-raidos-velavimas', label: 'Motorinės raidos vėlavimas' },
@@ -184,7 +184,7 @@ export default function HipertonusasPage() {
       ctaRegister: 'Registruotis vizitui',
       ctaPhone: '+370 666 99676',
       ctaAddress: 'Aludarių g. 7-43, Vilnius',
-      medNote: 'Ši informacija yra edukacinė ir nepakeičia gydytojo konsultacijos. Jei simptomai progresuoja ar atsiranda skubūs požymiai, kreipkitės į gydytoją nedelsiant.',
+      medNote: 'Ši informacija yra informacinio pobūdžio ir nepakeičia individualios gydytojo konsultacijos. Jei būklė blogėja arba atsiranda pavojaus požymių, nedelsdami kreipkitės į gydytoją.',
       lastUpdated: '2026-02-22',
       reviewer: 'Agnė Juodytė, vaikų kineziterapeutė',
     },
@@ -333,7 +333,7 @@ export default function HipertonusasPage() {
 
       relatedTitle: 'Related conditions',
       related: [
-        { href: '/kudikiu-hipotonusas', label: 'Hypotonia' },
+        { href: '/ka-gydome/kudikiu-hipotonusas', label: 'Hypotonia' },
         { href: '/kudikio-kreivakakliste', label: 'Torticollis' },
         { href: '/plagiocefalija', label: 'Plagiocephaly' },
         { href: '/motorines-raidos-velavimas', label: 'Motor Development Delays' },
@@ -344,7 +344,7 @@ export default function HipertonusasPage() {
       ctaRegister: 'Register for Visit',
       ctaPhone: '+370 666 99676',
       ctaAddress: 'Aludarių g. 7-43, Vilnius',
-      medNote: 'This information is educational and does not replace medical consultation. If symptoms progress or urgent signs appear, contact a doctor immediately.',
+      medNote: 'This information is for informational purposes and does not replace individual medical consultation. If the condition worsens or danger signs appear, contact a doctor without delay.',
       lastUpdated: '2026-02-22',
       reviewer: 'Agnė Juodytė, paediatric physiotherapist',
     },
@@ -643,13 +643,10 @@ export default function HipertonusasPage() {
           </div>
         </section>
 
-        {/* Medical note + reviewer */}
+        {/* Medical note */}
         <section className="py-8 bg-gray-50 border-t border-gray-200">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-sm text-gray-500 mb-2">{txt.medNote}</p>
-            <p className="text-xs text-gray-400">
-              {currentLang === 'lt' ? 'Peržiūrėjo' : 'Reviewed by'}: {txt.reviewer} · {currentLang === 'lt' ? 'Atnaujinta' : 'Updated'}: {txt.lastUpdated}
-            </p>
+            <p className="text-sm text-gray-500">{txt.medNote}</p>
           </div>
         </section>
 

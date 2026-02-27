@@ -252,7 +252,7 @@ export default function KudikioKreivakaklyste() {
       relatedTitle: 'Susijusios būklės',
       relatedLinks: [
         { title: 'Hipertonusas', desc: 'Per didelis raumenų tonusas kūdikiams', href: '/hipertonusas' },
-        { title: 'Hipotonusas', desc: 'Per mažas raumenų tonusas kūdikiams', href: '/hipotonusas' },
+        { title: 'Hipotonusas', desc: 'Per mažas raumenų tonusas kūdikiams', href: '/ka-gydome/kudikiu-hipotonusas' },
         { title: 'Kūno asimetrija', desc: 'Vienašališki judesiai ir laikysena', href: '/kunas-asimetrija' },
         { title: 'Motorinės raidos vėlavimas', desc: 'Vėluojantys judėjimo etapai', href: '/motorines-raidos-velavimas' },
       ],
@@ -260,6 +260,7 @@ export default function KudikioKreivakaklyste() {
       finalDesc: 'Pastebėjote kreivakaklystės požymių? Kuo anksčiau kreipsitės, tuo trumpesnis ir efektyvesnis bus gydymas. Pirmame vizite atliekame išsamų įvertinimą ir sudarome planą.',
       ctaRegister: 'Registruotis vizitui',
       ctaCall: '+370 666 99676',
+      medNote: 'Ši informacija yra informacinio pobūdžio ir nepakeičia individualios gydytojo konsultacijos. Jei būklė blogėja arba atsiranda pavojaus požymių, nedelsdami kreipkitės į gydytoją.',
     },
     en: {
       heroTitle: 'Infant Torticollis (Wryneck)',
@@ -483,7 +484,7 @@ export default function KudikioKreivakaklyste() {
       relatedTitle: 'Related Conditions',
       relatedLinks: [
         { title: 'Hypertonus', desc: 'Elevated muscle tone in infants', href: '/hipertonusas' },
-        { title: 'Hypotonus', desc: 'Low muscle tone in infants', href: '/hipotonusas' },
+        { title: 'Hypotonus', desc: 'Low muscle tone in infants', href: '/ka-gydome/kudikiu-hipotonusas' },
         { title: 'Body Asymmetry', desc: 'One-sided movement and posture', href: '/kunas-asimetrija' },
         { title: 'Motor Development Delay', desc: 'Delayed movement milestones', href: '/motorines-raidos-velavimas' },
       ],
@@ -491,6 +492,7 @@ export default function KudikioKreivakaklyste() {
       finalDesc: 'Noticed signs of torticollis? The sooner you seek help, the shorter and more effective the treatment. The first visit includes a comprehensive assessment and plan.',
       ctaRegister: 'Register for Visit',
       ctaCall: '+370 666 99676',
+      medNote: 'This information is for informational purposes and does not replace individual medical consultation. If the condition worsens or danger signs appear, contact a doctor without delay.',
     },
   };
 
@@ -903,6 +905,13 @@ export default function KudikioKreivakaklyste() {
                 <span>{txt.ctaCall}</span>
               </a>
             </div>
+          </div>
+        </section>
+
+        {/* Medical note */}
+        <section className="py-8 bg-gray-50 border-t border-gray-200">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-sm text-gray-500">{txt.medNote}</p>
           </div>
         </section>
 
