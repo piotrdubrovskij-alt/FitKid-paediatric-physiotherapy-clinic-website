@@ -144,6 +144,78 @@ export const pageMetadata: Record<string, Record<Language, { title: string; desc
       description: 'Infant torticollis signs, types and physiotherapy treatment. Individual assessment at FitKid clinic in Vilnius. ☎ +370 666 99676',
     },
   },
+  '/ka-gydome/kreivos-kojos-vaikams': {
+    lt: {
+      title: 'Kreivos kojos (X ar O) vaikams | Požymiai ir pagalba | FitKid Vilnius',
+      description:
+        'X ir O kojų deformacijos vaikams: kas normalu pagal amžių, raudoni signalai, kaip FitKid vertina ir kaip kineziterapija padeda Vilniuje.',
+    },
+    en: {
+      title: 'Bow Legs and Knock Knees (X/O) in Children | Signs and Help | FitKid Vilnius',
+      description:
+        'X and O leg deformities in children: what is normal by age, red flags, how FitKid assesses and how physiotherapy helps in Vilnius.',
+    },
+  },
+  '/ka-gydome/ploksciapedyste-eisenos-sutrikimai-vaikams': {
+    lt: {
+      title: 'Plokščiapėdystė, pronacija ir eisenos sutrikimai vaikams | FitKid Vilnius',
+      description:
+        'Plokščiapėdystė, pėdų pronacija ir eisenos sutrikimai vaikams: kas normalu, kada koreguoti, kaip FitKid padeda per kineziterapiją Vilniuje.',
+    },
+    en: {
+      title: 'Flat Feet, Pronation and Gait Disorders in Children | FitKid Vilnius',
+      description:
+        'Flat feet, foot pronation and gait disorders in children: what is normal, when to correct, how FitKid helps through physiotherapy in Vilnius.',
+    },
+  },
+  '/ka-gydome/reabilitacija-po-traumu-vaikams': {
+    lt: {
+      title: 'Reabilitacija po traumų ar imobilizacijos vaikams | FitKid Vilnius',
+      description:
+        'Reabilitacija po lūžio, gipso, įtvaro ar operacijos vaikams. Kaip FitKid vertina funkciją ir kaip kineziterapija bei masažas padeda atkurti judesį ir jėgą.',
+    },
+    en: {
+      title: 'Rehabilitation After Trauma or Immobilisation in Children | FitKid Vilnius',
+      description:
+        'Rehabilitation after fracture, cast, brace or surgery in children. How FitKid assesses function and how physiotherapy and massage help restore movement and strength.',
+    },
+  },
+  '/ka-gydome/nugaros-kaklo-peciu-skausmai-vaikams': {
+    lt: {
+      title: 'Nugaros, kaklo ir pečių skausmai vaikams | Požymiai ir pagalba | FitKid',
+      description:
+        'Vaikų ir paauglių nugaros, kaklo, pečių skausmų požymiai pagal amžių, raudoni signalai, kaip FitKid vertina ir kaip kineziterapija bei masažas padeda Vilniuje.',
+    },
+    en: {
+      title: 'Back, Neck and Shoulder Pain in Children | Signs and Help | FitKid',
+      description:
+        'Signs of back, neck and shoulder pain in children by age, red flags, how FitKid assesses and how physiotherapy and massage help in Vilnius.',
+    },
+  },
+  '/ka-gydome/skolioze-vaikams': {
+    lt: {
+      title: 'Skoliozė ir kiti stuburo iškrypimai vaikams | Požymiai ir pagalba | FitKid',
+      description:
+        'Skoliozės ir kitų stuburo iškrypimų požymiai pagal amžių, kada kreiptis, kaip FitKid vertina ir kaip kineziterapija bei masažas padeda vaikams Vilniuje.',
+    },
+    en: {
+      title: 'Scoliosis and Other Spinal Deformities in Children | Signs and Help | FitKid',
+      description:
+        'Signs of scoliosis and other spinal deformities by age, when to seek help, how FitKid assesses and how physiotherapy and massage help children in Vilnius.',
+    },
+  },
+  '/ka-gydome/netaisyklinga-laikysena-vaikams': {
+    lt: {
+      title: 'Netaisyklinga laikysena vaikams ir paaugliams | Požymiai ir pagalba | FitKid',
+      description:
+        'Netaisyklingos laikysenos požymiai pagal amžių, kada kreiptis, kaip FitKid vertina laikyseną ir judesį. Kineziterapija ir masažas vaikams Vilniuje.',
+    },
+    en: {
+      title: 'Poor Posture in Children and Adolescents | Signs and Help | FitKid',
+      description:
+        'Signs of poor posture by age, when to seek help, how FitKid assesses posture and movement. Physiotherapy and massage for children in Vilnius.',
+    },
+  },
   '/ka-gydome': {
     lt: {
       title: 'Ką gydome | Būklės ir situacijos | FitKid klinika',

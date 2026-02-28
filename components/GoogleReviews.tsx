@@ -27,12 +27,16 @@ export default function GoogleReviews() {
     async function fetchReviews() {
       try {
         const response = await fetch('/api/reviews');
-        if (!response.ok) throw new Error('Failed to fetch reviews');
+        if (!response.ok) {
+          const data = await response.json().catch(() => ({}));
+          setError(data?.error || 'Nepavyko gauti atsiliepimų');
+          setLoading(false);
+          return;
+        }
         const data = await response.json();
         setReviewsData(data);
       } catch (err) {
-        console.error('Error loading reviews:', err);
-        setError('Не удалось загрузить отзывы');
+        setError('Nepavyko gauti atsiliepimų');
       } finally {
         setLoading(false);
       }
@@ -47,7 +51,7 @@ export default function GoogleReviews() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#54B6FC] border-r-transparent"></div>
-            <p className="mt-4 text-gray-600">Загружаем отзывы...</p>
+            <p className="mt-4 text-gray-600">Krauname atsiliepimus...</p>
           </div>
         </div>
       </section>
@@ -55,10 +59,6 @@ export default function GoogleReviews() {
   }
 
   if (error || !reviewsData) {
-    // Показываем информацию об ошибке в консоли
-    console.error('GoogleReviews error:', error);
-    console.log('ReviewsData:', reviewsData);
-    
     return (
       <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,7 +67,7 @@ export default function GoogleReviews() {
               Mūsų klientų atsiliepimai
             </h2>
             <p className="text-gray-600 mb-4">
-              Отзывы временно недоступны
+              Atsiliepimai laikinai neprieinami
             </p>
             <a
               href="https://www.google.com/maps/search/fitkid+klinika+vilnius"
@@ -79,7 +79,7 @@ export default function GoogleReviews() {
               <ExternalLink className="w-4 h-4" />
             </a>
             <p className="text-sm text-gray-500 mt-8">
-              Ошибка: {error || 'Нет данных'} - Откройте консоль браузера (F12) для деталей
+              {error || 'Nėra duomenų'}
             </p>
           </div>
         </div>

@@ -289,15 +289,20 @@ export default function VaikuKineziterapijaPage() {
             </p>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {situations.map((situation, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:border-[#54B6FC] hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                >
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{situation.title}</h3>
-                  <p className="text-sm text-gray-700 leading-relaxed">{situation.desc}</p>
-                </div>
-              ))}
+              {situations.map((situation, index) => {
+                const ids = ['skolioze', 'kreivos-kojos', 'ploksciapedyste', '', '', 'reabilitacija', '', '', '', '', 'nugaros-skausmai'];
+                const id = ids[index] || undefined;
+                return (
+                  <div
+                    key={index}
+                    id={id}
+                    className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:border-[#54B6FC] hover:shadow-xl transition-all duration-300 hover:-translate-y-1 scroll-mt-24"
+                  >
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">{situation.title}</h3>
+                    <p className="text-sm text-gray-700 leading-relaxed">{situation.desc}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

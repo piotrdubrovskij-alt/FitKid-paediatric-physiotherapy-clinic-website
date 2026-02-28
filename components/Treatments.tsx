@@ -22,7 +22,25 @@ export default function Treatments({ translations }: TreatmentsProps) {
     const isHypertonia = item.name === "Padidėjęs raumenų tonusas (hipertonusas)" || item.name === "Increased Muscle Tone (Hypertonia)";
     const isDDH = item.name === "Klubo sąnario displazija" || item.name === "Hip Dysplasia";
     const isHypotonia = item.name === "Sumažėjęs raumenų tonusas (hipotonusas)" || item.name === "Decreased Muscle Tone (Hypotonia)";
-    const href = isTorticollis
+    const isPosture = item.name === "Netaisyklinga laikysena" || item.name === "Incorrect Posture";
+    const isScoliosis = item.name === "Skoliozė ir kiti stuburo iškrypimai" || item.name === "Scoliosis and Spinal Deformities";
+    const isBackPain = item.name === "Nugaros, kaklo ir pečių skausmai" || item.name === "Back, Neck and Shoulder Pain";
+    const isRehab = item.name === "Reabilitacija po traumų ar imobilizacijos" || item.name === "Rehabilitation After Trauma or Immobilization";
+    const isKreivosKojos = item.name === "Kreivos kojos (X ar O kojų deformacija)" || item.name === "Crooked Legs (X or O Leg Deformity)";
+    const isPloksciapedyste = item.name === "Plokščiapėdystė, pėdų pronacija, eisenos sutrikimai" || item.name === "Flat Feet, Foot Pronation, Gait Disorders";
+    const href = isPloksciapedyste
+      ? "/ka-gydome/ploksciapedyste-eisenos-sutrikimai-vaikams"
+      : isKreivosKojos
+      ? "/ka-gydome/kreivos-kojos-vaikams"
+      : isRehab
+      ? "/ka-gydome/reabilitacija-po-traumu-vaikams"
+      : isBackPain
+      ? "/ka-gydome/nugaros-kaklo-peciu-skausmai-vaikams"
+      : isScoliosis
+      ? "/ka-gydome/skolioze-vaikams"
+      : isPosture
+      ? "/ka-gydome/netaisyklinga-laikysena-vaikams"
+      : isTorticollis
       ? "/kudikio-kreivakakliste"
       : isMotorDelay
       ? "/motorines-raidos-velavimas"
