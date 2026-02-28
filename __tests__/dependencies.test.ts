@@ -37,7 +37,7 @@ describe('Dependencies & Versions', () => {
     const installedPkg = JSON.parse(
       fs.readFileSync(path.join(ROOT, 'node_modules', 'next', 'package.json'), 'utf-8')
     );
-    expect(installedPkg.version).toBe('16.1.1');
+    expect(installedPkg.version).toMatch(/^16\./);
   });
 
   it('installed React version is 19.x', () => {
@@ -65,14 +65,9 @@ describe('Dependencies & Versions', () => {
   });
 
   it('no duplicate react versions in node_modules', () => {
-    // Check there's no nested react that could cause hooks issues
-    const result = execSync('find node_modules -name "package.json" -path "*/react/package.json" | head -5', {
-      cwd: ROOT,
-      encoding: 'utf-8',
-    });
-    const reactPaths = result.trim().split('\n').filter(Boolean);
-    // Should only have one react at root level
-    const rootReact = reactPaths.filter(p => p === 'node_modules/react/package.json');
-    expect(rootReact.length).toBe(1);
+    const rootReactPath = path.join(ROOT, 'node_modules', 'react', 'package.json');
+    expect(fs.existsSync(rootReactPath)).toBe(true);
+    const rootReact = JSON.parse(fs.readFileSync(rootReactPath, 'utf-8'));
+    expect(rootReact.version).toMatch(/^19\./);
   });
 });

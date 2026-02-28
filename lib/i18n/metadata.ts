@@ -76,16 +76,6 @@ export const pageMetadata: Record<string, Record<Language, { title: string; desc
       description: 'Vojta method for infants with motor development prevention and treatment. Certified specialists at FitKid clinic.',
     },
   },
-  '/kudikiu-hipertonusas': {
-    lt: {
-      title: 'Kūdikių hipertonusas: padidėjęs raumenų tonusas | Požymiai ir pagalba | FitKid',
-      description: 'Kūdikių hipertonuso požymiai pagal amžių, priežastys ir kineziterapinė pagalba. Kada kreiptis skubiai. Individualus įvertinimas FitKid klinikoje Vilniuje.',
-    },
-    en: {
-      title: 'Infant Hypertonia: Increased Muscle Tone | Signs and Help | FitKid',
-      description: 'Infant hypertonia signs by age, causes and physiotherapy help. When to seek urgent help. Individual assessment at FitKid clinic Vilnius.',
-    },
-  },
   '/motorines-raidos-velavimas': {
     lt: {
       title: 'Motorinės raidos vėlavimas kūdikiams | Požymiai ir pagalba | FitKid',

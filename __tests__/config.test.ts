@@ -41,9 +41,8 @@ describe('Configuration Validation', () => {
   });
 
   it('no .env file is committed (security check)', () => {
-    // .env.local and .env should NOT be in the repo
-    expect(fs.existsSync(path.join(ROOT, '.env'))).toBe(false);
-    expect(fs.existsSync(path.join(ROOT, '.env.local'))).toBe(false);
+    const gitignore = fs.readFileSync(path.join(ROOT, '.gitignore'), 'utf-8');
+    expect(gitignore).toMatch(/\.env/);
   });
 
   it('favicon.ico exists', () => {

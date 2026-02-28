@@ -25,7 +25,6 @@ export default function KontaktaiPage() {
       setCurrentLang(urlLang);
       setStoredLanguage(urlLang);
     } else {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentLang(getStoredLanguage());
     }
   }, []);
