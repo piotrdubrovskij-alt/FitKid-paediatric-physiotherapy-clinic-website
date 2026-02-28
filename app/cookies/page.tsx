@@ -14,6 +14,7 @@ export default function CookiesPage() {
     const params = new URLSearchParams(window.location.search);
     const lang = params.get('lang') as Language;
     if (lang && (lang === 'lt' || lang === 'en')) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentLang(lang);
     }
   }, []);
@@ -72,7 +73,7 @@ export default function CookiesPage() {
                 <section className="mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">1. KAS YRA SLAPUKAI?</h2>
                   <p className="text-gray-700 mb-4">
-                    Slapukai (angl. <em>cookies</em>) – tai nedideli tekstiniai failai, kuriuos interneto svetainė įrašo į jūsų įrenginį (kompiuterį, telefoną, planšetę), kai ją aplankote. Jie padeda svetainei „prisiminti" jūsų veiksmus ir nuostatas (pvz., kalbą, prisijungimo duomenis), todėl jums nereikia jų įvesti iš naujo kiekvieną kartą.
+                    Slapukai (angl. <em>cookies</em>) – tai nedideli tekstiniai failai, kuriuos interneto svetainė įrašo į jūsų įrenginį (kompiuterį, telefoną, planšetę), kai ją aplankote. Jie padeda svetainei {'\u201E'}prisiminti{'\u201C'} jūsų veiksmus ir nuostatas (pvz., kalbą, prisijungimo duomenis), todėl jums nereikia jų įvesti iš naujo kiekvieną kartą.
                   </p>
                 </section>
 
@@ -151,7 +152,7 @@ export default function CookiesPage() {
                       <li><strong>Atmesti nebūtinus</strong> – leidžiate tik būtinus slapukus.</li>
                     </ul>
                     <p className="text-gray-700 mt-4">
-                      Savo pasirinkimą galite bet kada pakeisti paspaudę mygtuką „Slapukų nustatymai" svetainės apačioje arba ištrinti slapukus per savo naršyklės nustatymus.
+                      Savo pasirinkimą galite bet kada pakeisti paspaudę mygtuką {'\u201E'}Slapukų nustatymai{'\u201C'} svetainės apačioje arba ištrinti slapukus per savo naršyklės nustatymus.
                     </p>
                   </div>
 
@@ -230,7 +231,7 @@ export default function CookiesPage() {
                 <section className="mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">1. WHAT ARE COOKIES?</h2>
                   <p className="text-gray-700">
-                    Cookies are small text files that a website stores on your device (computer, phone, tablet) when you visit it. They help the website "remember" your actions and preferences (e.g., language, login details), so you don't have to enter them again each time.
+                    Cookies are small text files that a website stores on your device (computer, phone, tablet) when you visit it. They help the website {'\u201C'}remember{'\u201D'} your actions and preferences (e.g., language, login details), so you don{'\u2019'}t have to enter them again each time.
                   </p>
                 </section>
 
@@ -253,7 +254,7 @@ export default function CookiesPage() {
                   <div className="mb-6">
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">B. Functional Cookies</h3>
                     <p className="text-gray-700 mb-2">
-                      <strong>Purpose:</strong> remember your choices and preferences (e.g., language, regions you've already seen).
+                      <strong>Purpose:</strong> remember your choices and preferences (e.g., language, regions you{'\u2019'}ve already seen).
                     </p>
                     <p className="text-gray-700 mb-2">
                       <strong>Legal basis:</strong> consent (via cookie banner).
@@ -275,7 +276,7 @@ export default function CookiesPage() {
                       <strong>Examples:</strong> Google Analytics or similar services.
                     </p>
                     <p className="text-gray-700">
-                      <strong>Note:</strong> data is processed anonymously or pseudonymously – we don't see your personal identity.
+                      <strong>Note:</strong> data is processed anonymously or pseudonymously – we don{'\u2019'}t see your personal identity.
                     </p>
                   </div>
 
@@ -307,7 +308,7 @@ export default function CookiesPage() {
                       <li><strong>Reject non-essential</strong> – allows only essential cookies.</li>
                     </ul>
                     <p className="text-gray-700 mt-4">
-                      You can change your choice anytime by clicking the "Cookie Settings" button at the bottom of the website or by deleting cookies through your browser settings.
+                      You can change your choice anytime by clicking the {'\u201C'}Cookie Settings{'\u201D'} button at the bottom of the website or by deleting cookies through your browser settings.
                     </p>
                   </div>
 

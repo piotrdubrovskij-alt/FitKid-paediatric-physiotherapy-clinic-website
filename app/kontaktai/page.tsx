@@ -21,9 +21,11 @@ export default function KontaktaiPage() {
     const params = new URLSearchParams(window.location.search);
     const urlLang = params.get('lang') as Language;
     if (urlLang && (urlLang === 'lt' || urlLang === 'en')) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentLang(urlLang);
       setStoredLanguage(urlLang);
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentLang(getStoredLanguage());
     }
   }, []);

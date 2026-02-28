@@ -17,6 +17,7 @@ export default function KreivosKojosVaikamsPage() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const lang = params.get('lang') as Language;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (lang === 'en' || lang === 'lt') setCurrentLang(lang);
   }, []);
 

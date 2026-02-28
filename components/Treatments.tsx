@@ -15,7 +15,7 @@ export default function Treatments({ translations }: TreatmentsProps) {
     (item) => item.ageGroup === 'child'
   );
 
-  const renderCard = (item: any) => {
+  const renderCard = (item: { name: string; hint: string; ageGroup: string }) => {
     const isTorticollis = item.name === "Kreivakaklystė (tortikolis)" || item.name === "Torticollis";
     const isMotorDelay = item.name === "Motorinės raidos vėlavimas" || item.name === "Motor Development Delays";
     const isPlagiocephaly = item.name === "Plagiocefalija" || item.name === "Plagiocephaly";

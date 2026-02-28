@@ -14,6 +14,7 @@ export default function PrivacyPage() {
     const params = new URLSearchParams(window.location.search);
     const lang = params.get('lang') as Language;
     if (lang && (lang === 'lt' || lang === 'en')) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentLang(lang);
     }
   }, []);
@@ -75,7 +76,7 @@ export default function PrivacyPage() {
                     Šią Privatumo politiką taiko ir už Jūsų asmens duomenų tvarkymą atsako:
                   </p>
                   <p className="text-gray-700 mb-2">
-                    Juridinio asmens pavadinimas: MB Kineziterapija, veikianti pavadinimu „FitKid"
+                    Juridinio asmens pavadinimas: MB Kineziterapija, veikianti pavadinimu {'\u201E'}FitKid{'\u201C'}
                   </p>
                   <p className="text-gray-700 mb-2">
                     Įmonės kodas: 305136936
@@ -95,7 +96,7 @@ export default function PrivacyPage() {
                 <section className="mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">2. BENDROJI INFORMACIJA</h2>
                   <p className="text-gray-700 mb-4">
-                    „FitKid" teikia sveikatos priežiūros paslaugas ir tvarko asmens duomenis, įskaitant sveikatos duomenis, kurie laikomi ypatingai jautriais. Skiriame maksimalų dėmesį jų saugumui ir tvarkome duomenis tik tiek, kiek būtina paslaugoms suteikti, administruoti ir įstatymams vykdyti.
+                    {'\u201E'}FitKid{'\u201C'} teikia sveikatos priežiūros paslaugas ir tvarko asmens duomenis, įskaitant sveikatos duomenis, kurie laikomi ypatingai jautriais. Skiriame maksimalų dėmesį jų saugumui ir tvarkome duomenis tik tiek, kiek būtina paslaugoms suteikti, administruoti ir įstatymams vykdyti.
                   </p>
                   <p className="text-gray-700">
                     Svarbu tėvams / globėjams: mūsų pacientai dažniausiai yra vaikai, todėl praktikoje informaciją ir sutikimus (kai jų reikia) paprastai pateikia vaiko tėvai (įtėviai) ar globėjai. Kai kuriais atvejais, atsižvelgiant į vaiko amžių ir taikomus teisės aktus, vaikas taip pat gali būti įtraukiamas į sprendimų priėmimą.
@@ -320,7 +321,7 @@ export default function PrivacyPage() {
                   <p className="text-gray-700 mb-4">
                     This Privacy Policy is applied and responsible for your personal data processing:
                   </p>
-                  <p className="text-gray-700 mb-2">Legal name: MB Kineziterapija, operating as "FitKid"</p>
+                  <p className="text-gray-700 mb-2">Legal name: MB Kineziterapija, operating as {'\u201C'}FitKid{'\u201D'}</p>
                   <p className="text-gray-700 mb-2">Company code: 305136936</p>
                   <p className="text-gray-700 mb-2">Registered address: Ukmergės 224-4, Vilnius</p>
                   <p className="text-gray-700 mb-2">Email for data protection matters: info@fitkid.lt</p>
@@ -330,10 +331,10 @@ export default function PrivacyPage() {
                 <section className="mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">2. GENERAL INFORMATION</h2>
                   <p className="text-gray-700 mb-4">
-                    "FitKid" provides healthcare services and processes personal data, including health data, which is considered particularly sensitive. We pay maximum attention to their security and process data only to the extent necessary for service provision, administration, and legal compliance.
+                    {'\u201C'}FitKid{'\u201D'} provides healthcare services and processes personal data, including health data, which is considered particularly sensitive. We pay maximum attention to their security and process data only to the extent necessary for service provision, administration, and legal compliance.
                   </p>
                   <p className="text-gray-700">
-                    Important for parents/guardians: our patients are usually children, so in practice, information and consents (when required) are typically provided by the child's parents or guardians. In some cases, depending on the child's age and applicable law, the child may also be involved in decision-making.
+                    Important for parents/guardians: our patients are usually children, so in practice, information and consents (when required) are typically provided by the child{'\u2019'}s parents or guardians. In some cases, depending on the child{'\u2019'}s age and applicable law, the child may also be involved in decision-making.
                   </p>
                 </section>
 
@@ -341,7 +342,7 @@ export default function PrivacyPage() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">3. WHAT DATA WE PROCESS AND WHY</h2>
                   <p className="text-gray-700 mb-4">
                     <strong>A. Healthcare Service Provision</strong><br />
-                    Data processed: child's and/or representatives' name, surname, date of birth and/or personal code, contacts; health data (complaints, medical history, assessments, diagnoses, examinations, service progress, conclusions, recommendations), referrals (if applicable).<br />
+                    Data processed: child{'\u2019'}s and/or representatives{'\u2019'} name, surname, date of birth and/or personal code, contacts; health data (complaints, medical history, assessments, diagnoses, examinations, service progress, conclusions, recommendations), referrals (if applicable).<br />
                     Legal basis: contract performance, legal obligation, processing necessary for healthcare purposes.
                   </p>
                   <p className="text-gray-700 mb-4">
@@ -366,15 +367,15 @@ export default function PrivacyPage() {
                   </p>
                   <p className="text-gray-700">
                     <strong>F. Photos/Videos for Social Media</strong><br />
-                    Data processed: your or child's image, event/activity context.<br />
+                    Data processed: your or child{'\u2019'}s image, event/activity context.<br />
                     Legal basis: explicit consent. We do not publish photos/videos without consent.
                   </p>
                 </section>
 
                 <section className="mb-8">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">4. PROCESSING CHILDREN'S PERSONAL DATA</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">4. PROCESSING CHILDREN{'\u2019'}S PERSONAL DATA</h2>
                   <p className="text-gray-700">
-                    We process children's personal data to the extent necessary for service provision, contractual obligations, and legal compliance. When consent is required, it is usually provided by parents/guardians, especially for younger children.
+                    We process children{'\u2019'}s personal data to the extent necessary for service provision, contractual obligations, and legal compliance. When consent is required, it is usually provided by parents/guardians, especially for younger children.
                   </p>
                 </section>
 
@@ -441,7 +442,7 @@ export default function PrivacyPage() {
                 <section className="mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">13. POLICY CHANGES</h2>
                   <p className="text-gray-700">
-                    This policy may be updated. The latest version is published on the Company's website.
+                    This policy may be updated. The latest version is published on the Company{'\u2019'}s website.
                   </p>
                 </section>
               </>

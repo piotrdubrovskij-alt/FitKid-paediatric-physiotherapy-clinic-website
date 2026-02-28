@@ -18,6 +18,7 @@ export default function KudikioKreivakaklyste() {
     const params = new URLSearchParams(window.location.search);
     const lang = params.get('lang') as Language;
     if (lang === 'en' || lang === 'lt') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentLang(lang);
     }
   }, []);

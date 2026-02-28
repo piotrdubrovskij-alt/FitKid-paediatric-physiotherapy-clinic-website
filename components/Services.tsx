@@ -28,6 +28,7 @@ export default function Services({ translations, currentLang }: ServicesProps) {
     (item) => item.ageGroup === 'child'
   );
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const renderServiceCard = (service: any, colorScheme: 'blue' | 'orange') => {
     const imageName = serviceImages[service.slug as keyof typeof serviceImages];
     

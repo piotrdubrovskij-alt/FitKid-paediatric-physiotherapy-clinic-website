@@ -24,6 +24,7 @@ export default function RegistracijaPage() {
     const params = new URLSearchParams(window.location.search);
     const lang = params.get('lang') as Language;
     if (lang && (lang === 'lt' || lang === 'en')) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentLang(lang);
     }
     const spec = params.get('specialist');

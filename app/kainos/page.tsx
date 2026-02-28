@@ -18,6 +18,7 @@ export default function KainosPage() {
     const params = new URLSearchParams(window.location.search);
     const lang = params.get('lang') as Language;
     if (lang && (lang === 'lt' || lang === 'en')) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentLang(lang);
     }
   }, []);
@@ -92,6 +93,7 @@ export default function KainosPage() {
     },
   ];
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const renderServiceCard = (item: any, colorScheme: 'blue' | 'orange') => (
     <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:border-[#fb7825] hover:shadow-xl transition-all duration-300">
       <div className="mb-4">
