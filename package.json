@@ -9,7 +9,7 @@
     "dev:3004": "rm -rf .next && next dev -p 3004 --hostname 0.0.0.0",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "npx eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
