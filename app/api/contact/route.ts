@@ -1,11 +1,19 @@
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+});
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { name, email, phone, message } = body;
 
-    // Validate required fields
     if (!name || !email || !phone || !message) {
       return NextResponse.json(
         { error: 'All fields are required' },
@@ -13,17 +21,22 @@ export async function POST(request: Request) {
       );
     }
 
-    // Here you would typically send an email or save to database
-    // For now, we'll just log it and return success
-    console.log('Contact form submission:', { name, email, phone, message });
-
-    // TODO: Integrate with email service (SendGrid, etc.)
-    // Example:
-    // await sendEmail({
-    //   to: 'info@fitkid.lt',
-    //   subject: `New contact form submission from ${name}`,
-    //   text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`
-    // });
+    await transporter.sendMail({
+      from: `"FitKid svetainė" <${process.env.GMAIL_USER}>`,
+      to: 'fitkidvilnius@gmail.com',
+      replyTo: email,
+      subject: `Nauja užklausa iš ${name}`,
+      html: `
+        <h2>Nauja užklausa iš fitkid.lt</h2>
+        <table style="border-collapse:collapse;font-family:sans-serif">
+          <tr><td style="padding:8px;font-weight:bold">Vardas:</td><td style="padding:8px">${name}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold">El. paštas:</td><td style="padding:8px">${email}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold">Telefonas:</td><td style="padding:8px">${phone}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold">Žinutė:</td><td style="padding:8px">${message}</td></tr>
+        </table>
+      `,
+      text: `Vardas: ${name}\nEl. paštas: ${email}\nTelefonas: ${phone}\nŽinutė: ${message}`,
+    });
 
     return NextResponse.json(
       { message: 'Message sent successfully' },
