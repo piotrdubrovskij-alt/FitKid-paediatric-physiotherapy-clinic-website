@@ -1,14 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
-});
-
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -21,8 +13,27 @@ export async function POST(request: Request) {
       );
     }
 
+    const gmailUser = process.env.GMAIL_USER;
+    const gmailPass = process.env.GMAIL_APP_PASSWORD;
+
+    if (!gmailUser || !gmailPass) {
+      console.error('Missing GMAIL_USER or GMAIL_APP_PASSWORD env vars');
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
+      );
+    }
+
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: gmailUser,
+        pass: gmailPass,
+      },
+    });
+
     await transporter.sendMail({
-      from: `"FitKid svetainė" <${process.env.GMAIL_USER}>`,
+      from: `"FitKid svetainė" <${gmailUser}>`,
       to: 'fitkidvilnius@gmail.com',
       replyTo: email,
       subject: `Nauja užklausa iš ${name}`,
