@@ -9,6 +9,7 @@ import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
 import { getStoredLanguage, setStoredLanguage } from '@/lib/languageStorage';
 import { MapPin, Phone, Mail, Clock, Navigation, MessageCircle } from 'lucide-react';
+import { trackFormSubmit } from '@/lib/gtag';
 
 export default function KontaktaiPage() {
   const [currentLang, setCurrentLang] = useState<Language>('lt');
@@ -62,6 +63,7 @@ export default function KontaktaiPage() {
       });
 
       if (response.ok) {
+        trackFormSubmit('contact', window.location.pathname);
         setFormStatus('success');
         (e.target as HTMLFormElement).reset();
         setTimeout(() => setFormStatus('idle'), 5000);

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter, Poppins } from "next/font/google";
 import StructuredData from "./schema";
+import AnalyticsEvents from "@/components/AnalyticsEvents";
 import "./globals.css";
 
 const inter = Inter({
@@ -86,6 +87,7 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
+        <AnalyticsEvents />
         {children}
         <Script
           src="https://www.manodaktaras.lt/widget/js/mydocwidget.js"
