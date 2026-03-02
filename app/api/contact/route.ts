@@ -33,20 +33,21 @@ export async function POST(request: Request) {
     });
 
     await transporter.sendMail({
-      from: `"FitKid svetainė" <${gmailUser}>`,
+      from: `"${name} per fitkid.lt" <${gmailUser}>`,
       to: 'info@fitkid.lt',
-      replyTo: email,
-      subject: `Nauja užklausa iš ${name}`,
+      replyTo: `"${name}" <${email}>`,
+      subject: `Užklausa iš ${name} (${email})`,
       html: `
         <h2>Nauja užklausa iš fitkid.lt</h2>
+        <p style="font-size:16px;font-family:sans-serif"><strong>Norėdami atsakyti, tiesiog spauskite Reply — atsakymas bus išsiųstas adresu ${email}</strong></p>
         <table style="border-collapse:collapse;font-family:sans-serif">
           <tr><td style="padding:8px;font-weight:bold">Vardas:</td><td style="padding:8px">${name}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold">El. paštas:</td><td style="padding:8px">${email}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold">Telefonas:</td><td style="padding:8px">${phone}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold">El. paštas:</td><td style="padding:8px"><a href="mailto:${email}">${email}</a></td></tr>
+          <tr><td style="padding:8px;font-weight:bold">Telefonas:</td><td style="padding:8px"><a href="tel:${phone}">${phone}</a></td></tr>
           <tr><td style="padding:8px;font-weight:bold">Žinutė:</td><td style="padding:8px">${message}</td></tr>
         </table>
       `,
-      text: `Vardas: ${name}\nEl. paštas: ${email}\nTelefonas: ${phone}\nŽinutė: ${message}`,
+      text: `Vardas: ${name}\nEl. paštas: ${email}\nTelefonas: ${phone}\nŽinutė: ${message}\n\nNorėdami atsakyti, tiesiog spauskite Reply.`,
     });
 
     return NextResponse.json(
