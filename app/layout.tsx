@@ -75,6 +75,13 @@ export default function RootLayout({
   return (
     <html lang="lt" className="scroll-smooth">
       <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-HLJPTQ5XLD" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-HLJPTQ5XLD');
+        `}</Script>
         <link href="https://www.manodaktaras.lt/widget/css/mydocwidget.css" rel="stylesheet" />
         <StructuredData />
       </head>
