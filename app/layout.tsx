@@ -75,6 +75,10 @@ export default function RootLayout({
   return (
     <html lang="lt" className="scroll-smooth">
       <head>
+        <link href="https://www.manodaktaras.lt/widget/css/mydocwidget.css" rel="stylesheet" />
+        <StructuredData />
+      </head>
+      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-HLJPTQ5XLD" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
@@ -82,10 +86,6 @@ export default function RootLayout({
           gtag('js', new Date());
           gtag('config', 'G-HLJPTQ5XLD');
         `}</Script>
-        <link href="https://www.manodaktaras.lt/widget/css/mydocwidget.css" rel="stylesheet" />
-        <StructuredData />
-      </head>
-      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
         {children}
         <Script
           src="https://www.manodaktaras.lt/widget/js/mydocwidget.js"
