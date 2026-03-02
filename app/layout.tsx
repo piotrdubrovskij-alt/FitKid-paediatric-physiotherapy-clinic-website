@@ -79,8 +79,8 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-HLJPTQ5XLD" strategy="afterInteractive" />
-        <Script id="gtag-init" strategy="afterInteractive">{`
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-HLJPTQ5XLD" strategy="beforeInteractive" />
+        <Script id="gtag-init" strategy="beforeInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
