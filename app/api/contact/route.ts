@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 
     await transporter.sendMail({
       from: `"FitKid svetainė" <${gmailUser}>`,
-      to: 'fitkidvilnius@gmail.com',
+      to: 'info@fitkid.lt',
       replyTo: email,
       subject: `Nauja užklausa iš ${name}`,
       html: `
