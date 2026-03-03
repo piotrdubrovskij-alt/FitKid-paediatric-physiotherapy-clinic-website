@@ -3,67 +3,70 @@
 import { useEffect } from 'react';
 import { trackBookingClick, trackPhoneClick, trackEmailClick } from '@/lib/gtag';
 
-function getLinkText(el: HTMLElement): string {
+function getButtonText(el: Element): string {
   const span = el.querySelector('span');
-  return (span?.textContent || el.textContent || '').trim().slice(0, 100);
+  return (span?.textContent || el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 100);
 }
 
 export default function AnalyticsEvents() {
   useEffect(() => {
     function handleClick(e: MouseEvent) {
-      const target = e.target as HTMLElement | null;
-      if (!target) return;
-
       const pagePath = window.location.pathname;
 
-      // 1. Check data-analytics attribute on target or any ancestor
-      const tracked = target.closest<HTMLElement>('[data-analytics]');
-      if (tracked) {
-        const event = tracked.getAttribute('data-analytics');
-        if (event === 'click_booking') {
-          trackBookingClick(getLinkText(tracked), pagePath);
+      // Walk up from click target — handles SVG, nested icons, any DOM structure
+      let el: Element | null = e.target as Element;
+
+      while (el && el !== document.body) {
+        // Check data-analytics on every element as we walk up
+        const dataAnalytics = (el as HTMLElement).getAttribute?.('data-analytics');
+
+        if (dataAnalytics === 'click_phone') {
+          const phone = (el as HTMLElement).getAttribute('data-phone') || '';
+          trackPhoneClick(phone, pagePath);
           return;
         }
-        if (event === 'click_phone') {
-          trackPhoneClick(tracked.getAttribute('data-phone') || '', pagePath);
+
+        if (dataAnalytics === 'click_email') {
+          const email = (el as HTMLElement).getAttribute('data-email') || 'info@fitkid.lt';
+          trackEmailClick(email, pagePath);
           return;
         }
-        if (event === 'click_email') {
-          trackEmailClick(tracked.getAttribute('data-email') || '', pagePath);
+
+        if (dataAnalytics === 'click_booking') {
+          trackBookingClick(getButtonText(el), pagePath);
           return;
         }
-      }
 
-      // 2. Auto-detect from anchor href
-      const anchor = target.closest('a');
-      if (!anchor) return;
+        // When we reach an anchor tag, check href as fallback
+        if (el.tagName === 'A') {
+          const href = (el as HTMLAnchorElement).getAttribute('href') || '';
 
-      const href = anchor.getAttribute('href') || '';
+          if (href.startsWith('tel:')) {
+            trackPhoneClick(href.replace('tel:', '').trim(), pagePath);
+            return;
+          }
 
-      if (href.includes('/registracija')) {
-        trackBookingClick(getLinkText(anchor), pagePath);
-        return;
-      }
+          if (href.startsWith('mailto:')) {
+            trackEmailClick(href.replace('mailto:', '').trim(), pagePath);
+            return;
+          }
 
-      if (href.startsWith('tel:')) {
-        trackPhoneClick(href.replace('tel:', ''), pagePath);
-        return;
-      }
+          // Cloudflare email obfuscation — anchor has data-analytics, use data-email
+          if (href.includes('/cdn-cgi/l/email-protection')) {
+            trackEmailClick('info@fitkid.lt', pagePath);
+            return;
+          }
 
-      // mailto: links — also handle Cloudflare email obfuscation
-      if (href.startsWith('mailto:')) {
-        trackEmailClick(href.replace('mailto:', ''), pagePath);
-        return;
-      }
-      if (href.includes('/cdn-cgi/l/email-protection')) {
-        const decoded = anchor.textContent?.trim() || '';
-        trackEmailClick(decoded, pagePath);
-        return;
-      }
-      if (anchor.querySelector('[data-cfemail]')) {
-        const decoded = anchor.textContent?.trim() || '';
-        trackEmailClick(decoded, pagePath);
-        return;
+          if (href.includes('/registracija')) {
+            trackBookingClick(getButtonText(el), pagePath);
+            return;
+          }
+
+          // Stop at anchor — don't track generic clicks
+          return;
+        }
+
+        el = el.parentElement;
       }
     }
 
