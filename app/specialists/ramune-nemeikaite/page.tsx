@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
 import { CheckCircle, Award, Phone, Calendar } from 'lucide-react';
+import { trackSpecialistBookingClick } from '@/lib/gtag';
 
 // Static reviews component for Ramunė
 function RamuneReviews() {
@@ -228,6 +229,7 @@ export default function RamuneNemeikaitePage() {
                   <Link
                     href={`/registracija?specialist=ramune${currentLang !== 'lt' ? `&lang=${currentLang}` : ''}`}
                     className="inline-flex items-center justify-center w-full space-x-2 bg-[#fb7825] hover:bg-[#e66f1f] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg text-lg"
+                    onClick={() => trackSpecialistBookingClick('ramune', txt.ctaBookRamune, window.location.pathname)}
                   >
                     <Calendar className="w-5 h-5" />
                     <span>{txt.ctaBookRamune}</span>
@@ -325,6 +327,7 @@ export default function RamuneNemeikaitePage() {
               <Link
                 href={`/registracija?specialist=ramune${currentLang !== 'lt' ? `&lang=${currentLang}` : ''}`}
                 className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-[#fb7825] px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
+                onClick={() => trackSpecialistBookingClick('ramune', txt.ctaBookRamune, window.location.pathname)}
               >
                 <Calendar className="w-5 h-5" />
                 <span>{txt.ctaBookRamune}</span>

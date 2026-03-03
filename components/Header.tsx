@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { Menu, X, Phone } from 'lucide-react';
 import { type Language, type Translation } from '@/lib/i18n/translations';
+import { trackLanguageSwitch } from '@/lib/gtag';
 
 interface HeaderProps {
   translations: Translation;
@@ -137,7 +138,7 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
               {languages.map((lang, index) => (
                 <button
                   key={lang}
-                  onClick={() => onLanguageChange(lang)}
+                  onClick={() => { trackLanguageSwitch(lang, window.location.pathname); onLanguageChange(lang); }}
                   className={`transition-colors ${
                     currentLang === lang
                       ? 'text-[#54B6FC] font-semibold'
@@ -191,6 +192,7 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
                 <button
                   key={lang}
                   onClick={() => {
+                    trackLanguageSwitch(lang, window.location.pathname);
                     onLanguageChange(lang);
                     setIsMenuOpen(false);
                   }}

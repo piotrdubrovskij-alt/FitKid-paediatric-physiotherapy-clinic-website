@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Star, Quote, ExternalLink } from 'lucide-react';
+import { trackMapsClick } from '@/lib/gtag';
 
 interface Review {
   author_name: string;
@@ -74,6 +75,7 @@ export default function GoogleReviews() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 text-[#54B6FC] hover:text-[#fb7825] font-semibold transition-colors"
+              onClick={() => trackMapsClick('reviews', window.location.pathname)}
             >
               <span>Žiūrėti atsiliepimus Google Maps</span>
               <ExternalLink className="w-4 h-4" />
@@ -120,6 +122,7 @@ export default function GoogleReviews() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 text-[#54B6FC] hover:text-[#fb7825] font-semibold transition-colors"
+            onClick={() => trackMapsClick('reviews', window.location.pathname)}
           >
             <span>Žiūrėti visus atsiliepimus Google Maps</span>
             <ExternalLink className="w-4 h-4" />

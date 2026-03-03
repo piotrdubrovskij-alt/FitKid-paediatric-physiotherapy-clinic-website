@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
 import { CheckCircle, Award, Heart, Phone, Calendar } from 'lucide-react';
+import { trackSpecialistBookingClick } from '@/lib/gtag';
 
 // Static reviews component for Ksenija
 function KsenijaReviews() {
@@ -228,6 +229,7 @@ export default function KsenijaPersijanovaPage() {
                   <Link
                     href={`/registracija?specialist=ksenija${currentLang !== 'lt' ? `&lang=${currentLang}` : ''}`}
                     className="inline-flex items-center justify-center w-full space-x-2 bg-[#fb7825] hover:bg-[#e66f1f] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg text-lg"
+                    onClick={() => trackSpecialistBookingClick('ksenija', txt.ctaBookKsenija, window.location.pathname)}
                   >
                     <Calendar className="w-5 h-5" />
                     <span>{txt.ctaBookKsenija}</span>
@@ -325,6 +327,7 @@ export default function KsenijaPersijanovaPage() {
               <Link
                 href={`/registracija?specialist=ksenija${currentLang !== 'lt' ? `&lang=${currentLang}` : ''}`}
                 className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-[#54B6FC] px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
+                onClick={() => trackSpecialistBookingClick('ksenija', txt.ctaBookKsenija, window.location.pathname)}
               >
                 <Calendar className="w-5 h-5" />
                 <span>{txt.ctaBookKsenija}</span>

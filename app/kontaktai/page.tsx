@@ -9,7 +9,7 @@ import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
 import { getStoredLanguage, setStoredLanguage } from '@/lib/languageStorage';
 import { MapPin, Phone, Mail, Clock, Navigation, MessageCircle } from 'lucide-react';
-import { trackFormSubmit, trackEmailClick } from '@/lib/gtag';
+import { trackFormSubmit, trackEmailClick, trackWhatsAppClick, trackMapsClick, trackWazeClick } from '@/lib/gtag';
 
 export default function KontaktaiPage() {
   const [currentLang, setCurrentLang] = useState<Language>('lt');
@@ -122,6 +122,7 @@ export default function KontaktaiPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-gradient-to-br from-green-500/5 to-white rounded-2xl p-6 border-2 border-gray-100 hover:border-green-500 transition-all hover:-translate-y-1 text-center"
+                onClick={() => trackWhatsAppClick(window.location.pathname)}
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <MessageCircle className="w-8 h-8 text-white" />
@@ -367,6 +368,7 @@ export default function KontaktaiPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-gradient-to-r from-[#54B6FC] to-[#4a9fe0] text-white px-6 py-4 rounded-xl font-semibold text-center hover:scale-105 transition-all shadow-lg"
+                onClick={() => trackMapsClick('directions', window.location.pathname)}
               >
                 {t.contactsPage.map.openGoogleMaps}
               </a>
@@ -375,6 +377,7 @@ export default function KontaktaiPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-gradient-to-r from-[#fb7825] to-[#e66f1f] text-white px-6 py-4 rounded-xl font-semibold text-center hover:scale-105 transition-all shadow-lg"
+                onClick={() => trackWazeClick(window.location.pathname)}
               >
                 {t.contactsPage.map.openWaze}
               </a>
@@ -432,6 +435,7 @@ export default function KontaktaiPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-[#54B6FC] hover:text-[#4a9fe0] text-sm font-medium transition-colors"
+                      onClick={() => trackMapsClick('parking', window.location.pathname)}
                     >
                       <MapPin className="w-4 h-4 mr-1" />
                       {t.contactsPage.howToArrive.showParkingOnMap}
@@ -458,6 +462,7 @@ export default function KontaktaiPage() {
                     <a
                       href="https://maps.app.goo.gl/zK8n1EKYnjV5aPFQ6"
                       target="_blank"
+                      onClick={() => trackMapsClick('transit', window.location.pathname)}
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-[#54B6FC] hover:text-[#4a9fe0] text-sm font-medium transition-colors"
                     >

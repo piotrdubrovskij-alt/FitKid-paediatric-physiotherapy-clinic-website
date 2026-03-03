@@ -1,7 +1,15 @@
 'use client';
 
 import { useEffect } from 'react';
-import { trackBookingClick, trackPhoneClick, trackEmailClick } from '@/lib/gtag';
+import {
+  trackBookingClick,
+  trackSpecialistBookingClick,
+  trackPhoneClick,
+  trackEmailClick,
+  trackWhatsAppClick,
+  trackMapsClick,
+  trackWazeClick,
+} from '@/lib/gtag';
 
 function getButtonText(el: Element): string {
   const span = el.querySelector('span');
@@ -37,7 +45,7 @@ export default function AnalyticsEvents() {
           return;
         }
 
-        // When we reach an anchor tag, check href as fallback
+        // When we reach an anchor tag, check href
         if (el.tagName === 'A') {
           const href = (el as HTMLAnchorElement).getAttribute('href') || '';
 
@@ -51,14 +59,46 @@ export default function AnalyticsEvents() {
             return;
           }
 
-          // Cloudflare email obfuscation — anchor has data-analytics, use data-email
+          // Cloudflare email obfuscation
           if (href.includes('/cdn-cgi/l/email-protection')) {
             trackEmailClick('info@fitkid.lt', pagePath);
             return;
           }
 
+          // WhatsApp
+          if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+            trackWhatsAppClick(pagePath);
+            return;
+          }
+
+          // Google Maps
+          if (
+            href.includes('maps.google.com') ||
+            href.includes('maps.app.goo.gl') ||
+            href.includes('google.com/maps')
+          ) {
+            trackMapsClick('google', pagePath);
+            return;
+          }
+
+          // Waze
+          if (href.includes('waze.com')) {
+            trackWazeClick(pagePath);
+            return;
+          }
+
+          // Specialist booking (has ?specialist= param)
           if (href.includes('/registracija')) {
-            trackBookingClick(getButtonText(el), pagePath);
+            const match = href.match(/[?&]specialist=([^&]+)/);
+            if (match) {
+              trackSpecialistBookingClick(
+                decodeURIComponent(match[1]),
+                getButtonText(el),
+                pagePath
+              );
+            } else {
+              trackBookingClick(getButtonText(el), pagePath);
+            }
             return;
           }
 

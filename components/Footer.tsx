@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Facebook, Instagram, MessageCircle } from 'lucide-react';
 import { type Translation } from '@/lib/i18n/translations';
-import { trackEmailClick } from '@/lib/gtag';
+import { trackEmailClick, trackWhatsAppClick, trackMapsClick } from '@/lib/gtag';
 
 interface FooterProps {
   translations: Translation;
@@ -51,6 +51,7 @@ export default function Footer({ translations }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 hover:bg-green-500 rounded-full flex items-center justify-center transition-colors"
+                onClick={() => trackWhatsAppClick(window.location.pathname)}
               >
                 <MessageCircle className="w-5 h-5" />
               </a>
@@ -116,6 +117,7 @@ export default function Footer({ translations }: FooterProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start space-x-3 text-gray-400 hover:text-white transition-colors"
+                  onClick={() => trackMapsClick('google', window.location.pathname)}
                 >
                   <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
                   <span>
