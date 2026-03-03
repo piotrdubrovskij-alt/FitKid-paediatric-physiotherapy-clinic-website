@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { MapPin, Phone, Mail, Facebook, Instagram, MessageCircle } from 'lucide-react';
 import { type Translation } from '@/lib/i18n/translations';
+import { trackEmailClick } from '@/lib/gtag';
 
 interface FooterProps {
   translations: Translation;
@@ -141,6 +142,7 @@ export default function Footer({ translations }: FooterProps) {
                   className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
                   data-analytics="click_email"
                   data-email="info@fitkid.lt"
+                  onClick={() => trackEmailClick('info@fitkid.lt', window.location.pathname)}
                 >
                   <Mail className="w-5 h-5" />
                   <span>info@fitkid.lt</span>

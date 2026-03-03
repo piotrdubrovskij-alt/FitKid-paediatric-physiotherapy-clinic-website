@@ -9,7 +9,7 @@ import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
 import { getStoredLanguage, setStoredLanguage } from '@/lib/languageStorage';
 import { MapPin, Phone, Mail, Clock, Navigation, MessageCircle } from 'lucide-react';
-import { trackFormSubmit } from '@/lib/gtag';
+import { trackFormSubmit, trackEmailClick } from '@/lib/gtag';
 
 export default function KontaktaiPage() {
   const [currentLang, setCurrentLang] = useState<Language>('lt');
@@ -55,6 +55,9 @@ export default function KontaktaiPage() {
       message: formData.get('message'),
     };
 
+    // Track form submit intent immediately — fires regardless of API response
+    trackFormSubmit('contact', window.location.pathname);
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -63,7 +66,6 @@ export default function KontaktaiPage() {
       });
 
       if (response.ok) {
-        trackFormSubmit('contact', window.location.pathname);
         setFormStatus('success');
         (e.target as HTMLFormElement).reset();
         setTimeout(() => setFormStatus('idle'), 5000);
@@ -133,6 +135,7 @@ export default function KontaktaiPage() {
                 className="group bg-gradient-to-br from-[#fb7825]/5 to-white rounded-2xl p-6 border-2 border-gray-100 hover:border-[#fb7825] transition-all hover:-translate-y-1 text-center"
                 data-analytics="click_email"
                 data-email="info@fitkid.lt"
+                onClick={() => trackEmailClick('info@fitkid.lt', window.location.pathname)}
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-[#fb7825] to-[#e66f1f] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Mail className="w-8 h-8 text-white" />
@@ -199,7 +202,7 @@ export default function KontaktaiPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-sm font-medium text-gray-500 mb-1">{t.contactsPage.contactInfo.emailLabel}</h3>
-                        <a href="mailto:info@fitkid.lt" className="text-gray-900 font-medium hover:text-[#54B6FC] transition-colors" data-analytics="click_email" data-email="info@fitkid.lt">
+                        <a href="mailto:info@fitkid.lt" className="text-gray-900 font-medium hover:text-[#54B6FC] transition-colors" data-analytics="click_email" data-email="info@fitkid.lt" onClick={() => trackEmailClick('info@fitkid.lt', window.location.pathname)}>
                           info@fitkid.lt
                         </a>
                       </div>
