@@ -10,6 +10,8 @@ export function trackEvent({ action, ...params }: GTagEvent) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const w = window as any;
   w.dataLayer = w.dataLayer || [];
+  // Debug: confirm event fires in browser console
+  console.log('[GA4]', action, params);
   if (typeof w.gtag === 'function') {
     w.gtag('event', action, params);
   } else {
