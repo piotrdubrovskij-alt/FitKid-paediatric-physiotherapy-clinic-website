@@ -106,6 +106,8 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
               href="tel:+37066699676"
               className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
               aria-label="Call"
+              data-analytics="click_phone"
+              data-phone="+37066699676"
             >
               <Phone className="w-6 h-6 text-[#54B6FC]" />
             </a>
@@ -114,6 +116,8 @@ export default function Header({ translations, currentLang, onLanguageChange }: 
             <a
               href="tel:+37066699676"
               className="hidden md:flex items-center space-x-2 text-gray-700 hover:text-[#54B6FC] transition-colors"
+              data-analytics="click_phone"
+              data-phone="+37066699676"
             >
               <Phone className="w-5 h-5 text-[#54B6FC]" />
               <span className="font-semibold">+370 666 99676</span>

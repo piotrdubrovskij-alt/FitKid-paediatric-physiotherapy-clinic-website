@@ -94,6 +94,8 @@ export default function FloatingActionButtons({ currentLang }: FloatingActionBut
       {/* Call button - Blue */}
       <a
         href="tel:+37066699676"
+        data-analytics="click_phone"
+        data-phone="+37066699676"
         className="
           flex items-center justify-center space-x-2
           bg-[#54B6FC] hover:bg-[#4a9fe0]

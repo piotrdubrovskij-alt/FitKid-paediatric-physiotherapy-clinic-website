@@ -105,6 +105,8 @@ export default function KontaktaiPage() {
               <a
                 href="tel:+37066699676"
                 className="group bg-gradient-to-br from-[#54B6FC]/5 to-white rounded-2xl p-6 border-2 border-gray-100 hover:border-[#54B6FC] transition-all hover:-translate-y-1 text-center"
+                data-analytics="click_phone"
+                data-phone="+37066699676"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-[#54B6FC] to-[#4a9fe0] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Phone className="w-8 h-8 text-white" />
@@ -129,6 +131,8 @@ export default function KontaktaiPage() {
               <a
                 href="mailto:info@fitkid.lt"
                 className="group bg-gradient-to-br from-[#fb7825]/5 to-white rounded-2xl p-6 border-2 border-gray-100 hover:border-[#fb7825] transition-all hover:-translate-y-1 text-center"
+                data-analytics="click_email"
+                data-email="info@fitkid.lt"
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-[#fb7825] to-[#e66f1f] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Mail className="w-8 h-8 text-white" />
@@ -183,7 +187,7 @@ export default function KontaktaiPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-sm font-medium text-gray-500 mb-1">{t.contactsPage.contactInfo.phone}</h3>
-                        <a href="tel:+37066699676" className="text-gray-900 font-medium hover:text-[#54B6FC] transition-colors">
+                        <a href="tel:+37066699676" className="text-gray-900 font-medium hover:text-[#54B6FC] transition-colors" data-analytics="click_phone" data-phone="+37066699676">
                           066 699 676
                         </a>
                       </div>
@@ -195,7 +199,7 @@ export default function KontaktaiPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-sm font-medium text-gray-500 mb-1">{t.contactsPage.contactInfo.emailLabel}</h3>
-                        <a href="mailto:info@fitkid.lt" className="text-gray-900 font-medium hover:text-[#54B6FC] transition-colors">
+                        <a href="mailto:info@fitkid.lt" className="text-gray-900 font-medium hover:text-[#54B6FC] transition-colors" data-analytics="click_email" data-email="info@fitkid.lt">
                           info@fitkid.lt
                         </a>
                       </div>

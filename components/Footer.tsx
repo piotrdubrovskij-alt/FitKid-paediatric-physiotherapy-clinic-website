@@ -128,6 +128,8 @@ export default function Footer({ translations }: FooterProps) {
                 <a
                   href="tel:+37066699676"
                   className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
+                  data-analytics="click_phone"
+                  data-phone="+37066699676"
                 >
                   <Phone className="w-5 h-5" />
                   <span>+370 666 99676</span>
@@ -137,6 +139,8 @@ export default function Footer({ translations }: FooterProps) {
                 <a
                   href="mailto:info@fitkid.lt"
                   className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors"
+                  data-analytics="click_email"
+                  data-email="info@fitkid.lt"
                 >
                   <Mail className="w-5 h-5" />
                   <span>info@fitkid.lt</span>
