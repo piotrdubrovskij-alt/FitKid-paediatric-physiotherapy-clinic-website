@@ -482,7 +482,7 @@ export const translations: Record<Language, Translation> = {
       cta: "Registruotis konsultacijai",
     },
     specialists: {
-      title: "Mūsų specialistai",
+      title: "Specialistai",
       subtitle: "Licencijuoti tinkamos kvalifikacijos ir patirties specialistai",
       team: [
         {
@@ -915,7 +915,7 @@ export const translations: Record<Language, Translation> = {
       cta: "Book a Consultation",
     },
     specialists: {
-      title: "Our Specialists",
+      title: "Specialists",
       subtitle: "Licensed specialists with proper qualifications and experience",
       team: [
         {
