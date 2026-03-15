@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.fitkid.lt' }],
+        destination: 'https://fitkid.lt/:path*',
+        permanent: true,
+      },
+      {
         source: '/kreivakaklyte',
         destination: '/kudikio-kreivakakliste',
         permanent: true,
