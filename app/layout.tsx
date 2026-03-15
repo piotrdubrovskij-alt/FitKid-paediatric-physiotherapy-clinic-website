@@ -23,6 +23,17 @@ export const metadata: Metadata = {
   description: "Profesionali vaikų kineziterapija Vilniaus centre. Kūdikių masažai, plukdymas, kineziterapija nuo 5 savaičių. Patyrę licencijuoti specialistai. ☎ +370 666 99676",
   keywords: "kineziterapija vaikams Vilnius, kūdikių masažas, vaikų fizioterapija, kūdikių plukdymas, pediatrinė kineziterapija, vaikų masažas Vilnius, FitKid klinika",
   authors: [{ name: "FitKid" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "FitKid - Vaikų kineziterapijos klinika Vilniuje",
     description: "Aukščiausios kokybės vaikų ir kūdikių gydymas Vilniaus centre. Kineziterapija, masažai, plukdymas. Patyrę specialistai.",
