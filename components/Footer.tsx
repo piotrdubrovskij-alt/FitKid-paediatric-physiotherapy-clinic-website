@@ -63,17 +63,17 @@ export default function Footer({ translations }: FooterProps) {
             <h3 className="text-lg font-semibold mb-4">{translations.footer.quickLinks}</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/#services" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/#paslaugos" className="text-gray-400 hover:text-white transition-colors">
                   {translations.nav.services}
                 </Link>
               </li>
               <li>
-                <Link href="/#treatments" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/#ka-gydome" className="text-gray-400 hover:text-white transition-colors">
                   {translations.nav.treatments}
                 </Link>
               </li>
               <li>
-                <Link href="/#specialists" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="/#specialistai" className="text-gray-400 hover:text-white transition-colors">
                   {translations.nav.specialists}
                 </Link>
               </li>

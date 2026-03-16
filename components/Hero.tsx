@@ -47,7 +47,7 @@ export default function Hero({ translations }: HeroProps) {
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
-                href="#services"
+                href="#paslaugos"
                 className="inline-flex items-center justify-center space-x-2 bg-white hover:bg-gray-50 text-gray-900 px-8 py-4 rounded-full font-semibold transition-all border-2 border-gray-200"
               >
                 <span>{translations.hero.cta}</span>

@@ -559,7 +559,7 @@ export default function VaikuMasazasPage() {
                     {txt.ramuneDesc}
                   </p>
                   <Link
-                    href="/#specialists"
+                    href="/#specialistai"
                     className="inline-flex items-center space-x-2 text-[#54B6FC] hover:text-[#4a9fe0] font-semibold transition-colors"
                   >
                     <span>{txt.viewProfile}</span>

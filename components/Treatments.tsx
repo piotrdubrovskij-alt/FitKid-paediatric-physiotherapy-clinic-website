@@ -74,7 +74,7 @@ export default function Treatments({ translations }: TreatmentsProps) {
   };
 
   return (
-    <section id="treatments" className="py-20 bg-gradient-to-br from-[#fb7825] to-[#e66f1f]">
+    <section id="ka-gydome" className="py-20 bg-gradient-to-br from-[#fb7825] to-[#e66f1f]">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
