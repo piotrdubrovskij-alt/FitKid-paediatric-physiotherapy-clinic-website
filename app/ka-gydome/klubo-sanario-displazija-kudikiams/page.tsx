@@ -231,16 +231,6 @@ export default function KluboDisplazijaPage() {
           note:
             'Masažas derinamas su aktyviais pratimais – vien pasyvi terapija funkcinio rezultato neužtikrina.',
         },
-        {
-          title: '6. Hidroterapija (plukdymas)',
-          items: [
-            'saugiai aktyvinti judesius su mažesne gravitacine apkrova;',
-            'didinti judesio pasitikėjimą;',
-            'dirbti su simetrija ir ištverme švelniu režimu.',
-          ],
-          note:
-            'Hidroterapijos planas visada individualus ir suderinamas su gydymo etapu.',
-        },
       ],
 
       visitsTitle: 'Kiek vizitų dažniausiai prireikia',
@@ -564,16 +554,6 @@ export default function KluboDisplazijaPage() {
           note:
             'Massage is combined with active exercises – passive therapy alone does not ensure functional results.',
         },
-        {
-          title: '6. Hydrotherapy',
-          items: [
-            'safely activating movements with lower gravitational load;',
-            'building movement confidence;',
-            'working on symmetry and endurance in a gentle setting.',
-          ],
-          note:
-            'The hydrotherapy plan is always individual and aligned with the treatment stage.',
-        },
       ],
 
       visitsTitle: 'How many visits are usually needed?',
@@ -707,24 +687,24 @@ export default function KluboDisplazijaPage() {
         currentLang === 'lt'
           ? 'Vojta terapijos praktikė, dirbanti su kūdikiais ir vaikais.'
           : 'Vojta therapy practitioner working with infants and children.',
-      img: '/specialists/agne.png',
+      img: '/specialists/agne.jpg',
       desc:
         currentLang === 'lt'
           ? 'Patyrusi vaikų kineziterapeutė, daug dėmesio skirianti funkcinės motorikos, sąnarių stabilumo ir tėvų edukacijos deriniui.'
           : 'Experienced paediatric physiotherapist focusing on functional motor skills, joint stability and clear parental education.',
     },
     {
-      name: 'Ksenija Persijanova',
+      name: 'Karolina Černych',
       role: currentLang === 'lt' ? 'Vaikų ir kūdikių kineziterapeutė' : 'Infant & child physiotherapist',
       detail:
         currentLang === 'lt'
-          ? 'Praktika kūdikių kineziterapijoje ir paliatyvioje pediatrijoje.'
-          : 'Practical experience in infant physiotherapy and paediatric palliative care.',
-      img: '/specialists/ksenija.png',
+          ? 'Praktika vaikų raidos ir neurologinės kineziterapijos srityje.'
+          : 'Practical experience in child development and neurological physiotherapy.',
+      img: '/specialists/karolina.jpg',
       desc:
         currentLang === 'lt'
-          ? 'Specializuojasi kūdikių raidos, tonuso ir simetrijos korekcijoje bei hidroterapijoje.'
-          : 'Specialises in infant development, tone and symmetry correction and hydrotherapy.',
+          ? 'Vertina kūdikių raidą, tonusą ir simetriją, taiko DNS metodikos principus.'
+          : 'Assesses infant development, tone and symmetry, applying DNS methodology principles.',
     },
     {
       name: 'Ramunė Nemeikaitė',
@@ -733,7 +713,7 @@ export default function KluboDisplazijaPage() {
         currentLang === 'lt'
           ? 'Dirba tik su kūdikiais ir vaikais.'
           : 'Works exclusively with infants and children.',
-      img: '/specialists/ramune.png',
+      img: '/specialists/ramune.jpg',
       desc:
         currentLang === 'lt'
           ? 'Vaikų masažo specialistė, padedanti mažinti antrinę raumenų įtampą ir gerinti bendrą komfortą.'

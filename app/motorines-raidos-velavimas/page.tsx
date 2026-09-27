@@ -84,8 +84,6 @@ export default function MotoRaidosVelavimasPage() {
       service3Desc: 'Vojta metodika aktyvuoja įgimtus judesių modelius per refleksines padėtis. Tai ypač svarbu kūdikiams, kurie dar negali savarankiškai atlikti taisyklingų judesių.',
       service4: 'Gydomasis masažas',
       service4Desc: 'Masažas padeda sumažinti per didelę įtampą arba paskatinti silpnų raumenų aktyvumą. Tai švelni priemonė, kurią dažnai deriname su kineziterapija.',
-      service5: 'Hidroterapija',
-      service5Desc: 'Šiltas vanduo sumažina gravitacijos poveikį, todėl kūdikis gali lengviau atlikti judesius, kurie sausumoje būtų per sunkūs. Tai puiki papildoma priemonė.',
       whenTitle: 'Kada kreiptis į specialistą?',
       whenIntro: 'Rekomenduojame pasitarti, jei:',
       whenList: ['kūdikis aiškiai vėluoja su galvytės laikymu', 'nesivarto ar varto sunkiai', 'ropojimo etapo nėra', 'sėdėjimas ar stojimas vėluoja', 'kūdikis vangus ir mažai juda'],
@@ -156,8 +154,6 @@ export default function MotoRaidosVelavimasPage() {
       service3Desc: 'Vojta methodology activates innate movement patterns through reflex positions. This is especially important for infants who cannot yet perform correct movements independently.',
       service4: 'Therapeutic Massage',
       service4Desc: 'Massage helps reduce excessive tension or stimulate weak muscle activity. This is a gentle tool that we often combine with physiotherapy.',
-      service5: 'Hydrotherapy',
-      service5Desc: 'Warm water reduces gravity effect, so infant can perform movements more easily that would be too difficult on land. This is an excellent additional tool.',
       whenTitle: 'When to Contact a Specialist?',
       whenIntro: 'We recommend consulting if:',
       whenList: ['infant clearly delays with head control', 'does not roll or rolls with difficulty', 'crawling stage is absent', 'sitting or standing is delayed', 'infant is sluggish and moves little'],
@@ -448,12 +444,6 @@ export default function MotoRaidosVelavimasPage() {
                 </p>
               </div>
 
-              <div className="bg-white rounded-xl p-8 shadow-md border-l-4 border-[#54B6FC]">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{txt.service5}</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  {txt.service5Desc}
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -500,7 +490,7 @@ export default function MotoRaidosVelavimasPage() {
               <div className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative aspect-[3/4] bg-gradient-to-br from-[#54B6FC]/15 to-[#fb7825]/15 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/specialists/agne.png"
+                    src="/specialists/agne.jpg"
                     alt="Agnė Juodytė"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
@@ -525,12 +515,12 @@ export default function MotoRaidosVelavimasPage() {
                 <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-[#54B6FC]/10 to-[#fb7825]/10 rounded-full blur-2xl" />
               </div>
 
-              {/* Ksenija Persijanova */}
+              {/* Karolina Černych */}
               <div className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative aspect-[3/4] bg-gradient-to-br from-[#54B6FC]/15 to-[#fb7825]/15 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/specialists/ksenija.png"
-                    alt="Ksenija Persijanova"
+                    src="/specialists/karolina.jpg"
+                    alt="Karolina Černych"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     style={{
@@ -542,13 +532,13 @@ export default function MotoRaidosVelavimasPage() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">
-                    Ksenija Persijanova
+                    Karolina Černych
                   </h3>
                   <div className="text-sm font-semibold text-[#54B6FC] mb-4">
                     Kineziterapeutė
                   </div>
                   <p className="text-gray-600 leading-relaxed text-sm">
-                    Kineziterapeutė su praktine patirtimi kūdikių kineziterapijoje ir paliaty­vio­je pediatrijoje. Specializuojasi kūdikių hidroterapijos procedūrose ir darbe su vaikais.
+                    Kineziterapeutė, dirbanti su kūdikiais ir vaikais. Taiko DNS metodikos principus, vertina motorinę raidą, tonusą ir simetriją, konsultuoja tėvus dėl pratimų namuose.
                   </p>
                 </div>
                 <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-[#54B6FC]/10 to-[#fb7825]/10 rounded-full blur-2xl" />
@@ -558,7 +548,7 @@ export default function MotoRaidosVelavimasPage() {
               <div className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative aspect-[3/4] bg-gradient-to-br from-[#54B6FC]/15 to-[#fb7825]/15 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/specialists/ramune.png"
+                    src="/specialists/ramune.jpg"
                     alt="Ramunė Nemeikaitė"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"

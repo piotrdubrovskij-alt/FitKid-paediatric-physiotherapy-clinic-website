@@ -93,9 +93,9 @@ export default function VaikuKineziterapijaPage() {
       visit3desc: 'kad progresas būtų stabilus, o šeimai viskas būtų aišku.',
       visitsGoal: 'Mūsų tikslas — kad vaikas judėtų kuo kokybiškiau, o tėvai žinotų, ką daryti namuose ir kasdienybėje.',
       specialistsTitle: 'Kas dirba su vaikais?',
-      ksenija: 'Ksenija Persijanova',
-      ksenijaRole: 'kineziterapeutė',
-      ksenijaDesc: 'Individualus įvertinimas ir planas, darbas su vaikų laikysena, judėjimo kokybe ir funkcija.',
+      karolina: 'Karolina Černych',
+      karolinaRole: 'kineziterapeutė',
+      karolinaDesc: 'Individualus įvertinimas ir planas, darbas su vaikų laikysena, judėjimo kokybe ir funkcija.',
       agne: 'Agnė Juodytė',
       agneRole: 'kineziterapeutė',
       agneDesc: 'Darbas su vaikais pagal individualų planą, judėjimo kokybės gerinimas, stabilumas ir koordinacija.',
@@ -197,9 +197,9 @@ export default function VaikuKineziterapijaPage() {
       visit3desc: 'so progress is stable and everything is clear for the family.',
       visitsGoal: 'Our goal — for the child to move as well as possible, and parents to know what to do at home and in daily life.',
       specialistsTitle: 'Who works with children?',
-      ksenija: 'Ksenija Persijanova',
-      ksenijaRole: 'physiotherapist',
-      ksenijaDesc: 'Individual assessment and plan, work with children\'s posture, movement quality and function.',
+      karolina: 'Karolina Černych',
+      karolinaRole: 'physiotherapist',
+      karolinaDesc: 'Individual assessment and plan, work with children\'s posture, movement quality and function.',
       agne: 'Agnė Juodytė',
       agneRole: 'physiotherapist',
       agneDesc: 'Work with children based on individual plan, improving movement quality, stability and coordination.',
@@ -244,16 +244,16 @@ export default function VaikuKineziterapijaPage() {
 
   const specialists = [
     {
-      name: txt.ksenija,
-      role: txt.ksenijaRole,
-      description: txt.ksenijaDesc,
-      image: '/specialists/ksenija.png',
+      name: txt.karolina,
+      role: txt.karolinaRole,
+      description: txt.karolinaDesc,
+      image: '/specialists/karolina.jpg',
     },
     {
       name: txt.agne,
       role: txt.agneRole,
       description: txt.agneDesc,
-      image: '/specialists/agne.png',
+      image: '/specialists/agne.jpg',
     },
   ];
 
@@ -558,7 +558,7 @@ export default function VaikuKineziterapijaPage() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                       style={{
-                        objectPosition: specialist.name.includes('Ksenija') ? '50% 12%' : 'center 10%'
+                        objectPosition: specialist.name.includes('Karolina') ? '50% 12%' : 'center 10%'
                       }}
                       sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 90vw"
                     />

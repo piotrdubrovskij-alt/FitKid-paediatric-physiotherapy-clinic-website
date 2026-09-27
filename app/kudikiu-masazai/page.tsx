@@ -101,8 +101,6 @@ export default function KudikiuMasazasPage() {
       additionalTitle: 'Papildomos paslaugos kūdikiams',
       kineziterapija: 'Kūdikių kineziterapija',
       kineziterapijaDesc: 'kai reikia motorinės raidos įvertinimo ir aiškaus plano.',
-      swimming: 'Kūdikių plukdymas',
-      swimmingDesc: 'judėjimas vandenyje, padedantis atsipalaiduoti ir stiprėti.',
       faqTitle: 'Dažniausiai užduodami klausimai',
       q1: 'Nuo kokio amžiaus galima pradėti kūdikių masažą?',
       a1: 'Masažą pritaikome pagal kūdikio amžių ir situaciją. Jei abejojate – parašykite, patarsime nuo ko pradėti.',
@@ -190,8 +188,6 @@ export default function KudikiuMasazasPage() {
       additionalTitle: 'Additional services for infants',
       kineziterapija: 'Infant physiotherapy',
       kineziterapijaDesc: 'when motor development assessment and clear plan is needed.',
-      swimming: 'Infant swimming',
-      swimmingDesc: 'movement in water, helping to relax and strengthen.',
       faqTitle: 'Frequently asked questions',
       q1: 'From what age can infant massage be started?',
       a1: 'We adapt massage according to infant\'s age and situation. If you have doubts – write, we will advise where to start.',
@@ -222,7 +218,7 @@ export default function KudikiuMasazasPage() {
     name: txt.ramune,
     role: txt.ramuneRole,
     description: txt.ramuneDesc,
-    image: '/specialists/ramune.png',
+    image: '/specialists/ramune.jpg',
   };
 
   const additionalServices = [
@@ -230,11 +226,6 @@ export default function KudikiuMasazasPage() {
       name: txt.kineziterapija,
       description: txt.kineziterapijaDesc,
       slug: 'kudikiu-kineziterapija',
-    },
-    {
-      name: txt.swimming,
-      description: txt.swimmingDesc,
-      slug: 'kudikiu-plukdymas',
     },
   ];
 
@@ -644,12 +635,12 @@ export default function KudikiuMasazasPage() {
               {txt.additionalTitle}
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="max-w-xl mx-auto">
               {additionalServices.map((service, index) => (
                 <Link
                   key={index}
                   href={`/${service.slug}`}
-                  className="group bg-white rounded-2xl p-7 shadow-lg border border-gray-200 hover:border-[#54B6FC] hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  className="block group bg-white rounded-2xl p-7 shadow-lg border border-gray-200 hover:border-[#54B6FC] hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#54B6FC] transition-colors">
                     {service.name}

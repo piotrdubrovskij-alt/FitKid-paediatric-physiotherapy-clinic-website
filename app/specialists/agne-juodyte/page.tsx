@@ -237,7 +237,7 @@ export default function AgneJuodytePage() {
               <div className="relative">
                 <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/specialists/agne.png"
+                    src="/specialists/agne.jpg"
                     alt="Agnė Juodytė"
                     fill
                     className="object-cover"

@@ -20,8 +20,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "FitKid - Vaikų kineziterapijos klinika Vilniuje | Kūdikių ir vaikų gydymas",
-  description: "Profesionali vaikų kineziterapija Vilniaus centre. Kūdikių masažai, plukdymas, kineziterapija nuo 5 savaičių. Patyrę licencijuoti specialistai. ☎ +370 666 99676",
-  keywords: "kineziterapija vaikams Vilnius, kūdikių masažas, vaikų fizioterapija, kūdikių plukdymas, pediatrinė kineziterapija, vaikų masažas Vilnius, FitKid klinika",
+  description: "Profesionali vaikų kineziterapija Vilniaus centre. Kūdikių masažai, kineziterapija nuo 5 savaičių. Patyrę licencijuoti specialistai. ☎ +370 666 99676",
+  keywords: "kineziterapija vaikams Vilnius, kūdikių masažas, vaikų fizioterapija, pediatrinė kineziterapija, vaikų masažas Vilnius, FitKid klinika",
   authors: [{ name: "FitKid" }],
   icons: {
     icon: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   openGraph: {
     title: "FitKid - Vaikų kineziterapijos klinika Vilniuje",
-    description: "Aukščiausios kokybės vaikų ir kūdikių gydymas Vilniaus centre. Kineziterapija, masažai, plukdymas. Patyrę specialistai.",
+    description: "Aukščiausios kokybės vaikų ir kūdikių gydymas Vilniaus centre. Kineziterapija ir masažai. Patyrę specialistai.",
     url: "https://fitkid.lt",
     siteName: "FitKid",
     locale: "lt_LT",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "FitKid - Vaikų kineziterapija Vilniuje",
-    description: "Profesionali vaikų ir kūdikių kineziterapija, masažai, plukdymas",
+    description: "Profesionali vaikų ir kūdikių kineziterapija ir masažai",
   },
   robots: {
     index: true,

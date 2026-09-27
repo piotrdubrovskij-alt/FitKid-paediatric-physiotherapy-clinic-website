@@ -31,7 +31,7 @@ describe('Pages Structure', () => {
   }
 
   it('specialist pages exist', () => {
-    const specialists = ['agne-juodyte', 'ksenija-persijanova', 'ramune-nemeikaite'];
+    const specialists = ['agne-juodyte', 'karolina-cernych', 'ramune-nemeikaite'];
     for (const spec of specialists) {
       const pagePath = path.join(APP_DIR, 'specialists', spec, 'page.tsx');
       expect(fs.existsSync(pagePath), `Missing specialist page: ${spec}`).toBe(true);

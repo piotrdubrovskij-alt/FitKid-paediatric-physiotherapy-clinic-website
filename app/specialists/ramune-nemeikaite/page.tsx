@@ -14,7 +14,7 @@ import { trackSpecialistBookingClick } from '@/lib/gtag';
 function RamuneReviews() {
   const staticReviews = [
     {
-      author_name: "Julija Gudaitė",
+      author_name: "Julija Gudaite",
       rating: 5,
       text: "Lankėmės su metukų amžiaus sūnumi masažuose pas Ramunę Nemeikaitę, kurią rekomendavo kineziterapeutė. Patirtis pati geriausia, Ramunė darė viską (linksmino, kalbino, keitė erdves), kad tik galėtų atlikti masažą tokiam įnoringam klientui. Vaikas greit atsipalaidavo ir prisileido Ramunę, kas su nepažįstamais žmonėmis būna itin retai. Pačios geriausios rekomendacijos! Pati klinika taip paliko labai gerą įspūdį. :)"
     },
@@ -22,11 +22,6 @@ function RamuneReviews() {
       author_name: "Kristina Jodenytė",
       rating: 5,
       text: "Norime nuoširdžiai padėkoti gydytojai Ramunei už profesionalumą, rūpestingumą ir šilumą, kurią parodė mūsų keturių mėnesių kūdikiui masažų metu. Jautėsi, kad gydytoja turi daug patirties dirbant su mažaisiais, o jos švelnus bendravimas ir ramybė suteikė pasitikėjimo ne tik vaikui, bet ir mums, tėvams. Masažo metu kūdikis jautėsi ramus ir atsipalaidavęs, o po kelių seansų pastebėjome teigiamus pokyčius jo raumenų tonuse ir bendrajame vystymesi. Džiaugiamės atradę tokią nuoširdžią ir atsidavusią specialistę. Rekomenduojame visiems tėveliams, ieškantiems tikro profesionalo savo vaikui!"
-    },
-    {
-      author_name: "Evelina Čatrauskienė",
-      rating: 5,
-      text: "Nuostabi vieta, kur jaučiamės kaip namuose. Masažistė Ramunė ir Kinezeterapeutė Ksenija yra tiesiog turbo komanda! Su tokia meile, rūpesčiu kalbina, užsiima/masažuoja mažylį, kad užsiėmimai pralekia su geriausiomis emocijomis bei daug šypsenų. Visiems tėveliams nuoširdžiai rekomenduoju bei siunčiu didžiausias padėkas!"
     }
   ];
 
@@ -240,7 +235,7 @@ export default function RamuneNemeikaitePage() {
               <div className="relative">
                 <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <Image
-                    src="/specialists/ramune.png"
+                    src="/specialists/ramune.jpg"
                     alt="Ramunė Nemeikaitė"
                     fill
                     className="object-cover"

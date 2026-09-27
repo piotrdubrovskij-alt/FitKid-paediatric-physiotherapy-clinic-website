@@ -114,7 +114,6 @@ export default function PlagiocefalijosPage() {
         { emoji: '🤲', name: 'Kineziterapija', desc: 'kaklo judesio simetrija, aktyvi galvos kontrolė vidurio linijoje, liemens stabilumas, motorinės raidos kokybė' },
         { emoji: '🌀', name: 'DNS principai', desc: 'gili stabilizacija, galvos-liemens-dubens ašis, simetriška atrama, kompensacijų mažinimas' },
         { emoji: '👐', name: 'Masažas', desc: 'kaklo ir pečių įtampos mažinimas, audinių tolerancija, kūdikio komfortas' },
-        { emoji: '💧', name: 'Hidroterapija', desc: 'mažesnė gravitacinė apkrova, simetriški judesiai, geresnis aktyvinimo toleravimas' },
       ],
 
       visitsTitle: 'Kiek vizitų reikia?',
@@ -157,9 +156,9 @@ export default function PlagiocefalijosPage() {
       specialistsTitle: 'Mūsų specialistai',
       specialistsSubtitle: 'Licencijuoti specialistai su tinkamomis kvalifikacijomis ir patirtimi',
       specialists: [
-        { name: 'Agnė Juodytė', role: 'Kineziterapeutė', roleDetail: 'vaikų kineziterapeutė, Vojta terapijos praktikė', img: '/specialists/agne.png', desc: 'Patyrusi kineziterapeutė, dirbanti su kūdikiais nuo pirmųjų dienų ir vaikais, turinčiais įvairių raidos, neurologinių ar judėjimo iššūkių.' },
-        { name: 'Ksenija Persijanova', role: 'Kineziterapeutė', roleDetail: 'vaikų ir kūdikių kineziterapeutė', img: '/specialists/ksenija.png', desc: 'Kineziterapeutė su praktine patirtimi kūdikių kineziterapijoje ir paliatyvioje pediatrijoje. Specializuojasi kūdikių hidroterapijos procedūrose ir darbe su vaikais.' },
-        { name: 'Ramunė Nemeikaitė', role: 'Masažo terapeutė', roleDetail: 'gydomojo masažo specialistė, dirba tik su kūdikiais ir vaikais', img: '/specialists/ramune.png', desc: 'Sertifikuota vaikų masažo specialistė. Masažo terapeutė Vaikų ligoninėje ir Santaros klinikose. Specializuojasi gydomuosiuose kūdikių ir vaikų masažuose.' },
+        { name: 'Agnė Juodytė', role: 'Kineziterapeutė', roleDetail: 'vaikų kineziterapeutė, Vojta terapijos praktikė', img: '/specialists/agne.jpg', desc: 'Patyrusi kineziterapeutė, dirbanti su kūdikiais nuo pirmųjų dienų ir vaikais, turinčiais įvairių raidos, neurologinių ar judėjimo iššūkių.' },
+        { name: 'Karolina Černych', role: 'Kineziterapeutė', roleDetail: 'vaikų ir kūdikių kineziterapeutė', img: '/specialists/karolina.jpg', desc: 'Kineziterapeutė, dirbanti su kūdikiais ir vaikais. Taiko DNS metodikos principus, vertina motorinę raidą, tonusą ir simetriją, konsultuoja tėvus dėl pratimų namuose.' },
+        { name: 'Ramunė Nemeikaitė', role: 'Masažo terapeutė', roleDetail: 'gydomojo masažo specialistė, dirba tik su kūdikiais ir vaikais', img: '/specialists/ramune.jpg', desc: 'Sertifikuota vaikų masažo specialistė. Masažo terapeutė Vaikų ligoninėje ir Santaros klinikose. Specializuojasi gydomuosiuose kūdikių ir vaikų masažuose.' },
       ],
 
       relatedTitle: 'Susijusios būklės',
@@ -259,7 +258,6 @@ export default function PlagiocefalijosPage() {
         { emoji: '🤲', name: 'Physiotherapy', desc: 'neck movement symmetry, active head control in midline, trunk stability, motor development quality' },
         { emoji: '🌀', name: 'DNS principles', desc: 'deep stabilization, head-trunk-pelvis axis, symmetric support, reducing compensations' },
         { emoji: '👐', name: 'Massage', desc: 'reducing neck and shoulder tension, tissue tolerance, infant comfort' },
-        { emoji: '💧', name: 'Hydrotherapy', desc: 'reduced gravitational load, symmetric movements, better activation tolerance' },
       ],
 
       visitsTitle: 'How Many Visits Are Needed?',
@@ -302,9 +300,9 @@ export default function PlagiocefalijosPage() {
       specialistsTitle: 'Our Specialists',
       specialistsSubtitle: 'Licensed specialists with proper qualifications and experience',
       specialists: [
-        { name: 'Agnė Juodytė', role: 'Physiotherapist', roleDetail: 'pediatric physiotherapist, Vojta therapy practitioner', img: '/specialists/agne.png', desc: 'Experienced physiotherapist working with infants from their first days and children with various developmental, neurological or movement challenges.' },
-        { name: 'Ksenija Persijanova', role: 'Physiotherapist', roleDetail: 'pediatric and infant physiotherapist', img: '/specialists/ksenija.png', desc: 'Physiotherapist with practical experience in infant physiotherapy and palliative paediatrics. Specialises in infant hydrotherapy and working with children.' },
-        { name: 'Ramunė Nemeikaitė', role: 'Massage Therapist', roleDetail: 'therapeutic massage specialist, works exclusively with infants and children', img: '/specialists/ramune.png', desc: 'Certified pediatric massage specialist. Massage therapist at the Children\'s Hospital and Santaros Clinics. Specialises in therapeutic infant and child massage.' },
+        { name: 'Agnė Juodytė', role: 'Physiotherapist', roleDetail: 'pediatric physiotherapist, Vojta therapy practitioner', img: '/specialists/agne.jpg', desc: 'Experienced physiotherapist working with infants from their first days and children with various developmental, neurological or movement challenges.' },
+        { name: 'Karolina Černych', role: 'Physiotherapist', roleDetail: 'pediatric and infant physiotherapist', img: '/specialists/karolina.jpg', desc: 'Physiotherapist working with infants and children. Applies DNS methodology principles, assesses motor development, tone and symmetry, and guides parents on home exercises.' },
+        { name: 'Ramunė Nemeikaitė', role: 'Massage Therapist', roleDetail: 'therapeutic massage specialist, works exclusively with infants and children', img: '/specialists/ramune.jpg', desc: 'Certified pediatric massage specialist. Massage therapist at the Children\'s Hospital and Santaros Clinics. Specialises in therapeutic infant and child massage.' },
       ],
 
       relatedTitle: 'Related Conditions',

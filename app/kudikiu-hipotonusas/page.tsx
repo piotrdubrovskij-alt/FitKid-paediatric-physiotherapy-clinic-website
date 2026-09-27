@@ -67,7 +67,6 @@ export default function KudikiuHipotonusasPage() {
         { title: 'DNS principai', text: 'DNS (dinaminė neuroraumeninė stabilizacija) padeda aktyvuoti giliuosius stabilizuojančius raumenis, gerinti kūno ašies kontrolę ir mokyti efektyvesnių, mažiau įtemptų judesių modelių.' },
         { title: 'Vojta terapija', text: 'Vojta taikoma, kai reikia aktyvinti įgimtus judesių modelius, pagerinti viso kūno koordinaciją ir nuosekliai mažinti patologinės įtampos dominavimą.' },
         { title: 'Gydomasis masažas kūdikiams', text: 'Masažas hipertonuso atveju mažina paviršinę raumenų įtampą, gerina kūno toleranciją prisilietimui, padeda pereiti į ramesnę būseną po aktyvumo ir gerina bendrą komfortą.' },
-        { title: 'Hidroterapija (kūdikių plukdymas)', text: 'Šiltame vandenyje mažėja gravitacinė apkrova, lengviau atlikti kokybiškus judesius, kūdikis dažniau atsipalaiduoja ir gerėja sensorinė integracija.' },
       ],
       visitsTitle: 'Kiek vizitų dažniausiai prireikia',
       visitsIntro: 'Tikslus skaičius priklauso nuo simptomų, amžiaus ir namų darbo nuoseklumo. Praktikoje dažniausiai:',
@@ -88,7 +87,7 @@ export default function KudikiuHipotonusasPage() {
         { q: 'Ar masažas gali pakeisti kineziterapiją?', a: 'Ne visada. Masažas yra naudingas, bet dažniausiai jis yra dalis platesnio kineziterapinio plano.' },
         { q: 'Kiek greitai matomas rezultatas?', a: 'Dažnai pirmi pokyčiai matomi per kelias savaites, jei planas taikomas nuosekliai.' },
         { q: 'Ar reikia neurologo konsultacijos?', a: 'Jei yra „raudonų vėliavų" arba aiški raidos rizika, taip. Jei jų nėra, vis tiek naudinga pediatro kontrolė ir kineziterapinis stebėjimas.' },
-        { q: 'Ar galima derinti Vojta, DNS, masažą ir hidroterapiją?', a: 'Taip, jei metodai parenkami individualiai ir turi aiškų tikslą.' },
+        { q: 'Ar galima derinti Vojta, DNS ir masažą?', a: 'Taip, jei metodai parenkami individualiai ir turi aiškų tikslą.' },
         { q: 'Kada terapiją galima mažinti?', a: 'Kai pasiekiami funkciniai tikslai: gerėja judesių kokybė, mažėja įtampa ir raida vyksta pagal amžių.' },
       ],
       specialistsTitle: 'Mūsų specialistai',
@@ -137,7 +136,6 @@ export default function KudikiuHipotonusasPage() {
         { title: 'DNS Principles', text: 'DNS (Dynamic Neuromuscular Stabilization) helps activate deep stabilizing muscles, improve body axis control, and teach more efficient, less tense movement patterns.' },
         { title: 'Vojta Therapy', text: 'Vojta is applied to activate innate movement patterns, improve whole-body coordination, and systematically reduce pathological tension dominance.' },
         { title: 'Therapeutic Infant Massage', text: 'Massage reduces surface muscle tension, improves body tolerance to touch, helps transition to a calmer state after activity and improves overall comfort.' },
-        { title: 'Hydrotherapy (Infant Swimming)', text: 'In warm water gravitational load decreases, quality movements are easier, the infant relaxes more often and sensory integration improves.' },
       ],
       visitsTitle: 'How Many Visits Are Usually Needed',
       visitsIntro: 'The exact number depends on symptoms, age and consistency of home work. In practice:',
@@ -158,7 +156,7 @@ export default function KudikiuHipotonusasPage() {
         { q: 'Can massage replace physiotherapy?', a: 'Not always. Massage is beneficial, but most often it is part of a broader physiotherapy plan.' },
         { q: 'How quickly is a result visible?', a: 'Often the first changes are visible within a few weeks if the plan is applied consistently.' },
         { q: 'Is a neurologist consultation needed?', a: 'If red flags are present or clear developmental risk exists, yes. If not, pediatrician monitoring and physiotherapy follow-up is still useful.' },
-        { q: 'Can Vojta, DNS, massage and hydrotherapy be combined?', a: 'Yes, if methods are selected individually and have a clear goal.' },
+        { q: 'Can Vojta, DNS and massage be combined?', a: 'Yes, if methods are selected individually and have a clear goal.' },
         { q: 'When can therapy be reduced?', a: 'When functional goals are achieved: movement quality improves, tension decreases and development proceeds according to age.' },
       ],
       specialistsTitle: 'Our Specialists',
@@ -171,9 +169,9 @@ export default function KudikiuHipotonusasPage() {
   }[currentLang];
 
   const specialists = [
-    { name: 'Agnė Juodytė', role: 'Kineziterapeutė', src: '/specialists/agne.png', desc: 'Patyrusi kineziterapeutė, dirbanti su kūdikiais nuo pirmųjų dienų ir vaikais, turinčiais įvairių raidos, neurologinių ar judėjimo iššūkių.' },
-    { name: 'Ksenija Persijanova', role: 'Kineziterapeutė', src: '/specialists/ksenija.png', desc: 'Kineziterapeutė su praktine patirtimi kūdikių kineziterapijoje ir paliatyvioioje pediatrijoje. Specializuojasi kūdikių hidroterapijos procedūrose.' },
-    { name: 'Ramunė Nemeikaitė', role: 'Masažo terapeutė', src: '/specialists/ramune.png', desc: 'Sertifikuota vaikų masažo specialistė. Masažo terapeutė Vaikų ligoninėje ir Santaros klinikose.' },
+    { name: 'Agnė Juodytė', role: 'Kineziterapeutė', src: '/specialists/agne.jpg', desc: 'Patyrusi kineziterapeutė, dirbanti su kūdikiais nuo pirmųjų dienų ir vaikais, turinčiais įvairių raidos, neurologinių ar judėjimo iššūkių.' },
+    { name: 'Karolina Černych', role: 'Kineziterapeutė', src: '/specialists/karolina.jpg', desc: 'Kineziterapeutė, dirbanti su kūdikiais ir vaikais. Taiko DNS metodikos principus, vertina motorinę raidą, tonusą ir simetriją.' },
+    { name: 'Ramunė Nemeikaitė', role: 'Masažo terapeutė', src: '/specialists/ramune.jpg', desc: 'Sertifikuota vaikų masažo specialistė. Masažo terapeutė Vaikų ligoninėje ir Santaros klinikose.' },
   ];
 
   return (

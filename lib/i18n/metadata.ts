@@ -9,11 +9,11 @@ export const pageMetadata: Record<string, Record<Language, { title: string; desc
   '/': {
     lt: {
       title: 'FitKid - Vaikų kineziterapijos klinika Vilniuje | Kūdikių ir vaikų gydymas',
-      description: 'Profesionali vaikų kineziterapija Vilniaus centre. Kūdikių masažai, plukdymas, kineziterapija nuo 5 savaičių. Patyrę licencijuoti specialistai. ☎ +370 666 99676',
+      description: 'Profesionali vaikų kineziterapija Vilniaus centre. Kūdikių masažai, kineziterapija nuo 5 savaičių. Patyrę licencijuoti specialistai. ☎ +370 666 99676',
     },
     en: {
       title: 'FitKid - Pediatric Physiotherapy Clinic Vilnius | Infant and Child Therapy',
-      description: 'Professional pediatric physiotherapy in Vilnius center. Infant massage, swimming, physiotherapy from 5 weeks. Experienced licensed specialists. ☎ +370 666 99676',
+      description: 'Professional pediatric physiotherapy in Vilnius center. Infant massage, physiotherapy from 5 weeks. Experienced licensed specialists. ☎ +370 666 99676',
     },
   },
   '/kudikiu-kineziterapija': {
@@ -38,12 +38,12 @@ export const pageMetadata: Record<string, Record<Language, { title: string; desc
   },
   '/kudikiu-plukdymas': {
     lt: {
-      title: 'Kūdikių plukdymas Vilniuje | FitKid klinika',
-      description: 'Kūdikių plaukimo pamokos nuo 2 mėnesių. Šiltas vanduo, patyrę instruktoriai, saugus ir linksmas aplinka.',
+      title: 'Kūdikių plukdymas šiuo metu nevyksta | FitKid',
+      description: 'Kūdikių plukdymas FitKid klinikoje šiuo metu nevyksta. Susipažinkite su kūdikių kineziterapija ir masažais.',
     },
     en: {
-      title: 'Infant Swimming Vilnius | FitKid Clinic',
-      description: 'Infant swimming lessons from 2 months. Warm water, experienced instructors, safe and fun environment at FitKid.',
+      title: 'Infant Swimming Currently Unavailable | FitKid',
+      description: 'FitKid is not currently offering infant swimming. Explore infant physiotherapy and massage services.',
     },
   },
   '/vaiku-kineziterapija': {
@@ -116,12 +116,12 @@ export const pageMetadata: Record<string, Record<Language, { title: string; desc
     lt: {
       title: 'Kūdikių hipotonusas Vilniuje | Žemas raumenų tonusas: požymiai ir pagalba | FitKid',
       description:
-        'Sumažėjęs raumenų tonusas (hipotonusas) kūdikiams: požymiai pagal amžių, kada kreiptis, kaip padeda kineziterapija, Vojta, DNS, masažas ir hidroterapija.',
+        'Sumažėjęs raumenų tonusas (hipotonusas) kūdikiams: požymiai pagal amžių, kada kreiptis, kaip padeda kineziterapija, Vojta, DNS ir masažas.',
     },
     en: {
       title: 'Infant Hypotonia in Vilnius | Low Muscle Tone: Signs and Help | FitKid',
       description:
-        'Decreased muscle tone (hypotonia) in infants: age-related signs, when to seek help, how physiotherapy, Vojta, DNS, massage and hydrotherapy help.',
+        'Decreased muscle tone (hypotonia) in infants: age-related signs, when to seek help, how physiotherapy, Vojta, DNS and massage help.',
     },
   },
   '/plagiocefalija': {
@@ -229,11 +229,11 @@ export const pageMetadata: Record<string, Record<Language, { title: string; desc
   '/kainos': {
     lt: {
       title: 'Kainos | FitKid vaikų kineziterapijos klinika',
-      description: 'Kūdikių ir vaikų kineziterapijos, masažo ir plukdymo kainos. Paketai su nuolaida. Nemokama konsultacija.',
+      description: 'Kūdikių ir vaikų kineziterapijos ir masažo kainos. Paketai su nuolaida. Nemokama konsultacija.',
     },
     en: {
       title: 'Prices | FitKid Pediatric Physiotherapy Clinic',
-      description: 'Infant and children physiotherapy, massage and swimming prices. Package deals. Free consultation.',
+      description: 'Infant and children physiotherapy and massage prices. Package deals. Free consultation.',
     },
   },
   '/kontaktai': {
@@ -249,11 +249,11 @@ export const pageMetadata: Record<string, Record<Language, { title: string; desc
   '/registracija': {
     lt: {
       title: 'Registracija vizitui | FitKid klinika',
-      description: 'Užsiregistruokite į kūdikių ar vaikų kineziterapijos, masažo ar plukdymo vizitą. Skambinkite +370 666 99676.',
+      description: 'Užsiregistruokite į kūdikių ar vaikų kineziterapijos ar masažo vizitą. Skambinkite +370 666 99676.',
     },
     en: {
       title: 'Book an Appointment | FitKid Clinic',
-      description: 'Book a physiotherapy, massage or swimming visit for your infant or child. Call +370 666 99676.',
+      description: 'Book a physiotherapy or massage visit for your infant or child. Call +370 666 99676.',
     },
   },
   '/privacy': {
@@ -274,6 +274,16 @@ export const pageMetadata: Record<string, Record<Language, { title: string; desc
     en: {
       title: 'Cookie Settings | FitKid',
       description: 'FitKid website cookie settings and management.',
+    },
+  },
+  '/specialists/karolina-cernych': {
+    lt: {
+      title: 'Karolina Černych - Vaikų kineziterapeutė | FitKid',
+      description: 'Karolina Černych - vaikų kineziterapeutė. Dirba su kūdikiais ir vaikais, turinčiais genetinių sindromų, neurologinių ar raidos sutrikimų. DNS pediatrijos ir skoliozės mokymai. Licencija ASL-12396.',
+    },
+    en: {
+      title: 'Karolina Černych - Paediatric Physiotherapist | FitKid',
+      description: 'Karolina Černych - paediatric physiotherapist working with infants and children, including those with genetic, neurological or developmental conditions. DNS paediatrics and scoliosis training. Licence ASL-12396.',
     },
   },
   '/specialists/agne-juodyte': {

@@ -129,8 +129,8 @@ export default function ReabilitacijaPoTraumuPage() {
       specialistsSubtitle: 'FitKid yra vaikų ir paauglių kineziterapijos klinika Vilniuje, orientuota į funkcijos grąžinimą po traumos, ne tik į simptomų mažinimą.',
       specialistAgne: 'Agnė Juodytė',
       specialistAgneRole: 'vaikų kineziterapeutė, Vojta terapijos praktikė',
-      specialistKsenija: 'Ksenija Persijanova',
-      specialistKsenijaRole: 'vaikų ir paauglių kineziterapeutė',
+      specialistKarolina: 'Karolina Černych',
+      specialistKarolinaRole: 'vaikų ir paauglių kineziterapeutė',
       specialistRamune: 'Ramunė Nemeikaitė',
       specialistRamuneRole: 'gydomojo masažo specialistė, dirba su kūdikiais, vaikais ir paaugliais',
 
@@ -251,8 +251,8 @@ export default function ReabilitacijaPoTraumuPage() {
       specialistsSubtitle: 'FitKid is a children and adolescent physiotherapy clinic in Vilnius, focused on restoring function after injury, not just reducing symptoms.',
       specialistAgne: 'Agnė Juodytė',
       specialistAgneRole: 'paediatric physiotherapist, Vojta therapy practitioner',
-      specialistKsenija: 'Ksenija Persijanova',
-      specialistKsenijaRole: 'paediatric and adolescent physiotherapist',
+      specialistKarolina: 'Karolina Černych',
+      specialistKarolinaRole: 'paediatric and adolescent physiotherapist',
       specialistRamune: 'Ramunė Nemeikaitė',
       specialistRamuneRole: 'therapeutic massage specialist, works with infants, children and adolescents',
 
@@ -278,9 +278,9 @@ export default function ReabilitacijaPoTraumuPage() {
   const txt = pageText[currentLang];
 
   const specialists = [
-    { name: txt.specialistAgne, role: txt.specialistAgneRole, img: '/specialists/agne.png', slug: 'agne-juodyte' },
-    { name: txt.specialistKsenija, role: txt.specialistKsenijaRole, img: '/specialists/ksenija.png', slug: 'ksenija-persijanova' },
-    { name: txt.specialistRamune, role: txt.specialistRamuneRole, img: '/specialists/ramune.png', slug: 'ramune-nemeikaite' },
+    { name: txt.specialistAgne, role: txt.specialistAgneRole, img: '/specialists/agne.jpg', slug: 'agne-juodyte' },
+    { name: txt.specialistKarolina, role: txt.specialistKarolinaRole, img: '/specialists/karolina.jpg', slug: 'karolina-cernych' },
+    { name: txt.specialistRamune, role: txt.specialistRamuneRole, img: '/specialists/ramune.jpg', slug: 'ramune-nemeikaite' },
   ];
 
   return (

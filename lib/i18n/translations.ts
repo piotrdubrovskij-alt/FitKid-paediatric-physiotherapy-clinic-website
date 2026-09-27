@@ -208,11 +208,6 @@ export type Translation = {
         description: string;
         features: string[];
       };
-      hydrotherapy: {
-        name: string;
-        description: string;
-        features: string[];
-      };
       massage: {
         name: string;
         description: string;
@@ -298,12 +293,6 @@ export const translations: Record<Language, Translation> = {
           name: "Kūdikių masažai",
           slug: "kudikiu-masazai",
           description: "Švelnūs, adaptuoti kūdikiams",
-          ageGroup: "infant" as const,
-        },
-        {
-          name: "Kūdikių plukdymas",
-          slug: "kudikiu-plukdymas",
-          description: "Užsiėmimai vandenyje su tėvais",
           ageGroup: "infant" as const,
         },
         {
@@ -491,9 +480,9 @@ export const translations: Record<Language, Translation> = {
           bio: "Dirba su kūdikiais nuo pirmųjų dienų ir vaikais. Taiko Vojta terapiją ir DNS principus, dėsto Vilniaus universitete kineziterapeutams.",
         },
         {
-          name: "Ksenija Persijanova",
+          name: "Karolina Černych",
           role: "Kineziterapeutė",
-          bio: "Dirba su kūdikiais ir vaikais. Praktikoje taiko DNS principus, atlieka kūdikių hidroterapiją, konsultuoja dėl raidos ir laikysenos.",
+          bio: "Dirba su kūdikiais ir vaikais, turinčiais genetinių sindromų, neurologinių ar raidos sutrikimų. Vertina motorinę raidą ir laikyseną, taiko DNS mokymuose įgytas žinias.",
         },
         {
           name: "Ramunė Nemeikaitė",
@@ -506,20 +495,20 @@ export const translations: Record<Language, Translation> = {
       title: "Atsiliepimai",
       rating: "5.0/5 iš 45+ atsiliepimų Google",
       viewAllReviews: "Žiūrėti visus atsiliepimus Google Maps",
-      verifiedReviews: "Patikrinti atsiliepimai iš Google",
+      verifiedReviews: "Atsiliepimai iš Google Maps",
       clientLabel: "FitKid klientė",
       items: [
         {
-          name: "Skaistė Volungevičienė",
-          text: "Jauku, šeimyniška, profesionalu: šioje klinikoje kiekvienas pacientas gauna viską ir kartais daug daugiau nei gali įsivaizduoti. Gera lankytis, kai jauti, jog dirbantys specialistai yra viena darni komanda. Ačiū Ramunei už masažus, ačiū Agnei už Vojta ir kineziterapiją, ačiū Ksenijai už nuostabią šypseną ir gerą nuotaiką, su kuria ji pasitinka ne tik savo, bet ir kolegių pacientus 🥰.",
+          name: "Jurgita R",
+          text: "Dirbame su Agne, jos požiūris ir darbo supratimas labai mums patinka. Laikome ją pagrindine savo kineziterapeute ir be jos įžvalgų nepriimame jokių sprendimų, nes visiškai pasitikime jos aukšta kompetencija ir žiniomis! Agnės darbo dėka mano dukra sparčiai stiprėja, tobulėja ir juda pirmyn neskaitant cerebrinio paralyžiaus, epilepsijos bei regos sutrikimų. Nuoširdžiausias AČIŪ už geranoriškumą ir nuolatinę pagalbą ❤️.",
         },
         {
-          name: "Svetlana Urbanović",
-          text: "Puiki kineziterapijos klinika. Lankėmės pas kineziterapeutę Kseniją ir likome labai patenkinti sūnaus pažanga. Vienareikšmiškai rekomenduojame rinktis šią kliniką ir kitiems tėveliams!",
+          name: "Julija Gudaite",
+          text: "Lankėmės su metukų amžiaus sūnumi masažuose pas Ramunę Nemeikaitę, kurią rekomendavo kineziterapeutė. Patirtis pati geriausia, Ramunė darė viską (linksmino, kalbino, keitė erdves), kad tik galėtų atlikti masažą tokiam įnoringam klientui. Vaikas greit atsipalaidavo ir prisileido Ramunę, kas su nepažįstamais žmonėmis būna itin retai. Pačios geriausios rekomendacijos! Pati klinika taip paliko labai gerą įspūdį. :)",
         },
         {
-          name: "Julija M.",
-          text: "Rekomenduoju FitKid kliniką! Nuostabios specialistės, kurios atsakingai dirba ir atsižvelgia į vaiko poreikius. Mes pradėjome lankyti nuo hidroterapijos pas kineziterapeutę Kseniją 💛 prieš vonelę mankštindavo mūsų mažylį ir parodydavo ką ir kaip mes galime atlikti namie. Mažylis po plukdymo atsipalaiduodavo, net geriau miegojo. Dėl padidėjusio tonuso lankėme masažus pas Ramunę 💛 nors mums dar metukų nebuvo, bet mažylis išbūdavo visą laiką. A po masažo jo kūnelis tikrai jautėsi atsipalaidavęs. Taip pat lankome mankštas pas kineziterapeutę Agnę 💛 Kiekvienam užsiėmui laukia vis kitokie žaislai, vis kažkas naujo kas tik sudomintų vaiką. Visada po užsiėmimo papasakos kaip sekėsi, patars mums.",
+          name: "Kotryna Gudžiūnaitė",
+          text: "Lankėsi 7 mėn. kūdikis. Agnė moka puikiai užsiimti su vaikais. Pas kitas kineziterapeutes kūdikis visąlaik praverkdavo, pas Agnę neverkė. Nuodugniai apžiūrėjo, paaiškino, atsakė į klausimus. Rekomenduoju.",
         },
       ],
     },
@@ -638,11 +627,6 @@ export const translations: Record<Language, Translation> = {
           description: "Individualūs kineziterapijos užsiėmimai",
           features: ["Individualūs pratimai", "Pratimų mokymas", "Rekomendacijos namams"],
         },
-        hydrotherapy: {
-          name: "Hidroterapija ir kineziterapija",
-          description: "Kompleksiniai užsiėmimai vandenyje ir salėje",
-          features: ["Užsiėmimai vandenyje", "Kineziterapija", "Abiejų tėvų dalyvavimas"],
-        },
         massage: {
           name: "Gydomasis masažas",
           description: "Profesionalus gydomasis masažas kūdikiams",
@@ -731,12 +715,6 @@ export const translations: Record<Language, Translation> = {
           name: "Infant Massage",
           slug: "kudikiu-masazai",
           description: "Gentle, adapted for infants",
-          ageGroup: "infant" as const,
-        },
-        {
-          name: "Infant Swimming",
-          slug: "kudikiu-plukdymas",
-          description: "Water sessions with parents",
           ageGroup: "infant" as const,
         },
         {
@@ -924,9 +902,9 @@ export const translations: Record<Language, Translation> = {
           bio: "Works with infants from first days and children. Applies Vojta therapy and DNS principles, teaches physiotherapists at Vilnius University.",
         },
         {
-          name: "Ksenija Persijanova",
+          name: "Karolina Černych",
           role: "Physiotherapist",
-          bio: "Works with infants and children. Applies DNS principles in practice, performs infant hydrotherapy, consults on development and posture.",
+          bio: "Works with infants and children, including those with genetic syndromes, neurological or developmental conditions. Assesses motor development and posture and applies knowledge from DNS training.",
         },
         {
           name: "Ramunė Nemeikaitė",
@@ -939,20 +917,20 @@ export const translations: Record<Language, Translation> = {
       title: "Testimonials",
       rating: "5.0/5 from 45+ Google reviews",
       viewAllReviews: "View all reviews on Google Maps",
-      verifiedReviews: "Verified reviews from Google",
+      verifiedReviews: "Reviews from Google Maps",
       clientLabel: "FitKid client",
       items: [
         {
-          name: "Skaistė Volungevičienė",
-          text: "Cozy, family-like, professional: at this clinic every patient receives everything and sometimes much more than they can imagine. It's good to visit when you feel that the specialists working there are one harmonious team. Thanks to Ramunė for massages, thanks to Agnė for Vojta and physiotherapy, thanks to Ksenija for wonderful smile and good mood with which she greets not only her own but also colleagues' patients 🥰.",
+          name: "Jurgita R",
+          text: "We work with Agnė and we really like her approach and her understanding of the work. We consider her our main physiotherapist and we do not make any decisions without her insights, because we fully trust her high competence and knowledge! Thanks to Agnė's work my daughter is getting stronger, developing and moving forward despite cerebral palsy, epilepsy and vision impairment. Our most sincere THANK YOU for the goodwill and constant support ❤️.",
         },
         {
-          name: "Svetlana Urbanović",
-          text: "Excellent physiotherapy clinic. We visited physiotherapist Ksenija and were very satisfied with our son's progress. We definitely recommend choosing this clinic to other parents!",
+          name: "Julija Gudaite",
+          text: "We came for massages with our one-year-old son to Ramunė Nemeikaitė, who was recommended by a physiotherapist. The experience was the very best – Ramunė did everything (entertained him, talked to him, changed the space) just to be able to massage such a demanding little client. He relaxed quickly and let Ramunė close, which is very rare with strangers. The very best recommendations! The clinic itself also left a very good impression. :)",
         },
         {
-          name: "Julija M.",
-          text: "I recommend FitKid clinic! Amazing specialists who work responsibly and consider child's needs. We started with hydrotherapy with physiotherapist Ksenija 💛 before bath she exercised our baby and showed what and how we can do at home. Baby relaxed after swimming, even slept better. Due to increased tone we visited massages with Ramunė 💛 though our baby wasn't even a year old, he stayed for whole session. After massage his body really felt relaxed. We also visit exercises with physiotherapist Agnė 💛 Each session has different toys, always something new to interest the child. After session she always tells how it went and advises us.",
+          name: "Kotryna Gudžiūnaitė",
+          text: "Our 7-month-old baby attended. Agnė knows perfectly how to work with children. With other physiotherapists the baby cried the whole time, with Agnė he did not cry at all. She examined him thoroughly, explained everything and answered our questions. I recommend.",
         },
       ],
     },
@@ -1070,11 +1048,6 @@ export const translations: Record<Language, Translation> = {
           name: "Individual Physiotherapy",
           description: "Individual physiotherapy sessions",
           features: ["Individual exercises", "Exercise training", "Home recommendations"],
-        },
-        hydrotherapy: {
-          name: "Hydrotherapy and Physiotherapy",
-          description: "Combined sessions in water and gym",
-          features: ["Water exercises", "Physiotherapy", "Both parents can participate"],
         },
         massage: {
           name: "Therapeutic Massage",

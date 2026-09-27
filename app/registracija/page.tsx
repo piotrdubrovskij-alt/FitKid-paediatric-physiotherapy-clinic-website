@@ -8,7 +8,8 @@ import { translations, type Language } from '@/lib/i18n/translations';
 
 const specialistWidgets: Record<string, { doctorId: string; name: { lt: string; en: string } }> = {
   agne: { doctorId: '16366', name: { lt: 'Agnę Juodytę', en: 'Agnė Juodytė' } },
-  ksenija: { doctorId: '16171', name: { lt: 'Kseniją Persijanovą', en: 'Ksenija Persijanova' } },
+  // TODO: Karolina Černych – pridėti, kai bus žinomas jos doctorId ManoDaktaras sistemoje:
+  // karolina: { doctorId: 'XXXXX', name: { lt: 'Karoliną Černych', en: 'Karolina Černych' } },
   ramune: { doctorId: '16367', name: { lt: 'Ramunę Nemeikaitę', en: 'Ramunė Nemeikaitę' } },
 };
 

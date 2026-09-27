@@ -538,7 +538,7 @@ export default function VaikuMasazasPage() {
               <div className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative aspect-[3/4] bg-gradient-to-br from-[#54B6FC]/15 to-[#fb7825]/15 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/specialists/ramune.png"
+                    src="/specialists/ramune.jpg"
                     alt={txt.ramune}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"

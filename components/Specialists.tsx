@@ -10,14 +10,14 @@ interface SpecialistsProps {
 
 export default function Specialists({ translations }: SpecialistsProps) {
   const photos: Record<string, string> = {
-    'Agnė Juodytė': '/specialists/agne.png',
-    'Ksenija Persijanova': '/specialists/ksenija.png',
-    'Ramunė Nemeikaitė': '/specialists/ramune.png',
+    'Agnė Juodytė': '/specialists/agne.jpg',
+    'Karolina Černych': '/specialists/karolina.jpg',
+    'Ramunė Nemeikaitė': '/specialists/ramune.jpg',
   };
 
   const specialistLinks: Record<string, string | null> = {
     'Agnė Juodytė': '/specialists/agne-juodyte',
-    'Ksenija Persijanova': '/specialists/ksenija-persijanova',
+    'Karolina Černych': '/specialists/karolina-cernych',
     'Ramunė Nemeikaitė': '/specialists/ramune-nemeikaite',
   };
 
@@ -52,6 +52,7 @@ export default function Specialists({ translations }: SpecialistsProps) {
                         src={hasPhoto}
                         alt={specialist.name}
                         fill
+                        loading="eager"
                         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                         style={{
                           objectPosition: 'center 10%'

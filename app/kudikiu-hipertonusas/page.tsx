@@ -130,7 +130,6 @@ export default function HipertonusasPage() {
         { emoji: '🌀', name: 'DNS principai', desc: 'DNS (dinaminė neuroraumeninė stabilizacija) aktyvuoja giliuosius stabilizuojančius raumenis, gerina kūno ašies kontrolę, moko efektyvesnių, mažiau įtemptų judesių modelių.' },
         { emoji: '⚡', name: 'Vojta terapija', desc: 'Vojta taikoma, kai reikia aktyvinti įgimtus judesių modelius, pagerinti viso kūno koordinaciją, nuosekliai mažinti patologinės įtampos dominavimą.' },
         { emoji: '👐', name: 'Gydomasis masažas kūdikiams', desc: 'Mažina paviršinę raumenų įtampą, gerina kūno toleranciją prisilietimui, padeda pereiti į ramesnę būseną po aktyvumo, gerina bendrą komfortą.' },
-        { emoji: '💧', name: 'Hidroterapija (kūdikių plukdymas)', desc: 'Šiltame vandenyje mažėja gravitacinė apkrova, lengviau atlikti kokybiškus judesius, kūdikis dažniau atsipalaiduoja, gerėja sensorinė integracija.' },
       ],
 
       visitsTitle: 'Kiek vizitų dažniausiai prireikia',
@@ -165,7 +164,7 @@ export default function HipertonusasPage() {
         { q: 'Ar masažas gali pakeisti kineziterapiją?', a: 'Ne visada. Masažas yra naudingas, bet dažniausiai jis yra dalis platesnio kineziterapinio plano.' },
         { q: 'Kiek greitai matomas rezultatas?', a: 'Dažnai pirmi pokyčiai matomi per kelias savaites, jei planas taikomas nuosekliai.' },
         { q: 'Ar reikia neurologo konsultacijos?', a: 'Jei yra „raudonų vėliavų" arba aiški raidos rizika, taip. Jei jų nėra, vis tiek naudinga pediatro kontrolė ir kineziterapinis stebėjimas.' },
-        { q: 'Ar galima derinti Vojta, DNS, masažą ir hidroterapiją?', a: 'Taip, jei metodai parenkami individualiai ir turi aiškų tikslą.' },
+        { q: 'Ar galima derinti Vojta, DNS ir masažą?', a: 'Taip, jei metodai parenkami individualiai ir turi aiškų tikslą.' },
         { q: 'Kada terapiją galima mažinti?', a: 'Kai pasiekiami funkciniai tikslai: gerėja judesių kokybė, mažėja įtampa ir raida vyksta pagal amžių.' },
       ],
 
@@ -290,7 +289,6 @@ export default function HipertonusasPage() {
         { emoji: '🌀', name: 'DNS principles', desc: 'DNS (Dynamic Neuromuscular Stabilisation) activates the deep stabilising muscles, improves body axis control, and teaches more efficient, less tense movement patterns.' },
         { emoji: '⚡', name: 'Vojta therapy', desc: 'Vojta is used when innate movement patterns need to be activated, whole-body coordination improved, and the dominance of pathological tension gradually reduced.' },
         { emoji: '👐', name: 'Therapeutic infant massage', desc: 'Reduces surface muscle tension, improves body tolerance to touch, helps transition to a calmer state after activity, and improves overall comfort.' },
-        { emoji: '💧', name: 'Hydrotherapy (infant swimming)', desc: 'In warm water, gravitational load decreases, quality movements become easier, the infant relaxes more readily, and sensory integration improves.' },
       ],
 
       visitsTitle: 'How many visits are usually needed?',
@@ -325,7 +323,7 @@ export default function HipertonusasPage() {
         { q: 'Can massage replace physiotherapy?', a: 'Not always. Massage is beneficial, but it is usually part of a broader physiotherapy plan.' },
         { q: 'How quickly are results seen?', a: 'Often the first changes are visible within a few weeks if the plan is applied consistently.' },
         { q: 'Is a neurologist consultation needed?', a: 'If red flags are present or there is a clear developmental risk, yes. Otherwise, paediatric monitoring and physiotherapy follow-up are still advisable.' },
-        { q: 'Can Vojta, DNS, massage and hydrotherapy be combined?', a: 'Yes, if the methods are chosen individually and have a clear goal.' },
+        { q: 'Can Vojta, DNS and massage be combined?', a: 'Yes, if the methods are chosen individually and have a clear goal.' },
         { q: 'When can therapy be reduced?', a: 'When functional goals are achieved: movement quality improves, tension decreases and development progresses according to age.' },
       ],
 
@@ -354,9 +352,9 @@ export default function HipertonusasPage() {
   const txt = pageText[currentLang];
 
   const specialists = [
-    { name: 'Agnė Juodytė', role: currentLang === 'lt' ? 'Kineziterapeutė' : 'Physiotherapist', detail: currentLang === 'lt' ? 'vaikų kineziterapeutė, Vojta terapijos praktikė' : 'pediatric physiotherapist, Vojta therapy practitioner', img: '/specialists/agne.png', desc: currentLang === 'lt' ? 'Patyrusi kineziterapeutė, dirbanti su kūdikiais nuo pirmųjų dienų ir vaikais, turinčiais įvairių raidos, neurologinių ar judėjimo iššūkių.' : 'Experienced physiotherapist working with infants from their first days and children with various developmental, neurological or movement challenges.' },
-    { name: 'Ksenija Persijanova', role: currentLang === 'lt' ? 'Kineziterapeutė' : 'Physiotherapist', detail: currentLang === 'lt' ? 'vaikų ir kūdikių kineziterapeutė' : 'pediatric and infant physiotherapist', img: '/specialists/ksenija.png', desc: currentLang === 'lt' ? 'Kineziterapeutė su praktine patirtimi kūdikių kineziterapijoje ir paliatyvioje pediatrijoje. Specializuojasi kūdikių hidroterapijos procedūrose.' : 'Physiotherapist with practical experience in infant physiotherapy and palliative paediatrics. Specialises in infant hydrotherapy.' },
-    { name: 'Ramunė Nemeikaitė', role: currentLang === 'lt' ? 'Masažo terapeutė' : 'Massage Therapist', detail: currentLang === 'lt' ? 'gydomojo masažo specialistė, dirba tik su kūdikiais ir vaikais' : 'therapeutic massage specialist, works exclusively with infants and children', img: '/specialists/ramune.png', desc: currentLang === 'lt' ? 'Sertifikuota vaikų masažo specialistė. Masažo terapeutė Vaikų ligoninėje ir Santaros klinikose.' : 'Certified pediatric massage specialist. Massage therapist at the Children\'s Hospital and Santaros Clinics.' },
+    { name: 'Agnė Juodytė', role: currentLang === 'lt' ? 'Kineziterapeutė' : 'Physiotherapist', detail: currentLang === 'lt' ? 'vaikų kineziterapeutė, Vojta terapijos praktikė' : 'pediatric physiotherapist, Vojta therapy practitioner', img: '/specialists/agne.jpg', desc: currentLang === 'lt' ? 'Patyrusi kineziterapeutė, dirbanti su kūdikiais nuo pirmųjų dienų ir vaikais, turinčiais įvairių raidos, neurologinių ar judėjimo iššūkių.' : 'Experienced physiotherapist working with infants from their first days and children with various developmental, neurological or movement challenges.' },
+    { name: 'Karolina Černych', role: currentLang === 'lt' ? 'Kineziterapeutė' : 'Physiotherapist', detail: currentLang === 'lt' ? 'vaikų ir kūdikių kineziterapeutė' : 'pediatric and infant physiotherapist', img: '/specialists/karolina.jpg', desc: currentLang === 'lt' ? 'Kineziterapeutė, dirbanti su kūdikiais ir vaikais. Taiko DNS metodikos principus, vertina motorinę raidą, tonusą ir simetriją.' : 'Physiotherapist working with infants and children. Applies DNS methodology principles, assesses motor development, tone and symmetry.' },
+    { name: 'Ramunė Nemeikaitė', role: currentLang === 'lt' ? 'Masažo terapeutė' : 'Massage Therapist', detail: currentLang === 'lt' ? 'gydomojo masažo specialistė, dirba tik su kūdikiais ir vaikais' : 'therapeutic massage specialist, works exclusively with infants and children', img: '/specialists/ramune.jpg', desc: currentLang === 'lt' ? 'Sertifikuota vaikų masažo specialistė. Masažo terapeutė Vaikų ligoninėje ir Santaros klinikose.' : 'Certified pediatric massage specialist. Massage therapist at the Children\'s Hospital and Santaros Clinics.' },
   ];
 
   return (

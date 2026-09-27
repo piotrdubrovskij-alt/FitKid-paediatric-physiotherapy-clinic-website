@@ -157,11 +157,6 @@ export default function KudikioKreivakaklyste() {
           name: 'Gydomasis masažas',
           desc: 'Švelnus tikslingas trumpojo SCM raumens ir aplinkinių audinių masažas mažina raumenų įtampą, gerina kraujotaką ir paruošia raumenis tempimui.',
         },
-        {
-          emoji: '💧',
-          name: 'Hidroterapija',
-          desc: 'Šiltas vanduo sumažina gravitacijos poveikį ir raumenų apsaugines reakcijas. Kūdikiui vandenyje lengviau laisvai sukti galvytę ir judėti simetriškai.',
-        },
       ],
       visitsTitle: 'Kiek procedūrų reikia?',
       visitsSubtitle: 'Orientaciniai skaičiai — tikslus planas sudaromas po įvertinimo',
@@ -218,10 +213,6 @@ export default function KudikioKreivakaklyste() {
           a: 'Raumeninė tortikolis turi struktūrinį raumens pažeidimą (sutankinimas, trumpumas) — dažnai nuo gimimo. Pozicinė išsivysto palaipsniui dėl padėties įpročio. Abi gydomos panašiai, tačiau raumeninei dažnai reikia intensyvesnio tempimo.',
         },
         {
-          q: 'Ar galima hidroterapija, jei kūdikis turi tortikolis?',
-          a: 'Taip, hidroterapija yra puiki papildoma priemonė. Vanduo sumažina raumenų gynybinę įtampą ir leidžia kūdikiui laisviau judėti. Derinami su kineziterapija, rezultatai būna greitesni.',
-        },
-        {
           q: 'Ar tortikolis turės įtakos tolimesnei vaiko raidai?',
           a: 'Laiku gydytas tortikolis nepalieką ilgalaikių pasekmių. Negydytas ar vėlai pradėtas gydyti — gali sukelti laikyseną, koordinacijos ir judėjimo problemas. Todėl ankstyvas kreipimasis yra labai svarbus.',
         },
@@ -237,11 +228,6 @@ export default function KudikioKreivakaklyste() {
         {
           name: 'Eglė M.',
           text: 'Pastebėjome tortikolis kai kūdikiui buvo 6 savaičios. Po 8 procedūrų su Agne galvytė juda visiškai laisvai. Mokė ir namų pratimų, kurie tikrai padėjo.',
-          stars: 5,
-        },
-        {
-          name: 'Tomas K.',
-          text: 'Ksenija nuostabus specialistas. Aiškiai paaiškino, kas vyksta, rodė kaip laikyti ir žaisti su kūdikiu namuose. Tortikolis išnyko per 2 mėnesius.',
           stars: 5,
         },
         {
@@ -389,11 +375,6 @@ export default function KudikioKreivakaklyste() {
           name: 'Therapeutic Massage',
           desc: 'Gentle targeted massage of the shortened SCM muscle and surrounding tissues reduces muscle tension, improves circulation, and prepares muscles for stretching.',
         },
-        {
-          emoji: '💧',
-          name: 'Hydrotherapy',
-          desc: 'Warm water reduces the effect of gravity and protective muscle reactions. Babies move more freely in water, making symmetric head rotation easier.',
-        },
       ],
       visitsTitle: 'How Many Sessions Are Needed?',
       visitsSubtitle: 'Approximate numbers — precise plan is created after assessment',
@@ -450,10 +431,6 @@ export default function KudikioKreivakaklyste() {
           a: 'Muscular torticollis has structural muscle damage (thickening, shortening) — often present from birth. Postural develops gradually due to positional habit. Both are treated similarly, but muscular often requires more intensive stretching.',
         },
         {
-          q: 'Can hydrotherapy be used if the baby has torticollis?',
-          a: 'Yes, hydrotherapy is an excellent supplementary method. Water reduces protective muscle tension and allows the baby to move more freely. Combined with physiotherapy, results are faster.',
-        },
-        {
           q: 'Will torticollis affect the child\'s later development?',
           a: 'Torticollis treated in time leaves no long-term consequences. Untreated or late-treated — it can cause posture, coordination and movement problems. That is why early intervention is so important.',
         },
@@ -469,11 +446,6 @@ export default function KudikioKreivakaklyste() {
         {
           name: 'Eglė M.',
           text: 'We noticed torticollis when the baby was 6 weeks old. After 8 sessions with Agnė the head moves completely freely. She also taught us home exercises that really helped.',
-          stars: 5,
-        },
-        {
-          name: 'Tomas K.',
-          text: 'Ksenija is a wonderful specialist. Clearly explained what is happening and showed how to hold and play with the baby at home. Torticollis resolved within 2 months.',
           stars: 5,
         },
         {
@@ -779,7 +751,7 @@ export default function KudikioKreivakaklyste() {
               <div className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative aspect-[3/4] bg-gradient-to-br from-[#54B6FC]/15 to-[#fb7825]/15 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/specialists/agne.png"
+                    src="/specialists/agne.jpg"
                     alt="Agnė Juodytė"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
@@ -801,8 +773,8 @@ export default function KudikioKreivakaklyste() {
               <div className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative aspect-[3/4] bg-gradient-to-br from-[#54B6FC]/15 to-[#fb7825]/15 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/specialists/ksenija.png"
-                    alt="Ksenija Persijanova"
+                    src="/specialists/karolina.jpg"
+                    alt="Karolina Černych"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     style={{ objectPosition: 'center 10%' }}
@@ -811,10 +783,10 @@ export default function KudikioKreivakaklyste() {
                   <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">Ksenija Persijanova</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">Karolina Černych</h3>
                   <div className="text-sm font-semibold text-[#54B6FC] mb-4">Kineziterapeutė</div>
                   <p className="text-gray-600 leading-relaxed text-sm">
-                    Kineziterapeutė su praktine patirtimi kūdikių kineziterapijoje ir paliatyvioje pediatrijoje. Specializuojasi kūdikių hidroterapijos procedūrose ir darbe su vaikais.
+                    Kineziterapeutė, dirbanti su kūdikiais ir vaikais. Taiko DNS metodikos principus, vertina motorinę raidą, tonusą ir simetriją, konsultuoja tėvus dėl pratimų namuose.
                   </p>
                 </div>
                 <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-[#54B6FC]/10 to-[#fb7825]/10 rounded-full blur-2xl" />
@@ -823,7 +795,7 @@ export default function KudikioKreivakaklyste() {
               <div className="group relative bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="relative aspect-[3/4] bg-gradient-to-br from-[#54B6FC]/15 to-[#fb7825]/15 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/specialists/ramune.png"
+                    src="/specialists/ramune.jpg"
                     alt="Ramunė Nemeikaitė"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"

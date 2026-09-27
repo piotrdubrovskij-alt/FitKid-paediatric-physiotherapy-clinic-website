@@ -51,14 +51,6 @@ export default function KainosPage() {
       savings: '25',
     },
     {
-      ...t.pricingPage.services.hydrotherapy,
-      duration: '45 min',
-      price: '40',
-      packagePrice: '185',
-      packageSessions: '5',
-      savings: '15',
-    },
-    {
       ...t.pricingPage.services.massage,
       duration: '30 min',
       price: '35',

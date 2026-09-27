@@ -5,7 +5,7 @@ export default function StructuredData() {
     "@type": "MedicalClinic",
     "name": "FitKid",
     "alternateName": "FitKid Vaikų Kineziterapijos Klinika",
-    "description": "Vaikų ir kūdikių kineziterapijos klinika Vilniuje. Profesionalūs masažai, kineziterapija, plukdymas.",
+    "description": "Vaikų ir kūdikių kineziterapijos klinika Vilniuje. Profesionali kineziterapija ir gydomieji masažai.",
     "url": "https://fitkid.lt",
     "telephone": "+37066699676",
     "email": "info@fitkid.lt",
@@ -42,7 +42,6 @@ export default function StructuredData() {
     "medicalSpecialty": [
       "Pediatric Physiotherapy",
       "Infant Massage",
-      "Hydrotherapy",
       "Kinesiotherapy"
     ],
     "areaServed": {

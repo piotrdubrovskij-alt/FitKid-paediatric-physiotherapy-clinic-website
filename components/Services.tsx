@@ -13,7 +13,6 @@ interface ServicesProps {
 const serviceImages = {
   'kudikiu-kineziterapija': 'infant-physiotherapy.jpg',
   'kudikiu-masazai': 'hero/hero-kudikiu-masazas.png',
-  'kudikiu-plukdymas': 'infant-swimming.jpg',
   'vaiku-kineziterapija': 'child-physiotherapy.jpg',
   'vaiku-masazas': 'child-massage.jpg',
   'vojta-terapija': 'vojta-therapy.jpg',
@@ -36,7 +35,6 @@ export default function Services({ translations, currentLang }: ServicesProps) {
     const imagePositions: Record<string, string> = {
       'kudikiu-kineziterapija': 'center 45%',
       'kudikiu-masazai': 'center 40%',
-      'kudikiu-plukdymas': 'center 35%',
       'vaiku-kineziterapija': 'center 40%',
       'vaiku-masazas': 'center 45%',
       'vojta-terapija': 'center 55%',

@@ -95,7 +95,6 @@ export default function HipotonusasPage() {
         { emoji: '🌀', name: 'DNS principai', desc: 'DNS (dinaminė neuroraumeninė stabilizacija) taikoma siekiant aktyvuoti giliuosius stabilizuojančius raumenis, gerinti diafragmos-liemens-dubens koordinaciją ir formuoti stabilią bazę judesiui. Hipotonuso atveju DNS padeda kurti „vidinę atramą“.', },
         { emoji: '⚡', name: 'Vojta terapija', desc: 'Vojta metodas naudojamas, kai reikia aktyvinti įgimtus judesių modelius, pagerinti viso kūno įsitraukimą ir pasiekti efektyvesnį nervų-raumenų atsaką. Tai ypač aktualu, kai kūdikis pats dar negali kokybiškai inicijuoti tam tikrų judesių.' },
         { emoji: '👐', name: 'Gydomasis masažas kūdikiams', desc: 'Hipotonuso atveju masažas naudojamas kaip dalis plano: sensorinei ir proprioceptinei stimuliacijai, kraujotakai ir audinių paruošimui aktyvesniam darbui, kūno „pažadinimui“ prieš pratimus ir bendram komfortui. Masažas nepakeičia kineziterapijos, bet gali reikšmingai pagerinti toleranciją.' },
-        { emoji: '💧', name: 'Hidroterapija (kūdikių plukdymas)', desc: 'Vandens aplinka padeda saugiau aktyvuoti raumenis be per didelės apkrovos, didinti judesio amplitudę, skatinti simetriškus judesius ir gerinti ištvermę bei kūno kontrolės pojūtį. Hipotonuso atveju hidroterapija dažnai labai naudinga kaip papildoma priemonė.' },
       ],
 
       visitsTitle: 'Kiek vizitų dažniausiai prireikia',
@@ -121,7 +120,7 @@ export default function HipotonusasPage() {
         { q: 'Ar masažas gali pakeisti kineziterapiją?', a: 'Dažniausiai ne. Masažas yra papildoma priemonė, o judesio kokybei ir funkcijai būtina kineziterapinė programa.' },
         { q: 'Kiek laiko reikia iki pirmų pokyčių?', a: 'Dažnai pirmi pokyčiai matomi per kelias savaites, jei planas taikomas nuosekliai namuose ir klinikoje.' },
         { q: 'Ar reikalinga neurologo konsultacija?', a: 'Jei yra raudonų vėliavų ar neaiški klinikinė situacija, taip. Daugeliu atvejų deriname pediatro ir kineziterapeuto stebėseną.' },
-        { q: 'Ar galima derinti DNS, Vojta, masažą ir hidroterapiją?', a: 'Taip, kai metodai parenkami individualiai ir taikomi pagal aiškius tikslus.' },
+        { q: 'Ar galima derinti DNS, Vojta ir masažą?', a: 'Taip, kai metodai parenkami individualiai ir taikomi pagal aiškius tikslus.' },
         { q: 'Ar hipotonusas gali būti susijęs su vėlesniais laikysenos sunkumais?', a: 'Taip, jei ilgai nekoreguojamas. Todėl svarbu anksti dirbti su stabilizacija ir judesio kokybe.' },
         { q: 'Kada galima mažinti terapijos intensyvumą?', a: 'Kai pasiekti funkciniai tikslai, raida vyksta nuosekliai ir tėvai turi aiškų palaikymo planą namuose.' },
       ],
@@ -199,7 +198,6 @@ export default function HipotonusasPage() {
         { emoji: '🌀', name: 'DNS principles', desc: 'DNS (Dynamic Neuromuscular Stabilisation) is used to activate deep stabilising muscles, improve diaphragm-trunk-pelvis coordination and form a stable base for movement. In hypotonia, DNS helps build "inner support".' },
         { emoji: '⚡', name: 'Vojta therapy', desc: 'Vojta is used when innate movement patterns need to be activated, whole-body engagement improved and a more efficient neuromuscular response achieved. This is especially relevant when the infant cannot yet initiate certain movements with quality.' },
         { emoji: '👐', name: 'Therapeutic infant massage', desc: 'With hypotonia, massage is used as part of the plan for sensory and proprioceptive stimulation, circulation and tissue preparation for more active work, and to "wake up" the body before exercises. Massage does not replace physiotherapy but can significantly improve tolerance.' },
-        { emoji: '💧', name: 'Hydrotherapy (infant swimming)', desc: 'Water helps activate muscles more safely without excessive load, increase range of motion, encourage symmetrical movement and improve endurance and body awareness. With hypotonia, hydrotherapy is often very useful as an adjunct between physiotherapy sessions.' },
       ],
 
       visitsTitle: 'How many visits are usually needed?',
@@ -225,7 +223,7 @@ export default function HipotonusasPage() {
         { q: 'Can massage replace physiotherapy?', a: 'Usually not. Massage is an adjunct; a physiotherapy programme is essential for movement quality and function.' },
         { q: 'How long until first changes?', a: 'Often the first changes are seen within a few weeks if the plan is applied consistently at home and in the clinic.' },
         { q: 'Is a neurologist consultation needed?', a: 'If there are red flags or an unclear clinical picture, yes. In many cases we combine paediatric and physiotherapy follow-up.' },
-        { q: 'Can DNS, Vojta, massage and hydrotherapy be combined?', a: 'Yes, when methods are chosen individually and applied according to clear goals.' },
+        { q: 'Can DNS, Vojta and massage be combined?', a: 'Yes, when methods are chosen individually and applied according to clear goals.' },
         { q: 'Can hypotonia be linked to later posture difficulties?', a: 'Yes, if left uncorrected for long. So it is important to work on stabilisation and movement quality early.' },
         { q: 'When can therapy intensity be reduced?', a: 'When functional goals are reached, development progresses steadily and parents have a clear home support plan.' },
       ],
@@ -254,9 +252,9 @@ export default function HipotonusasPage() {
   const txt = pageText[currentLang];
 
   const specialists = [
-    { name: 'Agnė Juodytė', role: currentLang === 'lt' ? 'Kineziterapeutė' : 'Physiotherapist', detail: currentLang === 'lt' ? 'vaikų kineziterapeutė, Vojta terapijos praktikė' : 'paediatric physiotherapist, Vojta therapy practitioner', img: '/specialists/agne.png', desc: currentLang === 'lt' ? 'Patyrusi kineziterapeutė, dirbanti su kūdikiais nuo pirmųjų dienų ir vaikais.' : 'Experienced physiotherapist working with infants from their first days and children.' },
-    { name: 'Ksenija Persijanova', role: currentLang === 'lt' ? 'Kineziterapeutė' : 'Physiotherapist', detail: currentLang === 'lt' ? 'vaikų ir kūdikių kineziterapeutė' : 'paediatric and infant physiotherapist', img: '/specialists/ksenija.png', desc: currentLang === 'lt' ? 'Kineziterapeutė su praktine patirtimi kūdikių kineziterapijoje ir paliatyvioje pediatrijoje.' : 'Physiotherapist with practical experience in infant physiotherapy and palliative paediatrics.' },
-    { name: 'Ramunė Nemeikaitė', role: currentLang === 'lt' ? 'Masažo terapeutė' : 'Massage Therapist', detail: currentLang === 'lt' ? 'gydomojo masažo specialistė, dirba tik su kūdikiais ir vaikais' : 'therapeutic massage specialist, works only with infants and children', img: '/specialists/ramune.png', desc: currentLang === 'lt' ? 'Sertifikuota vaikų masažo specialistė.' : 'Certified paediatric massage specialist.' },
+    { name: 'Agnė Juodytė', role: currentLang === 'lt' ? 'Kineziterapeutė' : 'Physiotherapist', detail: currentLang === 'lt' ? 'vaikų kineziterapeutė, Vojta terapijos praktikė' : 'paediatric physiotherapist, Vojta therapy practitioner', img: '/specialists/agne.jpg', desc: currentLang === 'lt' ? 'Patyrusi kineziterapeutė, dirbanti su kūdikiais nuo pirmųjų dienų ir vaikais.' : 'Experienced physiotherapist working with infants from their first days and children.' },
+    { name: 'Karolina Černych', role: currentLang === 'lt' ? 'Kineziterapeutė' : 'Physiotherapist', detail: currentLang === 'lt' ? 'vaikų ir kūdikių kineziterapeutė' : 'paediatric and infant physiotherapist', img: '/specialists/karolina.jpg', desc: currentLang === 'lt' ? 'Kineziterapeutė, dirbanti su kūdikiais ir vaikais, taikanti DNS metodikos principus.' : 'Physiotherapist working with infants and children, applying DNS methodology principles.' },
+    { name: 'Ramunė Nemeikaitė', role: currentLang === 'lt' ? 'Masažo terapeutė' : 'Massage Therapist', detail: currentLang === 'lt' ? 'gydomojo masažo specialistė, dirba tik su kūdikiais ir vaikais' : 'therapeutic massage specialist, works only with infants and children', img: '/specialists/ramune.jpg', desc: currentLang === 'lt' ? 'Sertifikuota vaikų masažo specialistė.' : 'Certified paediatric massage specialist.' },
   ];
 
   return (

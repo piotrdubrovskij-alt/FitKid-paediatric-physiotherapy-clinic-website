@@ -88,8 +88,8 @@ export default function VojtaTerapijaPage() {
       faqTitle: 'Dažniausiai užduodami klausimai',
       q1: 'Kiek laiko trunka kursas?',
       a1: 'Tai priklauso nuo diagnozės. Kai kuriems kūdikiams užtenka kelių mėnesių, kol pasiveja raidą. Esant rimtesniems sutrikimams, terapija gali trukti ilgiau su pertraukomis.',
-      q2: 'Ar galima derinti su masažu ar baseinu?',
-      a2: 'Taip, dažnai Vojta derinama su kitomis priemonėmis, tačiau svarbu neperkrauti vaiko. Sudarysime individualų planą.',
+      q2: 'Ar galima derinti su masažu?',
+      a2: 'Taip, tačiau svarbu neperkrauti vaiko. Sudarysime individualų planą.',
       q3: 'Ar tėvai tikrai sugebės tai daryti namuose?',
       a3: 'Taip! 99% tėvų išmoksta. Mes skiriame tiek laiko mokymui, kiek reikia. Jūs nesate paliekami vieni.',
       q4: 'Nuo kokio amžiaus galima pradėti Vojta terapiją?',
@@ -173,8 +173,8 @@ export default function VojtaTerapijaPage() {
       faqTitle: 'Frequently Asked Questions',
       q1: 'How long does the course last?',
       a1: 'It depends on diagnosis. For some infants, a few months are enough to catch up with development. For more serious disorders, therapy may take longer with breaks.',
-      q2: 'Can it be combined with massage or swimming?',
-      a2: 'Yes, Vojta is often combined with other methods, but it\'s important not to overload the child. We\'ll create an individual plan.',
+      q2: 'Can it be combined with massage?',
+      a2: 'Yes, but it\'s important not to overload the child. We\'ll create an individual plan.',
       q3: 'Can parents really do this at home?',
       a3: 'Yes! 99% of parents learn. We dedicate as much time to training as needed. You are not left alone.',
       q4: 'From what age can Vojta therapy start?',
@@ -518,7 +518,7 @@ export default function VojtaTerapijaPage() {
                 {/* Photo with 3:4 aspect ratio like main page */}
                 <div className="relative aspect-[3/4] bg-gradient-to-br from-[#54B6FC]/15 to-[#fb7825]/15 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/specialists/agne.png"
+                    src="/specialists/agne.jpg"
                     alt="Agnė Juodytė"
                     fill
                     className="object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-[1.03]"

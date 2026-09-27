@@ -101,15 +101,13 @@ export default function KudikiuKineziterapijaPage() {
       specialistsTitle: 'Kas dirba su kūdikiais?',
       agne: 'Agnė Juodytė – kineziterapeutė',
       agneDesc: 'Dirba su kūdikiais nuo pirmųjų dienų, padeda spręsti raidos, judėjimo ir simetrijos situacijas.',
-      ksenija: 'Ksenija Persijanova – kineziterapeutė',
-      ksenijaDesc: 'Patirtis kūdikių kineziterapijoje ir kūdikių hidroterapijos procedūrose, darbas su vaikais pagal individualų planą.',
+      karolina: 'Karolina Černych – kineziterapeutė',
+      karolinaDesc: 'Dirba su kūdikiais ir vaikais pagal individualų planą, taiko DNS metodikos principus ir moko tėvus pratimų namuose.',
       viewProfile: 'Žiūrėti profilį',
       meetTeam: 'Susipažinti su visa komanda',
       additionalTitle: 'Papildomos paslaugos kūdikiams',
       massage: 'Kūdikių masažai',
       massageDesc: 'kai reikia švelnaus raumenų atpalaidavimo ar tonizavimo.',
-      swimming: 'Kūdikių plukdymas',
-      swimmingDesc: 'judėjimas vandenyje, padedantis atsipalaiduoti ir stiprėti.',
       faqTitle: 'Dažniausiai užduodami klausimai',
       q1: 'Nuo kokio amžiaus galima pradėti kūdikių kineziterapiją?',
       a1: 'Galima pradėti nuo pirmųjų savaičių ar mėnesių – vizitą ir vertinimą pritaikome pagal kūdikio amžių, būklę ir dienos ritmą.',
@@ -194,15 +192,13 @@ export default function KudikiuKineziterapijaPage() {
       specialistsTitle: 'Who works with infants?',
       agne: 'Agnė Juodytė – Physiotherapist',
       agneDesc: 'Works with infants from the first days, helps solve development, movement, and symmetry situations.',
-      ksenija: 'Ksenija Persijanova – Physiotherapist',
-      ksenijaDesc: 'Experience in infant physiotherapy and infant hydrotherapy procedures, work with children according to individual plan.',
+      karolina: 'Karolina Černych – Physiotherapist',
+      karolinaDesc: 'Works with infants and children according to an individual plan, applies DNS methodology principles and teaches parents home exercises.',
       viewProfile: 'View Profile',
       meetTeam: 'Meet the Team',
       additionalTitle: 'Additional Services for Infants',
       massage: 'Infant Massage',
       massageDesc: 'when gentle muscle relaxation or toning is needed.',
-      swimming: 'Infant Swimming',
-      swimmingDesc: 'movement in water, helping to relax and strengthen.',
       faqTitle: 'Frequently Asked Questions',
       q1: 'From what age can infant physiotherapy start?',
       a1: 'Can start from the first weeks or months – we adapt the visit and assessment to the baby\'s age, condition, and daily rhythm.',
@@ -233,19 +229,20 @@ export default function KudikiuKineziterapijaPage() {
       name: 'Agnė Juodytė',
       role: txt.agne,
       description: txt.agneDesc,
-      image: '/specialists/agne.png'
+      image: '/specialists/agne.jpg',
+      profile: '/specialists/agne-juodyte'
     },
     {
-      name: 'Ksenija Persijanova',
-      role: txt.ksenija,
-      description: txt.ksenijaDesc,
-      image: '/specialists/ksenija.png'
+      name: 'Karolina Černych',
+      role: txt.karolina,
+      description: txt.karolinaDesc,
+      image: '/specialists/karolina.jpg',
+      profile: '/specialists/karolina-cernych'
     }
   ];
 
   const additionalServices = [
     { name: txt.massage, description: txt.massageDesc, slug: 'kudikiu-masazai' },
-    { name: txt.swimming, description: txt.swimmingDesc, slug: 'kudikiu-plukdymas' }
   ];
 
   const faqs = [
@@ -635,7 +632,7 @@ export default function KudikiuKineziterapijaPage() {
                       {specialist.description}
                     </p>
                     <Link
-                      href="/registracija"
+                      href={`${specialist.profile}${currentLang === 'en' ? '?lang=en' : ''}`}
                       className="inline-flex items-center space-x-2 text-[#54B6FC] font-semibold hover:text-[#4a9fe0] transition-colors"
                     >
                       <span>{txt.viewProfile}</span>
@@ -648,7 +645,7 @@ export default function KudikiuKineziterapijaPage() {
 
             <div className="text-center">
               <Link
-                href="/registracija"
+                href={currentLang === 'en' ? '/?lang=en#specialistai' : '/#specialistai'}
                 className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#54B6FC] to-[#4a9fe0] hover:from-[#4a9fe0] hover:to-[#54B6FC] text-white px-8 py-3 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
               >
                 <span>{txt.meetTeam}</span>
@@ -665,19 +662,19 @@ export default function KudikiuKineziterapijaPage() {
               {txt.additionalTitle}
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="max-w-xl mx-auto">
               {additionalServices.map((service, index) => (
                 <Link
                   key={index}
                   href={`/${service.slug}`}
-                  className="group bg-gradient-to-br from-[#54B6FC]/5 to-white rounded-2xl p-6 shadow-md border-2 border-gray-100 hover:border-[#54B6FC] transition-all hover:-translate-y-1"
+                  className="block group bg-gradient-to-br from-[#54B6FC]/5 to-white rounded-2xl p-6 shadow-md border-2 border-gray-100 hover:border-[#54B6FC] transition-all hover:-translate-y-1"
                 >
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#54B6FC] transition-colors">
                     {service.name}
                   </h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <div className="inline-flex items-center space-x-2 text-[#54B6FC] font-semibold">
-                    <span>Sužinoti daugiau</span>
+                    <span>{t.services.learnMore}</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>

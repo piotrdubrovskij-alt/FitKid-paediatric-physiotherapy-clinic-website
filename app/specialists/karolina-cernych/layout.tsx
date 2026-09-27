@@ -2,13 +2,12 @@ import type { Metadata } from 'next';
 import { getMetadataForPage, buildAlternates } from '@/lib/i18n/metadata';
 
 export function generateMetadata(): Metadata {
-  const { title, description } = getMetadataForPage('/kudikiu-plukdymas', 'lt');
-  const alternates = buildAlternates('/kudikiu-plukdymas');
+  const { title, description } = getMetadataForPage('/specialists/karolina-cernych', 'lt');
+  const alternates = buildAlternates('/specialists/karolina-cernych');
 
   return {
     title,
     description,
-    robots: { index: false, follow: true },
     alternates: {
       canonical: alternates.canonical,
       languages: alternates.languages,
