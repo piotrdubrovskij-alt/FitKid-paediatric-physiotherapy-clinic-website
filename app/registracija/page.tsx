@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { Fragment, useState, useEffect, useRef, useCallback } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
@@ -29,7 +29,7 @@ export default function RegistracijaPage() {
       setCurrentLang(lang);
     }
     const spec = params.get('specialist');
-    if (spec && specialistWidgets[spec]) {
+    if (spec && Object.hasOwn(specialistWidgets, spec)) {
       setSpecialist(spec);
     }
     setReady(true);
@@ -39,12 +39,13 @@ export default function RegistracijaPage() {
   const initWidget = useCallback(() => {
     if (!widgetRef.current) return;
     // Remove any previously injected widget script to force re-init
-    const oldScript = document.querySelector('script[src*="mydocwidget"]');
+    const oldScript = document.getElementById('fitkid-mydocwidget');
     if (oldScript) {
       oldScript.remove();
     }
     // Inject the widget script fresh so it processes the current DOM
     const script = document.createElement('script');
+    script.id = 'fitkid-mydocwidget';
     script.src = 'https://www.manodaktaras.lt/widget/js/mydocwidget.js';
     script.type = 'text/javascript';
     document.body.appendChild(script);
@@ -129,15 +130,15 @@ export default function RegistracijaPage() {
           </p>
           
           {/* ManoDaktaras widgets */}
-          <div
-            ref={widgetRef}
-            className="mydoc-widgets"
-            dangerouslySetInnerHTML={{
-              __html: widgetsToShow
-                .map(w => `<br/><br/><div mydoc-widget mydoc-doctor="${w.doctorId}" mydoc-clinic="2930"></div><br/><br/>`)
-                .join(''),
-            }}
-          />
+          <div ref={widgetRef} className="mydoc-widgets">
+            {widgetsToShow.map((widget) => (
+              <Fragment key={widget.doctorId}>
+                <br /><br />
+                <div mydoc-widget="" mydoc-doctor={widget.doctorId} mydoc-clinic="2930" />
+                <br /><br />
+              </Fragment>
+            ))}
+          </div>
         </div>
       </main>
       <Footer translations={t} />

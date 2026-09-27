@@ -6,7 +6,6 @@ import { Check, ArrowLeft, Phone, Calendar } from 'lucide-react';
 import { translations, type Language } from '@/lib/i18n/translations';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CookieBanner from '@/components/CookieBanner';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
 
 export default function KainosPage() {
@@ -369,7 +368,6 @@ export default function KainosPage() {
 
       <Footer translations={t} />
       <FloatingActionButtons currentLang={currentLang} />
-      <CookieBanner currentLang={currentLang} />
     </>
   );
 }

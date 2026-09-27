@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CookieBanner from '@/components/CookieBanner';
+import { OPEN_COOKIE_PREFERENCES_EVENT } from '@/lib/gtag';
 import { translations, type Language } from '@/lib/i18n/translations';
 import Link from 'next/link';
 
@@ -63,6 +63,13 @@ export default function CookiesPage() {
                 ? 'Informacija apie svetainėje naudojamus slapukus' 
                 : 'Information about cookies used on the website'}
             </p>
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event(OPEN_COOKIE_PREFERENCES_EVENT))}
+              className="mt-5 rounded-full bg-[#54B6FC] px-5 py-2.5 font-semibold text-white hover:bg-[#4a9fe0]"
+            >
+              {currentLang === 'lt' ? 'Keisti slapukų pasirinkimą' : 'Change cookie preferences'}
+            </button>
           </div>
 
           {/* Content */}
@@ -383,7 +390,6 @@ export default function CookiesPage() {
       </main>
 
       <Footer translations={t} />
-      <CookieBanner currentLang={currentLang} />
     </>
   );
 }

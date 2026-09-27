@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CookieBanner from '@/components/CookieBanner';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
 import { getStoredLanguage, setStoredLanguage } from '@/lib/languageStorage';
@@ -479,7 +478,6 @@ export default function KontaktaiPage() {
 
       <Footer translations={t} />
       <FloatingActionButtons currentLang={currentLang} />
-      <CookieBanner currentLang={currentLang} />
     </div>
   );
 }

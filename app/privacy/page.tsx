@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CookieBanner from '@/components/CookieBanner';
 import { translations, type Language } from '@/lib/i18n/translations';
 import Link from 'next/link';
 
@@ -452,7 +451,6 @@ export default function PrivacyPage() {
       </main>
 
       <Footer translations={t} />
-      <CookieBanner currentLang={currentLang} />
     </>
   );
 }

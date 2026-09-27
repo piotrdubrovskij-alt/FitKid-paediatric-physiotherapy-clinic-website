@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import { getMetadataForPage, buildAlternates } from '@/lib/i18n/metadata';
 
 export function generateMetadata(): Metadata {
@@ -15,6 +16,11 @@ export function generateMetadata(): Metadata {
   };
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+export default function RegistracijaLayout({ children }: { children: ReactNode }) {
+  return (
+    <>
+      <link rel="stylesheet" href="https://www.manodaktaras.lt/widget/css/mydocwidget.css" />
+      {children}
+    </>
+  );
 }

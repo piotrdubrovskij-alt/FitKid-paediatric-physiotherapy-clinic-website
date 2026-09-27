@@ -25,8 +25,8 @@ https://console.cloud.google.com/apis/library/places-backend.googleapis.com
 ```
 https://console.cloud.google.com/apis/credentials/wizard?api=places-backend.googleapis.com
 ```
-- Выберите: **"Web browser (JavaScript)"**
-- Website URL: `http://localhost:3000/*`
+- Это серверный API: не выбирайте **"Web browser (JavaScript)"** и ограничение по Website URL.
+- Разрешите только нужный Places API; для ограничения по IP нужен постоянный исходящий IP сервера.
 - Нажмите **"DONE"**
 - **СКОПИРУЙТЕ КЛЮЧ!** (выглядит как `AIzaSy...`)
 

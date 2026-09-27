@@ -1,5 +1,7 @@
 # 🌟 Настройка Google Отзывов
 
+> **Безопасность:** `/api/reviews` обращается к Google с сервера. Не публикуйте ключ в GitHub и не настраивайте для него ограничение «HTTP referrers»: оно относится к браузерным вызовам. В production храните ключ в Secret Manager, разрешите только нужный Places API и проверьте использование перед заменой старого ключа.
+
 ## 📋 Что нужно сделать
 
 Для отображения реальных отзывов из Google нужно:
@@ -32,12 +34,10 @@ https://console.cloud.google.com/apis/credentials
 
 ### 1.5 Ограничьте ключ (рекомендуется)
 1. Нажмите на созданный ключ
-2. В разделе **"Application restrictions"**:
-   - Выберите "HTTP referrers (web sites)"
-   - Добавьте: `fitkid.lt/*` и `localhost:3000/*`
-3. В разделе **"API restrictions"**:
+2. В разделе **"API restrictions"**:
    - Выберите "Restrict key"
    - Выберите только "Places API"
+3. Для ограничения по IP нужен постоянный исходящий IP сервера; сначала настройте его и проверьте работу API. Не выбирайте "HTTP referrers" для серверного запроса.
 4. Нажмите **"Save"**
 
 ---
@@ -91,7 +91,7 @@ GOOGLE_PLACE_ID=ChIJ...ваш_place_id_здесь
 
 **Пример:**
 ```env
-GOOGLE_PLACES_API_KEY=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI
+GOOGLE_PLACES_API_KEY=YOUR_GOOGLE_PLACES_API_KEY
 GOOGLE_PLACE_ID=ChIJN1t_tDeuEmsRUsoyG83frY4
 ```
 

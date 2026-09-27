@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Inter, Poppins } from "next/font/google";
 import StructuredData from "./schema";
 import AnalyticsEvents from "@/components/AnalyticsEvents";
+import CookieConsentManager from "@/components/CookieConsentManager";
 import "./globals.css";
 
 const inter = Inter({
@@ -90,23 +90,12 @@ export default function RootLayout({
   return (
     <html lang="lt" className="scroll-smooth">
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLJPTQ5XLD" />
-        <script dangerouslySetInnerHTML={{ __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-HLJPTQ5XLD');
-        `}} />
-        <link href="https://www.manodaktaras.lt/widget/css/mydocwidget.css" rel="stylesheet" />
         <StructuredData />
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
         <AnalyticsEvents />
         {children}
-        <Script
-          src="https://www.manodaktaras.lt/widget/js/mydocwidget.js"
-          strategy="afterInteractive"
-        />
+        <CookieConsentManager />
       </body>
     </html>
   );

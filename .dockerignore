@@ -3,4 +3,17 @@ node_modules
 .git
 *.md
 __tests__
-.env*
+**/.env*
+.preview/
+Claude outputs/
+.vercel/
+coverage/
+out/
+build/
+.DS_Store
+**/*.log
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/.npmrc

@@ -1,5 +1,7 @@
 # ⚡ Быстрая настройка Google Отзывов
 
+> **Безопасность:** ключ используется только сервером. Не сохраняйте его в GitHub и не ограничивайте по HTTP referrers. В production используйте Secret Manager и разрешите только нужный Places API.
+
 ## 🎯 ЧТО НУЖНО СДЕЛАТЬ ПРЯМО СЕЙЧАС
 
 ### 1️⃣ Получить Google Places API ключ (5 минут)
@@ -36,7 +38,7 @@ GOOGLE_PLACE_ID=ваш_place_id_сюда
 
 **Пример:**
 ```env
-GOOGLE_PLACES_API_KEY=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI
+GOOGLE_PLACES_API_KEY=YOUR_GOOGLE_PLACES_API_KEY
 GOOGLE_PLACE_ID=ChIJN1t_tDeuEmsRUsoyG83frY4
 ```
 

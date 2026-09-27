@@ -10,7 +10,6 @@ import Consultation from '@/components/Consultation';
 import Specialists from '@/components/Specialists';
 import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
-import CookieBanner from '@/components/CookieBanner';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
 
@@ -58,7 +57,6 @@ export default function Home() {
       </main>
       <Footer translations={t} />
       <FloatingActionButtons currentLang={currentLang} />
-      <CookieBanner currentLang={currentLang} />
     </div>
   );
 }

@@ -1,5 +1,7 @@
 # 🔑 Пошаговая инструкция: Получить Google API ключ
 
+> **Безопасность:** сайт запрашивает отзывы через серверный `/api/reviews`. Не помещайте ключ в GitHub или браузерный код. Для production храните его в Secret Manager; ограничение «HTTP referrers» для этого запроса не подходит.
+
 ## ⏱️ Время: 5-7 минут
 
 ---
@@ -67,7 +69,7 @@ https://console.cloud.google.com/apis/credentials
 
 ### 4.4 ✅ КЛЮЧ СОЗДАН!
 - Появится окно с вашим ключом
-- Выглядит примерно так: `AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI`
+- Выглядит примерно так: `YOUR_GOOGLE_PLACES_API_KEY`
 - **СКОПИРУЙТЕ ЕГО!** (кнопка Copy)
 
 ---
@@ -85,25 +87,13 @@ https://console.cloud.google.com/apis/credentials
   ✅ **Places API**
 
 ### 5.3 В разделе "Application restrictions":
-- Выберите "HTTP referrers (web sites)"
-- Нажмите "+ ADD AN ITEM"
-- Добавьте:
-  ```
-  localhost:3000/*
-  ```
-- Нажмите еще "+ ADD AN ITEM"
-- Добавьте (замените на ваш домен):
-  ```
-  fitkid.lt/*
-  ```
-- Если у вас есть www версия, добавьте еще:
-  ```
-  www.fitkid.lt/*
-  ```
+- Не выбирайте "HTTP referrers": запрос идёт с сервера, а не из браузера.
+- Ограничение по IP возможно только после настройки постоянного исходящего IP сервера.
+- Перед изменением существующего ключа проверьте его фактическое использование.
 
 ### 5.4 Нажмите "SAVE" внизу
 
-✅ Ключ готов и защищен!
+✅ Ограничение по API настроено. Для production добавьте подходящее ограничение приложения и безопасное хранение ключа.
 
 ---
 
@@ -168,13 +158,13 @@ GOOGLE_PLACE_ID=
 
 **Если у вас есть Place ID (начинается с ChIJ...):**
 ```env
-GOOGLE_PLACES_API_KEY=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI
+GOOGLE_PLACES_API_KEY=YOUR_GOOGLE_PLACES_API_KEY
 GOOGLE_PLACE_ID=ChIJN1t_tDeuEmsRUsoyG83frY4
 ```
 
 **Если у вас только URL от Google Maps:**
 ```env
-GOOGLE_PLACES_API_KEY=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI
+GOOGLE_PLACES_API_KEY=YOUR_GOOGLE_PLACES_API_KEY
 GOOGLE_PLACE_ID=вставьте_ваш_полный_URL_сюда
 ```
 
@@ -255,7 +245,7 @@ https://console.cloud.google.com/apis/library/places-backend.googleapis.com
 **"API key not valid"**
 - Проверьте что ключ скопирован полностью
 - Проверьте что нет пробелов в начале или конце
-- Проверьте что в ограничениях добавлен `localhost:3000/*`
+- Проверьте ограничения API и исходящего IP сервера, если он настроен
 
 **"This API project is not authorized to use this API"**
 - Places API не включен

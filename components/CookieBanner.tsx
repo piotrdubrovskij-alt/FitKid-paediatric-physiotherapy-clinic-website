@@ -4,6 +4,12 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { X } from 'lucide-react';
 import { type Language } from '@/lib/i18n/translations';
+import {
+  OPEN_COOKIE_PREFERENCES_EVENT,
+  readCookiePreferences,
+  saveCookiePreferences,
+  type CookiePreferences,
+} from '@/lib/gtag';
 
 interface CookieBannerProps {
   currentLang: Language;
@@ -12,28 +18,53 @@ interface CookieBannerProps {
 export default function CookieBanner({ currentLang }: CookieBannerProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [saveError, setSaveError] = useState(false);
+  const [preferences, setPreferences] = useState<CookiePreferences>({
+    functional: false,
+    analytics: false,
+    marketing: false,
+  });
 
   useEffect(() => {
-    // Check if user has already made a choice
-    const cookieConsent = localStorage.getItem('cookieConsent');
-    if (!cookieConsent) {
-      // Show banner after a short delay
-      setTimeout(() => setIsVisible(true), 1000);
-    }
+    const saved = readCookiePreferences();
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    if (!saved) timer = setTimeout(() => setIsVisible(true), 1000);
+
+    const openPreferences = () => {
+      setPreferences(readCookiePreferences() ?? {
+        functional: false,
+        analytics: false,
+        marketing: false,
+      });
+      setSaveError(false);
+      setShowDetails(true);
+      setIsVisible(true);
+    };
+    window.addEventListener(OPEN_COOKIE_PREFERENCES_EVENT, openPreferences);
+    return () => {
+      if (timer) clearTimeout(timer);
+      window.removeEventListener(OPEN_COOKIE_PREFERENCES_EVENT, openPreferences);
+    };
   }, []);
 
-  const handleAcceptAll = () => {
-    localStorage.setItem('cookieConsent', 'all');
-    setIsVisible(false);
+  const save = (choice: CookiePreferences) => {
+    if (saveCookiePreferences(choice)) {
+      setSaveError(false);
+      setIsVisible(false);
+      setShowDetails(false);
+    } else {
+      setSaveError(true);
+    }
   };
 
+  const handleAcceptAll = () => save({ functional: true, analytics: true, marketing: true });
+
   const handleAcceptNecessary = () => {
-    localStorage.setItem('cookieConsent', 'necessary');
-    setIsVisible(false);
+    save({ functional: false, analytics: false, marketing: false });
   };
 
   const handleClose = () => {
-    setIsVisible(false);
+    handleAcceptNecessary();
   };
 
   if (!isVisible) return null;
@@ -55,6 +86,7 @@ export default function CookieBanner({ currentLang }: CookieBannerProps) {
       marketing: 'Rinkodaros slapukai',
       marketingDesc: 'Rodo aktualią reklamą',
       savePreferences: 'Išsaugoti nustatymus',
+      saveError: 'Nepavyko išsaugoti pasirinkimo. Patikrinkite naršyklės nustatymus.',
     },
     en: {
       title: 'We use cookies',
@@ -72,6 +104,7 @@ export default function CookieBanner({ currentLang }: CookieBannerProps) {
       marketing: 'Marketing cookies',
       marketingDesc: 'Show relevant advertising',
       savePreferences: 'Save Preferences',
+      saveError: 'Could not save your choice. Check your browser settings.',
     },
   };
 
@@ -92,7 +125,7 @@ export default function CookieBanner({ currentLang }: CookieBannerProps) {
             <button
               onClick={handleClose}
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
-              aria-label="Close"
+              aria-label={currentLang === 'lt' ? 'Tik būtini slapukai ir uždaryti' : 'Necessary cookies only and close'}
             >
               <X className="w-5 h-5" />
             </button>
@@ -129,7 +162,14 @@ export default function CookieBanner({ currentLang }: CookieBannerProps) {
                       {t.acceptNecessary}
                     </button>
                     <button
-                      onClick={() => setShowDetails(true)}
+                      onClick={() => {
+                        setPreferences(readCookiePreferences() ?? {
+                          functional: false,
+                          analytics: false,
+                          marketing: false,
+                        });
+                        setShowDetails(true);
+                      }}
                       className="flex-1 border-2 border-[#54B6FC] text-[#54B6FC] hover:bg-[#54B6FC]/5 px-6 py-3 rounded-full font-semibold transition-colors"
                     >
                       {t.customize}
@@ -173,7 +213,13 @@ export default function CookieBanner({ currentLang }: CookieBannerProps) {
                         <p className="text-sm text-gray-600">{t.functionalDesc}</p>
                       </div>
                       <label className="ml-4 flex items-center cursor-pointer">
-                        <input type="checkbox" className="sr-only peer" defaultChecked />
+                        <input
+                          type="checkbox"
+                          className="sr-only peer"
+                          aria-label={t.functional}
+                          checked={preferences.functional}
+                          onChange={event => setPreferences({ ...preferences, functional: event.target.checked })}
+                        />
                         <div className="relative w-12 h-6 bg-gray-300 peer-checked:bg-[#54B6FC] rounded-full peer-checked:after:translate-x-6 after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
                       </label>
                     </div>
@@ -185,7 +231,13 @@ export default function CookieBanner({ currentLang }: CookieBannerProps) {
                         <p className="text-sm text-gray-600">{t.analyticsDesc}</p>
                       </div>
                       <label className="ml-4 flex items-center cursor-pointer">
-                        <input type="checkbox" className="sr-only peer" defaultChecked />
+                        <input
+                          type="checkbox"
+                          className="sr-only peer"
+                          aria-label={t.analytics}
+                          checked={preferences.analytics}
+                          onChange={event => setPreferences({ ...preferences, analytics: event.target.checked })}
+                        />
                         <div className="relative w-12 h-6 bg-gray-300 peer-checked:bg-[#54B6FC] rounded-full peer-checked:after:translate-x-6 after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
                       </label>
                     </div>
@@ -197,7 +249,13 @@ export default function CookieBanner({ currentLang }: CookieBannerProps) {
                         <p className="text-sm text-gray-600">{t.marketingDesc}</p>
                       </div>
                       <label className="ml-4 flex items-center cursor-pointer">
-                        <input type="checkbox" className="sr-only peer" defaultChecked />
+                        <input
+                          type="checkbox"
+                          className="sr-only peer"
+                          aria-label={t.marketing}
+                          checked={preferences.marketing}
+                          onChange={event => setPreferences({ ...preferences, marketing: event.target.checked })}
+                        />
                         <div className="relative w-12 h-6 bg-gray-300 peer-checked:bg-[#54B6FC] rounded-full peer-checked:after:translate-x-6 after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
                       </label>
                     </div>
@@ -206,7 +264,7 @@ export default function CookieBanner({ currentLang }: CookieBannerProps) {
                   {/* Action buttons */}
                   <div className="flex flex-col sm:flex-row gap-3">
                     <button
-                      onClick={handleAcceptAll}
+                      onClick={() => save(preferences)}
                       className="flex-1 bg-[#54B6FC] hover:bg-[#4a9fe0] text-white px-6 py-3 rounded-full font-semibold transition-colors"
                     >
                       {t.savePreferences}
@@ -220,6 +278,7 @@ export default function CookieBanner({ currentLang }: CookieBannerProps) {
                   </div>
                 </>
               )}
+              {saveError && <p role="alert" className="mt-4 text-sm text-red-700">{t.saveError}</p>}
             </div>
           </div>
         </div>
