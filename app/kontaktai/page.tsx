@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
@@ -10,11 +11,35 @@ import { getStoredLanguage, setStoredLanguage } from '@/lib/languageStorage';
 import { MapPin, Phone, Mail, Clock, Navigation, MessageCircle } from 'lucide-react';
 import { trackFormSubmit, trackEmailClick, trackWhatsAppClick, trackMapsClick, trackWazeClick } from '@/lib/gtag';
 
+type TurnstileConfig = { required: boolean; siteKey: string | null };
+type TurnstileWindow = Window & {
+  turnstile?: {
+    render: (container: HTMLElement, options: {
+      sitekey: string;
+      action: string;
+      theme: 'auto';
+      callback: (token: string) => void;
+      'expired-callback': () => void;
+      'error-callback': () => void;
+    }) => string;
+    reset: (widgetId: string) => void;
+    remove: (widgetId: string) => void;
+  };
+};
+
 export default function KontaktaiPage() {
   const [currentLang, setCurrentLang] = useState<Language>('lt');
   const [showMap, setShowMap] = useState(false);
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [turnstileConfig, setTurnstileConfig] = useState<TurnstileConfig | null>(null);
+  const [turnstileConfigError, setTurnstileConfigError] = useState(false);
+  const [turnstileReady, setTurnstileReady] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const turnstileContainer = useRef<HTMLDivElement>(null);
+  const turnstileWidgetId = useRef<string | null>(null);
   const t = translations[currentLang];
+  const securityCheckRequired = turnstileConfig?.required === true;
+  const securityCheckUnavailable = turnstileConfigError || (securityCheckRequired && !turnstileConfig?.siteKey);
 
   useEffect(() => {
     // Check URL first, then localStorage
@@ -28,6 +53,59 @@ export default function KontaktaiPage() {
       setCurrentLang(getStoredLanguage());
     }
   }, []);
+
+  useEffect(() => {
+    let mounted = true;
+    fetch('/api/contact/turnstile-config', { cache: 'no-store' })
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Security configuration unavailable');
+        return response.json();
+      })
+      .then((config: unknown) => {
+        if (!mounted) return;
+        if (!config || typeof config !== 'object') throw new Error('Invalid security configuration');
+        const data = config as Record<string, unknown>;
+        if (typeof data.required !== 'boolean') throw new Error('Invalid security configuration');
+        setTurnstileConfig({
+          required: data.required,
+          siteKey: typeof data.siteKey === 'string' ? data.siteKey : null,
+        });
+      })
+      .catch(() => { if (mounted) setTurnstileConfigError(true); });
+    return () => { mounted = false; };
+  }, []);
+
+  useEffect(() => {
+    if (!securityCheckRequired || !turnstileConfig?.siteKey || !turnstileReady || !turnstileContainer.current) return;
+    const turnstile = (window as TurnstileWindow).turnstile;
+    if (!turnstile) return;
+
+    let widgetId: string;
+    try {
+      widgetId = turnstile.render(turnstileContainer.current, {
+        sitekey: turnstileConfig.siteKey,
+        action: 'contact',
+        theme: 'auto',
+        callback: (token) => setTurnstileToken(token),
+        'expired-callback': () => setTurnstileToken(''),
+        'error-callback': () => setTurnstileToken(''),
+      });
+    } catch {
+      setTurnstileConfigError(true);
+      return;
+    }
+    turnstileWidgetId.current = widgetId;
+    return () => {
+      turnstile.remove(widgetId);
+      turnstileWidgetId.current = null;
+    };
+  }, [securityCheckRequired, turnstileConfig?.siteKey, turnstileReady]);
+
+  const resetTurnstile = () => {
+    setTurnstileToken('');
+    const turnstile = (window as TurnstileWindow).turnstile;
+    if (turnstile && turnstileWidgetId.current) turnstile.reset(turnstileWidgetId.current);
+  };
 
   const handleLanguageChange = (lang: Language) => {
     setCurrentLang(lang);
@@ -44,6 +122,10 @@ export default function KontaktaiPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!turnstileConfig || securityCheckUnavailable || (securityCheckRequired && !turnstileToken)) {
+      setFormStatus('error');
+      return;
+    }
     setFormStatus('loading');
 
     const formData = new FormData(e.currentTarget);
@@ -52,6 +134,7 @@ export default function KontaktaiPage() {
       email: formData.get('email'),
       phone: formData.get('phone'),
       message: formData.get('message'),
+      turnstileToken: securityCheckRequired ? turnstileToken : undefined,
     };
 
     // Track form submit intent immediately — fires regardless of API response
@@ -75,6 +158,8 @@ export default function KontaktaiPage() {
     } catch (error) {
       setFormStatus('error');
       setTimeout(() => setFormStatus('idle'), 5000);
+    } finally {
+      if (securityCheckRequired) resetTurnstile();
     }
   };
 
@@ -310,9 +395,30 @@ export default function KontaktaiPage() {
                     />
                   </div>
 
+                  {securityCheckRequired && turnstileConfig?.siteKey && (
+                    <>
+                      <Script
+                        id="contact-turnstile"
+                        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+                        strategy="afterInteractive"
+                        onReady={() => setTurnstileReady(true)}
+                        onError={() => setTurnstileConfigError(true)}
+                      />
+                      <div ref={turnstileContainer} aria-label={currentLang === 'lt' ? 'Saugumo patikra' : 'Security check'} />
+                    </>
+                  )}
+
+                  {securityCheckUnavailable && (
+                    <p className="text-red-600 text-center" role="alert">
+                      {currentLang === 'lt'
+                        ? 'Saugumo patikra laikinai neveikia. Prašome susisiekti telefonu arba el. paštu.'
+                        : 'Security check is temporarily unavailable. Please contact us by phone or email.'}
+                    </p>
+                  )}
+
                   <button
                     type="submit"
-                    disabled={formStatus === 'loading'}
+                    disabled={formStatus === 'loading' || !turnstileConfig || securityCheckUnavailable || (securityCheckRequired && !turnstileToken)}
                     className="w-full bg-gradient-to-r from-[#54B6FC] to-[#4a9fe0] hover:from-[#4a9fe0] hover:to-[#54B6FC] text-white px-8 py-4 rounded-xl font-semibold transition-all hover:scale-105 shadow-lg disabled:opacity-50"
                   >
                     {formStatus === 'loading' ? t.contactsPage.form.sending : t.contactsPage.form.send}

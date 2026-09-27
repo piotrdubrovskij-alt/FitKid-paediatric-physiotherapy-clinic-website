@@ -8,6 +8,31 @@ const HEADER_CONTROLS = /[\u0000-\u001f\u007f\u2028\u2029]/u;
 const MESSAGE_CONTROLS = /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/u;
 const EMAIL_PATTERN = /^[^\s@<>(),"\\]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/u;
 const PHONE_PATTERN = /^\+?[0-9][0-9(). -]*$/u;
+const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+
+async function verifyTurnstile(token: unknown, secret: string): Promise<'valid' | 'invalid' | 'unavailable'> {
+  if (typeof token !== 'string' || !token || token.length > 2048) return 'invalid';
+
+  try {
+    const response = await fetch(TURNSTILE_VERIFY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ secret, response: token }),
+      signal: AbortSignal.timeout(5000),
+      cache: 'no-store',
+    });
+    if (!response.ok) return 'unavailable';
+
+    const result: unknown = await response.json();
+    if (!result || typeof result !== 'object') return 'invalid';
+    const validation = result as Record<string, unknown>;
+    return validation.success === true && validation.hostname === 'fitkid.lt' && validation.action === 'contact'
+      ? 'valid'
+      : 'invalid';
+  } catch {
+    return 'unavailable';
+  }
+}
 
 function normalizeField(value: unknown, maxLength: number): string | null {
   if (typeof value !== 'string') return null;
@@ -88,6 +113,17 @@ export async function POST(request: Request) {
     !PHONE_PATTERN.test(phone) || phone.replace(/\D/g, '').length < 5
   ) {
     return NextResponse.json({ error: 'Invalid form data' }, { status: 400 });
+  }
+
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  if (turnstileSecret) {
+    const verification = await verifyTurnstile(form.turnstileToken, turnstileSecret);
+    if (verification !== 'valid') {
+      return NextResponse.json(
+        { error: 'Security verification failed' },
+        { status: verification === 'unavailable' ? 503 : 403 },
+      );
+    }
   }
 
   const gmailUser = process.env.GMAIL_USER;
