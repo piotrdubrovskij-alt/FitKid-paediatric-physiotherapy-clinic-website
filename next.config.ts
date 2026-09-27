@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
   output: 'standalone',
   poweredByHeader: false,
   images: {
+    // The origin gate also runs on Next.js internal image fetches, which do not
+    // carry the Cloudflare verification header. Serve the small public assets
+    // directly so image rendering keeps working without opening the origin.
+    unoptimized: true,
     qualities: [25, 50, 75, 85, 95],
   },
   async headers() {
