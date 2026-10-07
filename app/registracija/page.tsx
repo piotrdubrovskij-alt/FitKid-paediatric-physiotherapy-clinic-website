@@ -133,16 +133,6 @@ export default function RegistracijaPage() {
             {widgetsToShow.map((widget) => (
               <Fragment key={widget.doctorId}>
                 <br /><br />
-                {widget.doctorId === '17412' && (
-                  <p className="mb-6 text-center text-gray-700">
-                    {currentLang === 'lt'
-                      ? 'Jei laisvų laikų dar nematote, registruokitės telefonu: '
-                      : 'If no available times are shown yet, book by phone: '}
-                    <a className="font-semibold text-[#54B6FC] underline" href="tel:+37066699676">
-                      +370 666 99676
-                    </a>
-                  </p>
-                )}
                 <div mydoc-widget="" mydoc-doctor={widget.doctorId} mydoc-clinic="2930" />
                 <br /><br />
               </Fragment>
