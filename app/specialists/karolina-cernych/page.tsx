@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingActionButtons from '@/components/FloatingActionButtons';
 import { translations, type Language } from '@/lib/i18n/translations';
-import { CheckCircle, Award, GraduationCap, Phone } from 'lucide-react';
+import { CheckCircle, Award, GraduationCap, Calendar } from 'lucide-react';
 import { trackSpecialistBookingClick } from '@/lib/gtag';
 
 const LICENSE_NUMBER = 'ASL-12396';
@@ -62,7 +62,7 @@ export default function KarolinaCernychPage() {
       trainingTitle: 'Mokymai',
       training: ['DNS pediatrijos kursas, I dalis', 'DNS skoliozės mokymai'],
       ctaRegister: 'Vizitas pas Karoliną Černych',
-      ctaBook: 'Skambinti dėl vizito: +370 666 99676',
+      ctaBook: 'Registruotis vizitui',
     },
     en: {
       heroTitle: 'Karolina Černych',
@@ -88,12 +88,12 @@ export default function KarolinaCernychPage() {
       trainingTitle: 'Training',
       training: ['DNS Paediatrics Course, Part I', 'DNS Scoliosis training'],
       ctaRegister: 'Visit with Karolina Černych',
-      ctaBook: 'Call to book: +370 666 99676',
+      ctaBook: 'Book a visit',
     },
   };
 
   const txt = pageText[currentLang];
-  const bookingHref = 'tel:+37066699676';
+  const bookingHref = `/registracija?specialist=karolina${currentLang !== 'lt' ? `&lang=${currentLang}` : ''}`;
 
   return (
     <div className="min-h-screen bg-white">
@@ -143,7 +143,7 @@ export default function KarolinaCernychPage() {
                     className="inline-flex items-center justify-center w-full space-x-2 bg-[#fb7825] hover:bg-[#e66f1f] text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg text-lg"
                     onClick={() => trackSpecialistBookingClick('karolina', txt.ctaBook, window.location.pathname)}
                   >
-                    <Phone className="w-5 h-5" />
+                    <Calendar className="w-5 h-5" />
                     <span>{txt.ctaBook}</span>
                   </a>
                 </div>
@@ -260,7 +260,7 @@ export default function KarolinaCernychPage() {
                 className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-[#54B6FC] px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 shadow-lg"
                 onClick={() => trackSpecialistBookingClick('karolina', txt.ctaBook, window.location.pathname)}
               >
-                <Phone className="w-5 h-5" />
+                <Calendar className="w-5 h-5" />
                 <span>{txt.ctaBook}</span>
               </a>
 

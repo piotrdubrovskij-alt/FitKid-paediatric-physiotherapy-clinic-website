@@ -8,8 +8,7 @@ import { translations, type Language } from '@/lib/i18n/translations';
 
 const specialistWidgets: Record<string, { doctorId: string; name: { lt: string; en: string } }> = {
   agne: { doctorId: '16366', name: { lt: 'Agnę Juodytę', en: 'Agnė Juodytė' } },
-  // TODO: Karolina Černych – pridėti, kai bus žinomas jos doctorId ManoDaktaras sistemoje:
-  // karolina: { doctorId: 'XXXXX', name: { lt: 'Karoliną Černych', en: 'Karolina Černych' } },
+  karolina: { doctorId: '17412', name: { lt: 'Karoliną Černych', en: 'Karolina Černych' } },
   ramune: { doctorId: '16367', name: { lt: 'Ramunę Nemeikaitę', en: 'Ramunė Nemeikaitę' } },
 };
 
@@ -134,6 +133,16 @@ export default function RegistracijaPage() {
             {widgetsToShow.map((widget) => (
               <Fragment key={widget.doctorId}>
                 <br /><br />
+                {widget.doctorId === '17412' && (
+                  <p className="mb-6 text-center text-gray-700">
+                    {currentLang === 'lt'
+                      ? 'Jei laisvų laikų dar nematote, registruokitės telefonu: '
+                      : 'If no available times are shown yet, book by phone: '}
+                    <a className="font-semibold text-[#54B6FC] underline" href="tel:+37066699676">
+                      +370 666 99676
+                    </a>
+                  </p>
+                )}
                 <div mydoc-widget="" mydoc-doctor={widget.doctorId} mydoc-clinic="2930" />
                 <br /><br />
               </Fragment>
