@@ -13,7 +13,7 @@ import {
 vi.mock('next/navigation', () => ({ usePathname: () => '/' }));
 
 type AnalyticsTestWindow = Window & {
-  dataLayer?: unknown[][];
+  dataLayer?: unknown[];
   gtag?: (...args: unknown[]) => void;
 };
 
@@ -32,6 +32,23 @@ afterEach(() => {
 });
 
 describe('analytics consent', () => {
+  it('queues Google tag commands as arguments objects after consent', () => {
+    render(<CookieConsentManager />);
+    act(() => {
+      saveCookiePreferences({ functional: false, analytics: true, marketing: false });
+    });
+    const analyticsWindow = window as AnalyticsTestWindow;
+    const commands = analyticsWindow.dataLayer ?? [];
+    expect(commands).toHaveLength(2);
+    expect(Object.prototype.toString.call(commands[0])).toBe('[object Arguments]');
+    expect(Object.prototype.toString.call(commands[1])).toBe('[object Arguments]');
+    expect(Array.from(commands[0] as IArguments)).toEqual(['js', expect.any(Date)]);
+    expect(Array.from(commands[1] as IArguments)).toEqual(['config', 'G-HLJPTQ5XLD']);
+    trackBookingClick('Book', '/');
+    expect(Object.prototype.toString.call(commands[2])).toBe('[object Arguments]');
+    expect(Array.from(commands[2] as IArguments)).toEqual(['event', 'click_booking', {button_text: 'Book', page_path: '/'}]);
+  });
+
   it('honors legacy choices and never queues events without consent', () => {
     trackBookingClick('Book', '/');
     expect((window as AnalyticsTestWindow).dataLayer).toBeUndefined();

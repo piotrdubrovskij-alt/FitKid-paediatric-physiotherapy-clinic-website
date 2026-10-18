@@ -15,7 +15,7 @@ import type { Language } from '@/lib/i18n/translations';
 const ANALYTICS_SCRIPT_ID = 'fitkid-google-analytics';
 
 type AnalyticsWindow = Window & {
-  dataLayer?: unknown[][];
+  dataLayer?: unknown[];
   gtag?: (...args: unknown[]) => void;
 };
 
@@ -79,8 +79,10 @@ export default function CookieConsentManager() {
       const analyticsWindow = window as AnalyticsWindow;
       if (typeof analyticsWindow.gtag !== 'function') {
         analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
-        analyticsWindow.gtag = (...args: unknown[]) => {
-          analyticsWindow.dataLayer?.push(args);
+        analyticsWindow.gtag = function () {
+          // Google tag commands use arguments objects, not array data-layer entries.
+          // eslint-disable-next-line prefer-rest-params
+          analyticsWindow.dataLayer?.push(arguments);
         };
         analyticsWindow.gtag('js', new Date());
       }
